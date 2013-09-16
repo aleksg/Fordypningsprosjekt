@@ -113,6 +113,7 @@
 \usepackage{rotating}
 \usepackage{listings}
 \usepackage{lstpatch}
+\usepackage{pdfpages}
 \usepackage{float}
 \restylefloat{table}
 \lstset{captionpos=b,
