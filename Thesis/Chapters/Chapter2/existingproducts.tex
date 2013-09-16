@@ -4,10 +4,11 @@
 On the two biggest application stores, Google Play and iOS AppStore, it exists a couple of similar applications to the one we have in mind. Among those we have looked into, is Huff and Puff \fnurl{Google Play : Huff And Puff}{https://play.google.com/store/apps/details?id=com.healthnutsmedia.huffandpuffsd.free}, Asthma Logger
 \fnurl{Google Play : Asthma Logger}{https://play.google.com/store/apps/details?id=org.androworks.asthmalog}, Kids Beating Asthma \fnurl{Google Play : Kids Beating Asthma}{https://play.google.com/store/apps/details?id=es.medianet.hcsc01} and Asthma Monitor \fnurl{Google Play : Asthma Monitor}{https://play.google.com/store/apps/details?id=ch.imvs.unibas.asthma}. Common for all applications is that they have one specific aim. For instance, Huff and Puff wants to teach children in general about asthma. Asthma Logger logs treatments, and Kids Beating Asthma have some game elements, but none of these games are able to play during medication. 
 
-\begin{center}
-	\begin{tabular}{ | p{2.5cm} | p{5cm} | p{5cm} | p{2cm}|}
+\begin{sidewaystable}
+	\label{tab:existing-product-table}
+	\begin{tabular}{ | p{4.0cm} | p{5.5cm} | p{5.5cm} | p{4cm}|}
 	\hline
-	Application & Positive & Negative & Gamification elements \\ \hline
+	\textbf{Application} & \textbf{Positive} & \textbf{Negative} & \textbf{Target Audience} \\ \hline
 	
    Huff And Puff 
 	& 
@@ -23,7 +24,7 @@ On the two biggest application stores, Google Play and iOS AppStore, it exists a
 	  \item The games is not exactly what we look for, as they cannot be played while undergoing a treatment  
 	\end{itemize}
 	&
-	YES
+	Children
 	\\ \hline
 	Asthma Logger
 	& 
@@ -37,7 +38,7 @@ On the two biggest application stores, Google Play and iOS AppStore, it exists a
 	  \item Only has one generic medicine (does not state which medicine, for instance Ventoline) or dosage (?) 
 	\end{itemize}
 	& 
-	NO
+	Adults
 	\\ \hline
 	Kids Beating Asthma
 	& 
@@ -48,16 +49,39 @@ On the two biggest application stores, Google Play and iOS AppStore, it exists a
 	\begin{itemize}
 	  \item Many software bugs and crashes regularly
 	\end{itemize}
-	& NO
+	& Children
+	\\ \hline
+	Asthma Monitor
+	&
+	\begin{itemize}
+	  \item Ability connect Peak Flow to activities
+	  \item Thorough and ``advanced'' statistics
+	  \item Can input symptoms like Cough, Sputum, Wheezing breath and Dyspnsea 
+	  \item Can send records via email
+	\end{itemize}
+	&
+	\begin{itemize}
+	  \item Old fashioned GUI
+	\end{itemize}
+	& 
+	Adults
 	\\ \hline
 	\end{tabular}
-\end{center}
+	\caption{Evaluation of existing products on the market}
+\end{sidewaystable}
 
 \subsection{Conclusion and evaluation}
 \label{existingconcl}
 
 The main ideas we want to take further in our application is the email-sending system of Asthma Logger and the quiz-aspect of Huff And Puff. In general, it is a really good idea to be able to send your own journal on email, for instance to yourself. If we combine this with possibility to send this journal to the doctor, we have a great time saving tool. Let's say that Ole has been feeling bad for a while, and has been good at making journal for when he has taken his medicine. He can then schedule an appointment with his doctor, and send his journal on email to the doctor. When he arrives to his appointment, the doctor already knows how many times he has taken medicine the last days and can easier give advice based upon these facts. 
- 
+
+
+Asthma Monitor seems like a great application once you get used to it, and it is developed by researchers, which implies they know what they're doing. However, it seems a bit too complex for the following reasons:
+\begin{enumerate}
+  \item If an adult who have no other relations to asthma other than through his/her child, it contains terminology which they might not be very used to
+  \item The user interface is not very appealing
+  \item Forcing information from a child with regards of how much they cough once a day seems hard 
+\end{enumerate}   
 
 As for the quiz, we have concluded that this is a great way to inform children. Namely by letting them playing around with the application and gathering knowledge on this basis. 
 

@@ -16,10 +16,15 @@
 \newcommand\fnurl[2]{
 	\footnote{\href{#2}{#1}}
 }
+\usepackage{rotating}
+\usepackage{enumitem}
+\setlist{nolistsep}
+
 
 %% ----------------------------------------------------------------
 \begin{document}
 \frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
+\setlist[enumerate]{itemsep=2mm}
 
 % Set up the Title Page
 \title  {Fordypningsprosjekt}
@@ -142,11 +147,11 @@ We would like to thank \ldots
 \listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
 {
 % \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
-\textbf{NTNU} & \textbf{N}orwegian \textbf{U}niversity of \textbf{S}cience and \textbf{T}echnology \\
+\textbf{NTNU} & \textbf{N}orwegian \textbf{U}niversity of \textbf{S}cience and \textbf{T}echnology
+\\ 
 \textbf{BLOPP} & \textbf{B}arns \textbf{L}egemiddel\textbf{OPP}levelser
 \textbf{CAPP} & \textbf{C}hild \textbf{APP}lication
 \textbf{GAPP} & \textbf{G}uardian \textbf{APP}lication
-
 }
 
 %% ----------------------------------------------------------------
@@ -167,6 +172,7 @@ We would like to thank \ldots
 
 % Include the chapters of the thesis, as separate files
 % Just uncomment the lines as you write the chapters
+
 
 \input{Chapters/Chapter1/chapter1.tex} % Introduction
 
