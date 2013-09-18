@@ -19,5 +19,17 @@ As The Health Register Act states in \S 16 \cite{helseregisterloven} all informa
 Since we have no interest in the data values or the personal information of our test persons we made the following measurements to completely anonymize the data:
 
 \paragraph{Encryption}
+In order to identify children, we have a couple of problems. First off, it should not be possible to identify children by gaining access to our database. Second, we need a way that uniquely identifies the children, as both CAPP, GAPP and KAPP relies on uniquely identifying them. 
 
-\input{Chapters/personalhealthrecords}
+We propose the following level of encrypting a child's identity:
+First, we will make use of the Android UUID (Unique Unit Identifier). We will let the guardian type in the children's names. Then we will concatenate these values, and hash them using SHA-1. By including the Android UUID, we will get a one way encryption function, which should be acceptable.
+ 
+
+\input{Chapters/Chapter4/personalhealthrecords}
+
+
+\section{Basic security}
+\paragraph{HTTPS vs HTTP} If the application are ever to be published by NAAF, there are some requirements towards sending data over HTTPS. However, in order to get such a certificate, we have to pay a certain fee (REFERANSE). In addition, the communication will run slower, as data must be encrypted and decrypted. For demonstration value and early usability testing, we want to make sure that communication towards the database runs as smoothly as possible. As a consequence, we will not use HTTPS during our usability testing, but we might try it out later in our work.
+
+
+    
