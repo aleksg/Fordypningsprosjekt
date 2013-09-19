@@ -9,7 +9,7 @@ This chapter will give a brief explanation of the security requirements enforced
 
 Norway has specific laws for storing of medical information. The most significant law is ``The Health Register Act\footnote{Lov om helseregistre og behandling av helseopplysninger}''\cite{helseregisterloven}. This law regulates who is allowed to store health records and how they are supposed to store the records, among other regulations. 
 
-The most significant consequences are that we will need permission from ``The Norwegian Data Protection Authority''\footnote{Datatilsynet} in order to store medical records in the application, and that the information has to be stored on servers on Norwegian soil. This eliminates the option of using cloud-based storage. 
+The most significant consequences are that we will need permission from ``The Norwegian Data Protection Authority''\fnurl{http://www.datatilsynet.no/} in order to store medical records in the application, and that the information has to be stored on servers on Norwegian soil. This eliminates the option of using cloud-based storage\footnote{Such as Amazon EC2 or Windows Azure}. 
 
 %Jeg er ikke fornøyd med dette kapittelet. Skal jobbe mer med det når vi får svar fra Datatilsynet. /Aleks
 
@@ -22,14 +22,14 @@ Since we have no interest in the data values or the personal information of the 
 In order to identify children, we have a couple of problems. First off, it should not be possible to identify children by gaining access to the database. Second, we need a way that uniquely identifies the children, as both CAPP, GAPP and KAPP relies on uniquely identifying them. 
 
 We propose the following level of encrypting a child's identity:
-First, we will make use of the Android UUID (Unique Unit IDentifier). We will let the guardian type in the children's names. Then we will concatenate these values, and hash them using SHA-1. By including the Android UUID, we will get a one-way encryption function, which should be acceptable for storage.
+First, we will make use of the Android UUID (Unique Unit IDentifier). We will let the guardian type in the children's names. Then we will concatenate these values, and hash them using SHA-1\cite{sha1}. By including the Android UUID, we will get a one-way encryption function, which should be acceptable for storage.
  
 
 \input{Chapters/Chapter4/personalhealthrecords}
 
 
 \section{Basic security}
-\paragraph{HTTPS vs HTTP} If the application are ever to be published by NAAF, there are some requirements towards sending data over HTTPS. However, in order to get HTTPS certificate, we have to pay a set fee (REFERANSE)\footnote{A small number of companies are allowed to sell HTTPS certificates. On of them is Symantec - http://www.symantec.com/verisign/ssl-certificates}. In addition, the communication will run slower, since data must be encrypted and decrypted. For demonstration value and early usability testing, we want to make sure that communication towards the database runs as smoothly as possible. As a consequence, we will not use HTTPS during the usability testing.
+\paragraph{HTTPS vs HTTP} If the application are ever to be published by NAAF, there are some requirements towards sending data over HTTPS. However, in order to get HTTPS certificate, we have to pay a set fee (REFERANSE)\footnote{A small number of companies are allowed to sell HTTPS certificates. One of them is Symantec - http://www.symantec.com/verisign/ssl-certificates}. In addition, the communication will run slower, since data must be encrypted and decrypted. For demonstration value and early usability testing, we want to make sure that communication towards the database runs as smoothly as possible. As a consequence, we will not use HTTPS during the usability testing.
 
 
     
