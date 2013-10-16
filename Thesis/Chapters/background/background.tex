@@ -11,7 +11,7 @@ Barns LegemiddelOPPlevelser (BLOPP) is a project group working for ``Sykehusapot
 
 %Bare skrive generelt om BLOPP her.
 
-\section{CAPP/GAPP/KAPP}
+\section{CAPP, KAPP and GAPP}
 \label{sec:cappgappkapp}
 In the autumn of 2012 Aaberg, Aarseth, Dale, Gisvold and Svalestuen were engaged by the BLOPP Project group through the course ``TDT4290 - Customer Driven Project'' \cite{customerdrivenntnu} at NTNU. During the period of August 2012 to December 2012 they developed a prototype of a mobile information system consisting of three applications. One application were developed for guardians of a child (GAPP), and two applications were developed for children (CAPP and KAPP). In this section, we discuss them further in detail, while a full report of their work is available at [Insert Reference].
 
@@ -45,10 +45,19 @@ KAPP is the other application targeted towards children. The application runs on
 
 
 \begin{figure}
+	\begin{minipage}[b]{0.4\linewidth}
 		\centering
 			\includegraphics[width=0.20\paperwidth]{Pictures/karotz.jpg}
 		\caption{Karotz}
 		\label{fig:karotz}
+	\end{minipage}
+	\hspace{3cm}
+	\begin{minipage}[b]{0.4\linewidth}
+	\centering
+		\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/gapp_main_menu.png}
+		\caption{GAPP main menu}
+		\label{fig:gapp-main-menu}
+	\end{minipage}
 \end{figure}
 
 
@@ -65,12 +74,7 @@ Medicine information gives general information about different medicines, what t
 Medicine log shows how many times a child has taken their medicine the last couple of days.
 The manual is to help ``newcomers'' to medicate children. For instance, if an aunt is watching children with asthma, then they could use the application as a reference on how to do the process. 
         
-\begin{figure}
-		\centering
-			\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/gapp_main_menu.png}
-		\caption{GAPP main menu}
-		\label{fig:gapp-main-menu}
-\end{figure}
+
 Its basic functionality is to view logs on how often a child needs medication, how the child has been feeling the last couple of days, according to the asthma traffic light system, and to set up alarms for the child. 
 CAPP and GAPP work together as a pair, so a child may only have one parent and vice versa. %Er siste setning n��dvendig
 
@@ -84,6 +88,8 @@ As Aaberg, Aarseth, Dale, Gisvold and Svalestuen finished their work, they comme
 \item{Web application}
 \item{Support for more children}
 \end{itemize}
+
+They tried to implement a solution for displaying the pollen spread for a given day. They did not manage to finish this functionality, which should be researched further. Additionally, we want to use air quality data provided by \href{http://luftkvalitet.info}{Norwegian Institute for Air Research} 
 
 These comments are used as a basis when we decide what to improve in this project. 
 %In addition, we have discovered a potential in sending out emails with records, which perhaps will go directly to the child's doctor. Hvor skal vi skrive om dette? 
