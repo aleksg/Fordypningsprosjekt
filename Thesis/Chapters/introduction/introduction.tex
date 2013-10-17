@@ -17,37 +17,80 @@ According to NAAF, 20\% \cite{NAAF} of the Norwegian population has or has had a
 
 \section{Research Questions}
 \label{sec:researchquestions}
-The main goal for this study is to evaluate the CAPP, GAPP and Karotz application, and identify the usability problems in these systems. Structuring the goal into different research questions will help this study with the evaluation of the goal. The goal has been composed into these questions:
+The main goal for this study is to figure out ways technology can help children taking their medication. During the prephase, we will build upon the work of Aaberg, Gisvold et. al.  \cite{CustomerDriven}., trying to find problems with the system as it is today, and improve it further before we test it on parents over a longer period of time.  
+
+The objective has been composed into the following research questions: 
+
 
 \paragraph{RQ1:}
 \textbf{What are the usability problems of the current system?}
 
 
 \paragraph{RQ2:}
-\textbf{How will the guardian(s) react on having a system monitoring the childs use of medicines?}
+\textbf{Is gamification a feasible solution for motivating children to take their asthma medicine?}
 
 
 \paragraph{RQ3:}
-\textbf{Will the physicians benefit from having detailed logs and information sent by email?}
+\textbf{How will the presence of a Tangible User Interface affect children's medicational habits?}
 
-This evaluation should be done through user testing and feedback from future users of the applications. The testing will give information on how well the 
-\ldots
+
+This evaluation should be done through user testing and feedback from potential users of the applications. Hopefully, thorough testing will give information on how the interaction between children and the system is, whether these systems helped during medication process, etc. 
 
 \section{Research Method}
 \label{sec:researchmethod}
+This section will explain the methodology we plan to use during our research. The explanation is divided into the separate research questions.  
+
 
 \subsection{RQ1}
-\label{sec: RQ1-methodology}
-%Naatid vs fortid??
-We will perform usability testing on the NSEP laboratory located at St. Olavs hospital. We will ask the participants to fill out SUS-schemes \ref{app:norsksus}, in addition to noting problems users may experience. 
+\label{sec:RQ1-methodology}
+Finding usability problems with the current system will be a task of usability testing, which will be performed at the usability lab.  
 
 
 \subsection{RQ2}
-\label{sec: RQ2-methodology}
-We will try to get a holding of more Karotz, on which we will launch the application. Then we will find participants through BLOPP's network. We will then see how parents react on having such a tangible interface at their home, and how the parents react to it. The central question in mind is whether or not they feel ``monitored''. Through this process, the parents are required to fill out a diary on a daily basis. 
+\label{sec:RQ2-methodology}
+We want to test the system on NUMBER children. In order to test this using a systematic approach, we plan to take the following steps, which will be explained in further detail below. 
+\begin{enumerate}
+  \item Give guardians a diary, where they take note of how things are working on a regular basis. Expected duration: 1 week.
+  \item Give guardians a mobile application which instructs children during their medication. Expected duration: 1 week. 
+  \item Give guardians a mobile application which has gamification elements to it, in addition to the instructions in Step 2. Expected duration 1 week.   
+  \item Give the test persons a custom built TUI. Expected duration: 1 week. 
+\end{enumerate}
+During the testing phase, we want the guardians to fill out a diary, in addition to undergo an interview at the end of test period. Things we want to find out from the diary study, is whether the children like the idea of having a TUI at home or not. Do they like the idea, but find the design too poor.
+
+The rationale for doing Step 1 is to create a foundation to build upon on the later steps. Having children taking their medicine under ``normal'' conditions gives us something to compare the later results to. 
 
 
+The rationale for doing Step 2 is to see if it is actually enough to have a minor avatar system who tells the child what to do, and when to do it. This might give some ideas for further research from BLOPP. 
+
+
+The rationale for doing Step 3 is to start building an answer of whether gamification have the motivational effect on children, i.e. motivating children to take their medicine on a continuous basis. 
+
+
+The rationale for doing Step 4 is to see if a ``thing'' can give children proper motivation for taking their medicine. How do they react when seeing our TUI? Do they get reminded that they have not taken their medicine yet? Will they get excited? 
+
+
+A key point during all these steps is that guardians are actually on place, observing the children's behavior. We will not dive further into children's behavioural patterns or psychology, other than if they like it or not.    
+     
+ 
 \subsection{RQ3}
-\label{sec: RQ3-methodology}
-We will use some of the data collected in \ref{sec: RQ2-methodology} and present it to asthma physicians. We will then interview them, trying to identify what sort of information is useful, and whether or not it is feasible to send this medical information to physicians.    
+\label{sec:RQ3-methodology}
 
+RQ3 will be answered partly during Step 4 of the process mentioned in Section \ref{sec:RQ2-methodology}. We also want to try out different existing concepts at the NSEP lab, including Kartoz. We want to build an application using Rasperry Pi, which we will place inside a toy. This toy may vary according to the fire security of a Rasperry Pi. For instance, we obviously can't place a Rasperry Pi inside a teddy bear if the bear might ignite at any given moment.
+
+
+We plan to give the applications running inside these TUI's a sense of personality, i.e. feelings according to an asthmatic child. 
+
+
+The following dialogue is an example of how this application might work:
+\begin{enumerate}
+  \item (Toy): (Cough, cough)
+  \item (Child approaches)
+  \item Hi, there. Would you consider giving me my medication?
+  \item (Child finds the medicine, and brings it to the toy)
+  \item (Toy): Thank you very much! Now, it is your turn to take your medicine
+  \item (Child puts their medicine over their head)
+  \item (Toy): You have to remember to push the button on the top
+  \item ???
+  \item Profit!
+\end{enumerate} 
+%Gi de en ting over lengre periode. Før dagbokstudie. Er det lettere for de å ta medisin vs tidligere. Blir de minnet på astma-medisinen?
