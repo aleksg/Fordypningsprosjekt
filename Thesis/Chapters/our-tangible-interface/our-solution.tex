@@ -6,8 +6,9 @@ This chapter will give a brief introduction into the TUI we are planning to crea
 
 \section{Introduction}
 \label{sec:our-solution-introduction}
-From our experiences with Karotz \cite{karotz}, we have found that we do not want to go any further with it. The thought behind Karotz is great, but these thoughts are, in our subjective opinion, poorly executed. If we were to test the concept at people's homes, we would need to preconfigure the units down to the smallest details. Just the fact that we would have to ask families for their wifi-credentials before testing a system, should be reasons enough.
-Additionally, the Karotz API is only documented in french, which makes it considerable harder for us. Maybe the largest challenge by using Karotz is it's price. A Karotz starters kit costs \$200, not including customs to Norway. Making such a large investment on a product parents have no experience with is going to be quite difficult from a commercial standpoint.  
+From our experiences with Karotz \cite{karotz}, we have found that we do not want to go any further with it. The thought behind Karotz is great, but these thoughts are, in our subjective opinion, poorly executed. If we were to test the concept at people's homes, we would need to preconfigure the units down to the smallest details. Just the fact that we would have to ask families for their WiFi-credentials before testing a system, should be reasons enough.
+Additionally, the Karotz API is only documented in french, which makes it considerable harder to develop for. The largest challenge by using Karotz is it's price. A Karotz starters kit costs \$200, not including customs to Norway. Making such a large investment on a product parents have no experience with is going to be quite difficult from a commercial standpoint.  
+
 
 
 We have also taken a brief look into Arduino, which is an open source electronics prototyping platform \cite{arduino}. We have seen some of the projects that have been done in Ardunio, and have found that they require competence and knowledge we simply do not have, i.e. digital design and circuit boards. 
@@ -22,7 +23,7 @@ On the highest level of abstraction, what we want to create here is a descrete a
 We consider the following as the minimum set of abilities for our TUI:
 
 \begin{itemize}
-  \item Ability to connect to a network, either through ethernet or Wifi, though both are preferred. 
+  \item Ability to connect to a network, either through ethernet or WiFi, though both are preferred. 
   \item Play sounds through speakers
   \item Ability to read RFID-chips
   \item Display information about the color of the asthma medicine through LED-lights
@@ -37,8 +38,8 @@ In order to get a basic understanding of what we are trying to achieve here, we 
   \item (Bear): I need my asthma medicine now. Could you please help me? The color of the medicine is displayed at my belly.
   \item (Kid finds the medicine)
   \item (When the child holds the medicine towards the mouth of the bear, the RFID chip on the medicine is read, which instructs the bear to continue). 
-  \item (Bear): Thanks. Now it is your turn to take it. 
-  \item (Bear): Now, find your mask and put it over your head. You need to press the button at the top of your medicine before you start breathing. 
+  \item (Bear): Thanks. Now it is your turn to take your medicine. 
+  \item (Bear): Now, find your mask and put it over your nose and mouth. You need to press the button at the top of your medicine before you start breathing. 
   \item (Bear): (Counts for the amount of seconds needed)
   \item (Bear): Great job!
 \end{enumerate}
