@@ -123,14 +123,18 @@ The following steps are included in instructions:
 \section{Guardian partition}
 This section will take you through the Guardian partition of [INSERT APPNAME].
 
+\subsection{Menu}
+\label{sec:description-menu}
+
+
 \subsection{Medicine plan}
 \label{sec:description-medicine-plan}
 Creating a medicine plan for asthma treatment is highly connected to the Traffic Light System [INSERT REFERENCE].
-Users can have three different plans, depending on which health state they are currently in. As we are targeting children, we can not assume that they are aware of which category they are currently in, and as a result, we let their guardians control it. Figure [INSERT REFERENCE] shows the view in which one may the change medicine plan their child are currently on, in addition to setting alarms where appropriate. For instance, one might set an alarm at 07:00, which makes the user aware before it is time to leave for school. Changing medicine plan is done by selecting the checkbox at the left side of the panel.  
+Users can have three different plans, depending on which health state they are currently in. As we are targeting children, we can not assume that they are aware of which category they are currently in, and as a result, we let their guardians control it. Figure \ref{fig:gapp-view-plans} and [INSERT REFERENCE TO EDIT PLAN] shows the view in which one may the change medicine plan their child are currently on, in addition to setting alarms where appropriate. For instance, one might set an alarm at 07:00, which makes the user aware before it is time to leave for school. Changing medicine plan is done by selecting the checkbox at the left side of the panel.  
 
 \subsection{Register medicine}
 \label{sec:description-register-medicine}
-What happens if a child need their medicine, but the application or our TUI is not nearby? They would probably be mad because they did not get their star, and did not make any progress as far as the rewards go. Fortunately, it is possible to register a medicine that has been taken afterwards, which entitle the child the amount of stars they should have gotten. ``Etterregistrer medisin'' (Register medicine afterwards??) allows parents to register the medicine, at any given day prior to current time.  
+What happens if a child need their medicine, but the application or our TUI is not nearby? They would probably be mad because they did not get their star, and did not make any progress as far as the rewards go. Fortunately, it is possible to register a medicine that has been taken afterwards, which entitle the child the amount of stars they should have gotten. ``Etterregistrer medisin'' (Register medicine afterwards??) allows parents to register the medicine, at any given day prior to current time (See Figure \ref{fig:gapp-register-treatment}).  
 
 
 \subsection{Medicine log}
@@ -141,19 +145,64 @@ Figure [INSERT REFERENCE] shows the calendar view of the application. The view i
  
 \subsection{Medicine information}
 \label{sec:description-medicine-information}
-Figures [INSERT REFERENCE 1] and [INSERT REFERENCE 2] shows the application's medicine information functionality. The information part of the application is a part that is somewhat down-prioritized. In order to make this nice and easy for the reader, we should have some specified texts from NAAF, but these are not currently received ([TODO: Omformuler!]). At the time being, it contains a lightweight description of what it is, what it is used for, important information and how you apply it. 
+Figures \ref{fig:information-1} and \ref{fig:information-2} shows the application's medicine information functionality. The information part of the application is a part that is somewhat down-prioritized. In order to make this nice and easy for the reader, we should have some specified texts from NAAF, but these are not currently received ([TODO: Omformuler!]). At the time being, it contains a lightweight description of what it is, what it is used for, important information and how you apply it. 
 
 
 \subsection{Manual}
 \label{sec:description-manual}
-The manual contains excactly the same information as shown in Section \ref{sec:description-instructions}. [TODO: Beskrive hvorfor dette er to steder?]
+The manual contains excactly the same information as shown in Section \ref{sec:description-instructions}. [TODO: Beskrive hvorfor dette er to steder i appen?]
 
 
 \subsection{Reward}
 \label{sec:description-manage-rewards}
-Figure [INSERT REFERENCE 1] shows the list of possible rewards a child might receive. They are added by parents through ``Legg til belønning'' (Add reward). The idea of having guardians set their children's rewards is to specify rewards according to children's interest [TODO: Referanse til hvor vi har sagt dette før]. Figure [INSERT REFERENCE] shows how one may add an activity. Users inserts a description, then either take a photo or select one out of our standard images. It is possible to set a reward on ``Repeat'', which will make the reward repeating with twice the amount of stars [TODO: Omformuler].        
+Figure \ref{fig:reward-list} shows the list of possible rewards a child might receive. They are added by parents through ``Legg til belønning'' (Add reward). The idea of having guardians set their children's rewards is to specify rewards according to children's interest [TODO: Referanse til hvor vi har sagt dette før]. Figure \ref{fig:add-reward} shows how one may add an activity. Users inserts a description, then either take a photo or select one out of our standard images. It is possible to set a reward on ``Repeat'', which will make the reward repeating with twice the amount of stars [TODO: Omformuler].        
 When the user press ``Lagre'' (Save), the reward is added and children have the possibility to buy it. 
  
+
+\begin{figure}
+	\begin{minipage}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/gapp_main_menu.png}
+		\caption{Menu in guardian partition}
+		\label{fig:gapp-main-menu}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/register_treatment.png}
+		\caption{Register treatment}
+		\label{fig:gapp-register-treatment}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/gapp_view_plans.png}
+		\caption{View plans}
+		\label{fig:gapp-view-plans}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/information-1.png}
+		\caption{Information 1}
+		\label{fig:information-1}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/information-2.png}
+		\caption{Information 2}
+		\label{fig:information-2}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/reward-list.png}
+		\caption{Reward list}
+		\label{fig:reward-list}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/add-reward.png}
+		\caption{Add reward}
+		\label{fig:add-reward}
+	\end{minipage}
+\end{figure}
 % Skjermbilder -> Forklaringer
 % Dropper alt som har med Karotz å gjøre, med unntak av ``konsept''-følelsen
 % 
