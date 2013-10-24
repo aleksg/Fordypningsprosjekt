@@ -24,7 +24,7 @@ In order to identify children, we have a few problems. First, it should not be p
 We propose the following level of encrypting a child's identity:
 First, we will make use of the Android UUID (Unique Unit IDentifier). We will let the guardian type in the children's names. Then we will concatenate these values, and hash them using SHA-1\cite{sha1}. By including the Android UUID, we will get a one-way encryption function, which should be acceptable for storage.
  
-\input{Chapters/Chapter4/personalhealthrecords}
+
 
 \section{Basic security}
 \paragraph{HTTPS vs HTTP} If the application is to be published by NAAF, there are some requirements towards sending data over HTTPS. However, in order to get HTTPS certificate, we have to pay a set fee (REFERANSE)\footnote{A small number of companies are allowed to sell HTTPS certificates. One of them is Symantec - http://www.symantec.com/verisign/ssl-certificates}. In addition, the communication will run more slowly, since data must be encrypted and decrypted. For demonstration value and early usability testing, we want to make sure that communication towards the database runs as smoothly as possible. As a consequence, we will not use HTTPS during the usability testing.
