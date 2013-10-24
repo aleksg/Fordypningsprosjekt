@@ -100,6 +100,29 @@ As mentioned by Donker and Markopoulos \cite{TalkAloud} talk-aloud is very usefu
 
 \section{Usability testing on mobile devices}
 \label{sec:usabilitytestonmobiledevices}
-We plan on doing usability testing in testing lab or quiet testing office. The application's main environment for use will be at the user's home, which may be noisier and more hectic than our testing lab. Kaikkonen et al \cite{kallio2005usability} states that the similarity between testing environment and place of use is not too important, the test user will still be able to complete the tasks and find the same number of errors. 
+We plan on doing usability testing in testing lab or quiet testing office. The application's main environment for use will be at the user's home, which may be noisier and more hectic than our testing lab. Kaikkonen et al \cite{kallio2005usability} states that the similarity between testing environment and place of use is not too important, the test user will still be able to complete the tasks and find the same number of errors. This claim is supported by Beck et al \cite{beck2003experimental} who discovered that the test persons found more usability problems when sitting down, in difference to when walking on the street. 
 
-\input{Chapters/usability/nseplab.tex}
+Schusterich et al \cite{schusteritsch2007towards} published a guide on how to build the perfect infrastructure for usability testing on mobile devices, in 2007. They describe how generic infrastructure issues, mobile device-specific issues and usability study context issues should be taken into consideration. Shcusterich et al. recommends having a number of cameras recording from different angles in order to capture unbiased interaction patterns of the mobile device. 
+
+\subsection{Emulator versus device}
+When developing for mobile devices such as Android, it is possible to run an emulator on a pc, instead of running the application on an Android device. The emulator emulates the use of a mobile device on screen. Input must be given by mouse-clicks on buttons/screen elements. The Android emulator emulates use of system resources corresponding to a given Android device, in order to not act faster or slower that a real device. While this may be true in theory, it is not always true in practice. The emulator is often much slower than an actual device, a claim supported by Lin et al\cite{lin2011benchmark}, who found that native code will run up to 34.2\% faster than on the emulator.
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics{Thesis/Pictures/androidemulator}
+\end{center}
+\caption{The Android Emulator running an emulation of Android 4.1}
+\label{fig:androidemulator}
+\end{figure}
+
+The question arises, should one do usability testing on an emulator or on a real device?
+Using the emulator allows for easier capture of the interaction with the device, since it allows screen recording of user input and easier capture of the user when interacting with the emulator. Using a computer as a test object may be more positively perceived by the test user rather than installing the test application on their device or having them doing tests on our device. 
+
+Using a real device has the benefit of being an actual device, and may lead to a more realistic interaction pattern when using the application. While there exists a number of screen recorders for Android devices, these require that the device is ``rooted'' \cite{androidrooting}, which is not an option for us. 
+The use of a real device also allows the use of gestures, which is a benefit in contrast to the emulator which can simulate swiping. 
+
+
+Beitol and Cybis \cite{betiol2005usability} compared doing usability testing on a tripod-mounted device to an emulator and having a in the field. They found that many users found the tripod-mounted device difficult and unnatural to operate. The users found 80\% of the usability issues on the emulator, but Beitol and Cybis points out that use of an emulator may depend on the similarity between the emulator and the device. 
+
+Based on the research we have read we decided to do the usability testing on a real device.
