@@ -4,6 +4,7 @@
 This chapter will give a description of [APPNAME], through textual description and screen shots. Please note that the main language of the application is Norwegian, and we have translated parts of it where it seems appropriate. 
 
 \section{Basic System Architecture}
+\label{sec:architecture}
 Figure \ref{fig:basic-architecture} shows an overview of the architecture we intend to use for our solution. We will build upon the architecture used by Aaberg et. al. \cite{CustomerDriven}.
 
 We have access to a MySQL-server hosted at NTNU, which we will access by a PHP-server hosted at NTNU. The main reason we have to access the database through a server layer, is that it is quite cumbersome to connect to the database if a device is not connected at NTNU's network. In addition, by having a webservice do some of the work for us, it becomes easier to parse results from the database through JSON.   
