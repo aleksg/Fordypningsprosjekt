@@ -126,6 +126,15 @@ This section will take you through the Guardian partition of [INSERT APPNAME].
 
 \subsection{Menu}
 \label{sec:description-menu}
+Figure \ref{fig:gapp-main-menu} shows the main menu of the guardian partition. It has six options (norwegian translation in paranthesis):
+\begin{enumerate}
+  \item Medicine Plan (\emph{Medisinplan})
+  \item Register Medicine Afterwards (\emph{Etterregistrer medisin})
+  \item Medicine Log (\emph{Medisinlogg})
+  \item Medicine Information (\emph{Legemiddelinformasjon})
+  \item Manual (\emph{Manual})
+  \item Rewards (\emph{Premier})
+\end{enumerate} 
 
 
 \subsection{Medicine plan}
@@ -135,18 +144,18 @@ Users can have three different plans, depending on which health state they are c
 
 \subsection{Register medicine}
 \label{sec:description-register-medicine}
-What happens if a child need their medicine, but the application or our TUI is not nearby? They would probably be mad because they did not get their star, and did not make any progress as far as the rewards go. Fortunately, it is possible to register a medicine that has been taken afterwards, which entitle the child the amount of stars they should have gotten. ``Etterregistrer medisin'' (Register treatment) allows parents to register the medicine, at any given day prior to current time (See Figure \ref{fig:gapp-register-treatment}).  
+What happens if a child need their medicine, but the application or our TUI is not nearby? They would probably be mad because they did not get their star, and did not make any progress as far as the rewards go. Fortunately, it is possible to register a medicine that has been taken afterwards, which entitle the child the amount of stars they should have gotten. \emph{Register Medicine Afterwards} allows parents to register the medicine, at any given day prior to current time (See Figure \ref{fig:gapp-register-treatment}).  
 
 
 \subsection{Medicine log}
 \label{sec:description-medicine-log}
-Medicine log can be used by parents to show how many times a child has taken their medicine. One of the main reasons that children does not take their medicine is lack of communication between parents. Having an option to show medicine log, give parents the ability to check and see whether they have taken the necessary amount at a given day.
+The \emph{Medicine log} can be used by parents to show how many times a child has taken their medicine. One of the main reasons that children does not take their medicine is lack of communication between parents. Having an option to show medicine log, give parents the ability to check and see whether they have taken the necessary amount at a given day.
 
 Figure [INSERT REFERENCE] shows the calendar view of the application. The view is a bit complicated, and an explanation is in it's place. We'll start out by the cells in the calendar. They obviously show any given day of a month. In addition, there is a top bar in the view. The top bar indicates which health state (or health plan) the child was in at a given day. At the bottom of the screen, there are three panels. The left one shows which medicine that has been taken at a selected day. The middle one shows the air quality in Trondheim. The right shows the pollen distribution of the 6 most common pollen types. The idea behind this is that asthma symptoms can often be the same as allergy symptoms, and if guardians are able to recongize a pattern between health state and pollen distribution, they might want to take their child to a hospital.   
  
 \subsection{Medicine information}
 \label{sec:description-medicine-information}
-Figures \ref{fig:information-1} and \ref{fig:information-2} shows the application's medicine information functionality. The information part of the application is a part that is somewhat down-prioritized. In order to make this nice and easy for the reader, we should have some specified texts from NAAF, but these are not currently received ([TODO: Omformuler!]). At the time being, it contains a lightweight description of what it is, what it is used for, important information and how you apply it. 
+Figures \ref{fig:information-1} and \ref{fig:information-2} shows the application's medicine information functionality. The information part of the application is a part that is somewhat down-prioritized. At the time being, it contains a lightweight description of what it is, what it is used for, important information and how you apply it. 
 
 
 \subsection{Manual}
@@ -156,7 +165,7 @@ The manual contains excactly the same information as shown in Section \ref{sec:d
 
 \subsection{Reward}
 \label{sec:description-manage-rewards}
-Figure \ref{fig:reward-list} shows the list of possible rewards a child might receive. They are added by parents through ``Legg til belønning'' (Add reward). The idea of having guardians set their children's rewards is to specify rewards according to children's interest [TODO: Referanse til hvor vi har sagt dette før]. Figure \ref{fig:add-reward} shows how one may add an activity. Users inserts a description, then either take a photo or select one out of our standard images. It is possible to set a reward on ``Repeat'', which will make the reward repeating with twice the amount of stars [TODO: Omformuler].        
+Figure \ref{fig:reward-list} shows the list of possible rewards a child might receive. They are added by parents through emph{Add reward}. The idea of having guardians set their children's rewards is to specify rewards according to children's interest [TODO: Referanse til hvor vi har sagt dette før]. Figure \ref{fig:add-reward} shows how one may add an activity. Users inserts a description, then either take a photo or select one out of our standard images. It is possible to set a reward on ``Repeat'', which will make the reward repeating with twice the amount of stars [TODO: Omformuler].        
 When the user press ``Lagre'' (Save), the reward is added and children have the possibility to buy it. 
  
 
