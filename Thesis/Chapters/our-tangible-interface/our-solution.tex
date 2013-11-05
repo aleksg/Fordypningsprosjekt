@@ -1,5 +1,5 @@
 
-\chapter{Our intended solution}
+\chapter{Introducing: AsthmaBuddy}
 \label{chp:our-solution}
 
 This chapter will give a brief introduction into the TUI we are planning to create. 
@@ -18,7 +18,7 @@ The idea we have found most exciting, both for ourselves and as a solution, is R
 
 
 \section{What do we want to create?}
-On the highest level of abstraction, what we want to create here is a descrete artifact children can have at their rooms, which can remind them to take their medicine, and help them through the process. Our plan for the time being is basically to wrap the Rasperry Pi inside a toy, i.e. teddy bear, a doll, or some other popular, medium sized toy.
+On the highest level of abstraction, what we want to create here is a descrete artifact children can have at their rooms, which can remind them to take their medicine, and help them through the process. Our plan for the time being is basically to wrap the Rasperry Pi inside a toy, i.e. teddy bear, a doll, or some other popular, medium sized toy. We do not intend to answer the question of which wrapping is ideal for this product. For the time being, we have given the product the name \emph{AsthmaBuddy}. 
 
 We consider the following as the minimum set of abilities for our TUI:
 
@@ -33,36 +33,48 @@ We consider the following as the minimum set of abilities for our TUI:
 In order to get a basic understanding of what we are trying to achieve here, we have included a basic scenario below. Assume that we have our Rasperry Pi inside a teddy bear.  
 
 \begin{enumerate}
-  \item (Bear): Cough, cough. Come over here kiddo 
+  \item (AsthmaBuddy): Cough, cough. Come over here kiddo 
   \item (Kid approaches)
-  \item (Bear): I need my asthma medicine now. Could you please help me? The color of the medicine is displayed at my belly.
+  \item (AsthmaBuddy): I need my asthma medicine now. Could you please help me? The color of the medicine is displayed at my belly.
   \item (Kid finds the medicine)
-  \item (When the child holds the medicine towards the mouth of the bear, the RFID chip on the medicine is read, which instructs the bear to continue). 
-  \item (Bear): Thanks. Now it is your turn to take your medicine. 
-  \item (Bear): Now, find your mask and put it over your nose and mouth. You need to press the button at the top of your medicine before you start breathing. 
-  \item (Bear): (Counts for the amount of seconds needed)
-  \item (Bear): Great job!
+  \item (When the child holds the medicine towards the mouth of AsthmaBuddy, the RFID chip on the medicine is read, which instructs AsthmaBuddy to continue). 
+  \item (AsthmaBuddy): Thanks. Now it is your turn to take your medicine. 
+  \item (AsthmaBuddy): By taking this medication, you make it easier for yourself to breathe. 
+  \item (AsthmaBuddy): Now, find your mask and put it over your nose and mouth. You need to press the button at the top of your medicine before you start breathing. 
+  \item (AsthmaBuddy): (Counts for the amount of seconds needed)
+  \item (AsthmaBuddy): Great job!
 \end{enumerate}
 
-The idea behind having a voice to the teddy bear is to establish a two-way communcation between children and the artifact. We want children to actually care for our product, which may be achieved through giving the artifact a sense of personality. 
+The idea behind having a voice to AsthmaBuddy is to establish a two-way communcation between children and the artifact. We want children to actually care for our product, which may be achieved through giving the artifact a sense of personality. 
 
 
 \subsection{Components}
 
 \paragraph{RFID}
-We will be using RFID-technology to let children interact with the TUI. Our initial vision is to attach an RFID-chip to each of the childrens' medicines, which in turn can be read by our TUI. For instance, during step 5 in the above scenario, a child can hold the medicine towards the mouth of the bear. The type of the medicine is read by the bear, who can notify the child if he/she is starting to take the wrong medicine. 
+We will be using RFID-technology to let children interact with AsthmaBuddy. Our initial vision is to attach an RFID-chip to each of the childrens' medicines, which in turn can be read by AsthmaBuddy. For instance, during step 5 in the above scenario, a child can hold the medicine towards the mouth of the bear. The type of the medicine is read by AsthmaBuddy, who can notify the child if he/she is starting to take the wrong medicine. 
 
 \paragraph{Speakers}
-The speakers will be used to play prerecorded messages from the teddybear.
+The speakers will be used to play prerecorded messages from AsthmaBuddy.
 
 \paragraph{Connect to network}
-Ideally, we want to attach a wifi shield to our Rasperry Pi, making it able to connect wirelessly. The benefits of this is that it makes the TUI portable. However, this might include having to preconfigure the system as with Karotz as mentioned in section \ref{sec:our-solution-introduction}. This makes it a problem we will have to research further before deciding on a solution for our prototype. Information we want to send through the network consists mainly of alarm notifications set by parents, i.e. when the toy should giving signals that it needs medication. 
+Ideally, we want to attach a wifi shield to our Rasperry Pi, making it able to connect wirelessly. The benefits of this is that it makes the TUI portable. However, this might include having to preconfigure the system as with Karotz as mentioned in Section \ref{sec:our-solution-introduction}. This makes it a problem we will have to research further before deciding on a solution for our prototype. Information we want to send through the network consists mainly of alarm notifications set by parents, i.e. when AsthmaBuddy should giving signals that it needs medication. 
 
 \paragraph{LED-lights}
 Through LED-lights, we intend to show the color of the medicine that is to be taken. As we cannot assume children are able to read, or to remember the name of the medicine, Aaberg et. al. have found that showing the color is a feasible solution to showing which medicine should be taken \cite{CustomerDriven}. 
 
-\section{Programming our Rasperry Pi}
-Rasperry Pi's main programming language is C. As we are not especially good at programming in C, we will use Pi4J as a bridge between Java and the Rasperry Pi's native libraries, which makes us able to manipulate IO-channels \cite{pi4j}.
-  
+\section{Planned modifications of existing system}
+As far as the software goes, we intend to keep the main parts of the architecture Aaberg et. al. created, with the exception of Karotz being replaced by AsthmaBuddy. 
+
+
+We intend to improve the mobile applications by modifying the following:
+\begin{itemize}
+  \item Modifying the mobile applications to become one single application. CAPP and GAPP will thus become [INSERT APPNAME]
+  \item Support a reward system where parents are able to specify their own rewards
+  \item Support display of air quality meassurements provided by \href{http://luftkvalitet.info}{Norwegian Institute for Air Research}
+  \item Modify the GUI of the mobile applications to meet design guidelines
+  \item Improved distraction sequence for children
+  \item Support several medications during the same treatment sequence. 
+\end{itemize}
+
 
  
