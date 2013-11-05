@@ -1,0 +1,17 @@
+
+\chapter{Constraints}
+\label{chp:securityrequirements}
+
+By law, we have some constraints in order to proceed start usability testing. This Appenix cover these. 
+
+\section{The Health Register Act}
+\label{sec:helseregisterloven}
+
+Norway has specific laws for storing of medical information. The most significant law is ``The Health Register Act\footnote{Lov om helseregistre og behandling av helseopplysninger}''\cite{helseregisterloven}. This law regulates who is allowed to store health records and how they store the records. 
+
+The most significant consequences is that the information has to be stored on servers on Norwegian soil. This eliminates the option of using cloud-based services such as Amazon EC2, Windows Azure or Google App Engine. 
+
+In addition, we need permission from \emph{REK} \fnurl{https://helseforskning.etikkom.no/} in order to store medical records in the application. If the application were ever to be deployed to Google Play, we would need permission from \emph{The Data Protection Authority}, but it not required if the application is just for research purposes. Our permission from REK is included in Appendix [INSERT REFERENCE ONCE FOUND].
+
+\section{Measures for Anonymization}
+Pursuant to section 16 of the Health Register Act \cite{helseregisterloven} all information that may identify a person, must be encrypted, i.e. it should be impossible to find which person a specific record corresponds to by looking at a database dump.  
