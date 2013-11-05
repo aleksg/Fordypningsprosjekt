@@ -1,18 +1,19 @@
-\section{Constraints}
-\label{sec:securityrequirements}
+\section{Mobile Computing in Health Care}
+Mobile computing is evolving at a rapid pace, and finding new ways to use it in health care is a rising research problem. This section covers the state of the art of the areas in which mobile computing is being used.  
+%Elektronisk pasientjournal
 
-By law, we have some constraints in order to proceed with our project. This section will elaborate further. 
+\subsection{Electronic patient journal}
+During 2009, the Norwegian \emph{Ministry of Government Administration, Reform and Church Affairs} decided that an electronic patient journal were to implemented, with the slogan \emph{One patient - One journal}. This has led to a lot of research problems, both regarding security requirements and usability of the system. Some of the research done on usability of EPJ has included the use of mobile technologies, such as tablets and smartphones, within the medical care facility \cite{svanaes2010usability}.    
 
-\subsection{The Health Register Act}
-\label{sec:helseregisterloven}
-
-Norway has specific laws for storing of medical information. The most significant law is ``The Health Register Act\footnote{Lov om helseregistre og behandling av helseopplysninger}''\cite{helseregisterloven}. This law regulates who is allowed to store health records and how they store the records. 
-
-The most significant consequences is that the information has to be stored on servers on Norwegian soil. This eliminates the option of using cloud-based services such as Amazon EC2, Windows Azure or Google App Engine. 
-
-In addition, we need permission from \emph{REK} \fnurl{https://helseforskning.etikkom.no/} in order to store medical records in the application. If the application were ever to be deployed to Google Play, we would need permission from \emph{The Data Protection Authority}, but it not required if the application is just for research purposes. Our permission from REK is included in Appendix [INSERT REFERENCE ONCE FOUND].
-
-\subsection{Measures for Anonymization}
-Pursuant to section 16 of the Health Register Act \cite{helseregisterloven} all information that may identify a person, must be encrypted, i.e. it should be impossible to find which person a specific record corresponds to by looking at a database dump.  
+\subsection{Meassuring blood preassure}
+iHealth, Withings and other companies has created a blood preassure monitor which are synchronized towards a mobile application \cite{ihealthlabs, withings}. It allows easy monitoring over periods of time, and makes it possible to share meassurements to both friends, family and doctors.
 
 
+\subsection{Controlling your Diabetes}
+Cellnovo has created a 3-part system that helps controlling diabetes. It consists of a handheld device for meassuring blood sugar level, a pump that controls the flow of insulin and a web interface that allows you to access the information \cite{cellnovo}. The interface helps users to check for trends and patterns. It also allow users to send information to physicians, which helps them make decisions further regarding how patients are managed.
+   
+\subsection{Heart monitor}
+Alivecor and eCardio among others have created mobile devices that helps patients monitor their heart rate on the go\cite{eCardio, alivecor}. 
+
+\subsection{Quit to smoke}
+There are lots of mobile applications that are helping people to quit smoking. For instance, \emph{The Norwegian Heart and Lung Patient Organization} has an app for helping people to quit smoking \cite{roykeslutt}. By reading the reviews, we can see that it has helped motivating people, which has tremendous health benefits.   
