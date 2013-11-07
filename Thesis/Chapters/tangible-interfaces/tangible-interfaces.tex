@@ -37,3 +37,39 @@ The results showed that their mood was better after interacting with Paro over f
 
 \section{Are Tangible Interfaces more fun?}
 In 2008, Xie et. al. performed a study on how children reacted using different interfaces in order to solve a jigsaw puzzle \cite{xie2008tangibles}. The different interfaces were a physical interface (i.e. a standard jigsaw puzzle), a TUI and a GUI. Their findings were mainly that children enjoyed playing with the different interfaces similarly. However, the children were more likely to start a puzzle over again if the interface were physical or tangible, which implies that a repeated task is more likely to be performed if they're playing with a tangible or physical interface, while it becomes boring to do the same task over and over again on a graphical user interface. It is worth mentioning that the puzzles were being solved by groups of two, and considering the GUI was a computer with one mouse, they didn't get the same sharing experience as with the other interfaces. 
+
+\subsection{Design Approach to TUI's}
+A lot of material exists on the potential benefits of TUI's, but few exists on how to actually create them. Champoux proposes a mechanism to design TUI's based achieving fitness between the form and its context \cite{subramaniandesign}.
+He proposes three classes of questions, which corresponds to the different development phases of TUIs:
+\begin{itemize}
+  \item Defining the boundaries
+  \item Orienting the components
+  \item Fitting the components
+\end{itemize} 
+
+
+By answering the questions in Table \ref{tab:tuidesign}, his mechanism will ease the development phase.   
+
+
+\begin{table}
+	\begin{tabular}{| p{5.0cm} | p{5.0cm} | p{5.0cm} |}
+	\hline
+	\textbf{Defining the Boundaries} & \textbf{Orienting the Concepts} & \textbf{Fitting the Components} \\
+	\hline
+	\textbf{BO1}: What should the user experience? \newline
+	\textbf{BO2}: What are the human task? \newline
+	\textbf{BO3}: What would the artefact represent and control? \newline 
+	\textbf{BO4}: What are the conventions? (Physical ergonomics vs electromechanical) \newline 
+	&
+	\textbf{OC5a}: What is the nature of the interaction for each sub task? (Continuous vs Discrete vs Assembly) \newline
+	\textbf{OC5b}: What are the electromechanical and physical ergonomic constraints for this task? \newline
+	\textbf{OC6}: Does the sub-task need any relational interaction? \newline
+	&
+	\textbf{FC7}: What are the relations between the objects and the actions? \newline 
+	\textbf{FC8}: What is the task order when using the artefact? \\ 
+	\hline
+	
+	\end{tabular}
+	\label{tab:tuidesign}
+	\caption{The eight questions stated by Champoux \cite{subramaniandesign}}
+\end{table}  
