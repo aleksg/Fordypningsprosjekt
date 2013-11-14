@@ -25,7 +25,7 @@ The child partition of our application consists mainly out of four parts. When A
 
 \subsection{Treatment}
 \label{sec:sec:description-treatment}
-Figure \ref{fig:capp_start_treatment} shows a screenshot for the application when the child starts their treatment. Starting this sequence can come from one out of two events: (i) \emph{The child reacts to an alarm set in the guardian partition}, and (ii) \emph{The child needs to take their medicine by need}. If (ii) is the case, the child is instructed to pick the medicine from a list shown by the application. If (i) is the case, the medicine is chosen beforehand. When a child has started their treatment, they are taken through an animated sequence, which reacts when a child interacts with the device. In addition, they are being told what to do through the comforting voice of Yngve Svalestuen.  
+Figure \ref{fig:capp_start_treatment} shows a screenshot for the application when the child starts their treatment. Starting this sequence can come from one out of two events: (i) \emph{The child reacts to an alarm set in the parent partition}, and (ii) \emph{The child needs to take their medicine by need}. If (ii) is the case, the child is instructed to pick the medicine from a list shown by the application. If (i) is the case, the medicine is chosen beforehand. When a child has started their treatment, they are taken through an animated sequence, which reacts when a child interacts with the device. In addition, they are being told what to do through the comforting voice of Yngve Svalestuen.  
 
 
 \subsection{Showing rewards}
@@ -121,12 +121,12 @@ The following steps are included in instructions:
 
 
 
-\section{Guardian partition}
-This section will take you through the Guardian partition of [INSERT APPNAME].
+\section{parent partition}
+This section will take you through the parent partition of [INSERT APPNAME].
 
 \subsection{Menu}
 \label{sec:description-menu}
-Figure \ref{fig:gapp-main-menu} shows the main menu of the guardian partition. It has six options (norwegian translation in paranthesis):
+Figure \ref{fig:gapp-main-menu} shows the main menu of the parent partition. It has six options (norwegian translation in paranthesis):
 \begin{enumerate}
   \item Medicine Plan (\emph{Medisinplan})
   \item Register Medicine Afterwards (\emph{Etterregistrer medisin})
@@ -140,7 +140,7 @@ Figure \ref{fig:gapp-main-menu} shows the main menu of the guardian partition. I
 \subsection{Medicine plan}
 \label{sec:description-medicine-plan}
 Creating a medicine plan for asthma treatment is highly connected to the Traffic Light System [INSERT REFERENCE].
-Users can have three different plans, depending on which health state they are currently in. As we are targeting children, we can not assume that they are aware of which category they are currently in, and as a result, we let their guardians control it. Figure \ref{fig:gapp-view-plans} and [INSERT REFERENCE TO EDIT PLAN] shows the view in which one may the change medicine plan their child are currently on, in addition to setting alarms where appropriate. For instance, one might set an alarm at 07:00, which makes the user aware before it is time to leave for school. Changing medicine plan is done by selecting the checkbox at the left side of the panel.  
+Users can have three different plans, depending on which health state they are currently in. As we are targeting children, we can not assume that they are aware of which category they are currently in, and as a result, we let their parents control it. Figure \ref{fig:gapp-view-plans} and [INSERT REFERENCE TO EDIT PLAN] shows the view in which one may the change medicine plan their child are currently on, in addition to setting alarms where appropriate. For instance, one might set an alarm at 07:00, which makes the user aware before it is time to leave for school. Changing medicine plan is done by selecting the checkbox at the left side of the panel.  
 
 \subsection{Register medicine}
 \label{sec:description-register-medicine}
@@ -151,7 +151,7 @@ What happens if a child need their medicine, but the application or our TUI is n
 \label{sec:description-medicine-log}
 The \emph{Medicine log} can be used by parents to show how many times a child has taken their medicine. One of the main reasons that children does not take their medicine is lack of communication between parents. Having an option to show medicine log, give parents the ability to check and see whether they have taken the necessary amount at a given day.
 
-Figure [INSERT REFERENCE] shows the calendar view of the application. The view is a bit complicated, and an explanation is in it's place. We'll start out by the cells in the calendar. They obviously show any given day of a month. In addition, there is a top bar in the view. The top bar indicates which health state (or health plan) the child was in at a given day. At the bottom of the screen, there are three panels. The left one shows which medicine that has been taken at a selected day. The middle one shows the air quality in Trondheim. The right shows the pollen distribution of the 6 most common pollen types. The idea behind this is that asthma symptoms can often be the same as allergy symptoms, and if guardians are able to recongize a pattern between health state and pollen distribution, they might want to take their child to a hospital.   
+Figure [INSERT REFERENCE] shows the calendar view of the application. The view is a bit complicated, and an explanation is in it's place. We'll start out by the cells in the calendar. They obviously show any given day of a month. In addition, there is a top bar in the view. The top bar indicates which health state (or health plan) the child was in at a given day. At the bottom of the screen, there are three panels. The left one shows which medicine that has been taken at a selected day. The middle one shows the air quality in Trondheim. The right shows the pollen distribution of the 6 most common pollen types. The idea behind this is that asthma symptoms can often be the same as allergy symptoms, and if parents are able to recongize a pattern between health state and pollen distribution, they might want to take their child to a hospital.   
  
 \subsection{Medicine information}
 \label{sec:description-medicine-information}
@@ -165,7 +165,7 @@ The manual contains excactly the same information as shown in Section \ref{sec:d
 
 \subsection{Reward}
 \label{sec:description-manage-rewards}
-Figure \ref{fig:reward-list} shows the list of possible rewards a child might receive. They are added by parents through \emph{Add reward}. The idea of having guardians set their children's rewards is to specify rewards according to children's interest [TODO: Referanse til hvor vi har sagt dette før]. Figure \ref{fig:add-reward} shows how one may add an activity. Users inserts a description, then either take a photo or select one out of our standard images. It is possible to set a reward on ``Repeat'', which will make the reward repeating with twice the amount of stars [TODO: Omformuler].        
+Figure \ref{fig:reward-list} shows the list of possible rewards a child might receive. They are added by parents through \emph{Add reward}. The idea of having parents set their children's rewards is to specify rewards according to children's interest [TODO: Referanse til hvor vi har sagt dette før]. Figure \ref{fig:add-reward} shows how one may add an activity. Users inserts a description, then either take a photo or select one out of our standard images. It is possible to set a reward on ``Repeat'', which will make the reward repeating with twice the amount of stars [TODO: Omformuler].        
 When the user press \emph{Save} (Lagre), the reward is added and children have the possibility to buy it. 
  
 % 
@@ -173,7 +173,7 @@ When the user press \emph{Save} (Lagre), the reward is added and children have t
 % 	\begin{minipage}[b]{0.3\linewidth}
 % 		\centering
 % 		\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/gapp_main_menu.png}
-% 		\caption{Menu in guardian partition}
+% 		\caption{Menu in parent partition}
 % 		\label{fig:gapp-main-menu}
 % 	\end{minipage}
 % 	\begin{minipage}[b]{0.3\linewidth}
