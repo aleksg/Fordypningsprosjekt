@@ -1,0 +1,39 @@
+\section{Challenges when creating TUI}
+\label{sec:challenges-with-TUI}
+
+Working with GUI's are somewhat easy from a usability point of view. Assuming that every potential user has used some sort of GUI-based application before, there should not be any fundemental affordance problems when creating a desktop application. What a user expects from a computer mouse is simply given beforehand. However, with TUIs, no such expectations from the user exist. Bellotti et. al. \cite{bellotti2002making} has found several research challenges with creating usable TUIs and ubiquitous systems. This section will elaborate on some of the questions we have to ask ourselves when we are creating our TUI.
+
+
+Bellotti et. al. found five basic issues considering communication between a human and a system; Address, Attention, Action, Alignment and Accident.  
+These issues were then asked as questions, which exposed several challenges. 
+Some of the challenges they found considered ubiquitous computing, i.e. assuming there are several possible target systems at the same location. Table \ref{tab:tuichallenges} shows an appropriate subset of their findings, with our project in mind.   
+
+\begin{table}[H]
+	\begin{tabular}{| p{6.0cm} | p{7.0cm} |}
+	\hline
+	\textbf{Basic question} & \textbf{Exposed Challenges} \\
+	\hline
+	\textbf{Address:} How do I address one of many possible devices? & How do disambiguate intended target system. \newline How to not address the system. \\ 
+	\hline
+	\textbf{Attention:} How do I know the system is ready and attending to my actions? & How to embody appropriate feedback, so that the user can be aware of the system's attention.\newline How to direct feedback to zone of user attention. \\
+	\hline
+	\textbf{Action:} How do I effect a meaningful action, control its extent and possibly specify a target or targets for my action? & How to identify and select a possible object for action \\
+	\hline
+	\textbf{Alignment:} How do I know the system is doing (has done) the right thing? & How to make system state perceivable and persistent or query-able. \newline How to direct timely and appropriate feedback. \newline How to provide distinctive feedback on results and state. \\ 
+	\hline 
+	\textbf{Accident:} How do I avoid mistakes & How to control or cancel system action in progress. \newline How to disambiguate what to undo in time. \newline How to intervene when user makes obvious error \\
+	\hline
+	\end{tabular}
+	\caption{The challenges of interacting with TUI \cite{bellotti2002making}}
+	\label{tab:tuichallenges}
+\end{table}
+
+Some of the challenges that we immedietely see will be especially hard for us to counter is:
+\begin{itemize}
+  \item How to control or cancel system action in progress.
+  \item How to make system state perceivable and persistent. 
+  \item How to embody appropriate feedback, so that the user can be aware of the system's attention. 
+\end{itemize} 
+An overview of how we plan to counter these challenges is included in Section \ref{sec:handling-challenges}
+ 
+
