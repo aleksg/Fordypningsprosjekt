@@ -1,0 +1,1 @@
+java -classpath .:classes:/opt/pi4j/lib/'*' -cp /home/pi/github/BLOPPAsthma/RaspberryPi/src no.blopp.bloppberrypi.test.RFID
