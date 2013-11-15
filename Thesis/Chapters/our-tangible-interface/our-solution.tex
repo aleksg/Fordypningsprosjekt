@@ -64,6 +64,11 @@ Through LED-lights, we intend to show the color of the medicine that is to be ta
 
 \subsection{Handling Bellotti's Challenges}
 \label{sec:handling-challenges}
+The main challenges Bellotti has identified (see Table \ref{tab:tuichallenges}) is \emph{``How to control or cancel system action in progress''} and \emph{``How to specify and select a possible object for action''}. We have previously stated that there are two cases in which a child will take their medicine, \emph{by need} and \emph{preventive}. An issue that could be rising is how to detect when a child needs to take a medicine by need. Preventive medicines will fire alarms on AsthmaBuddy, and the child automatically knows that the system is ``awake''. However, when a child needs to take it by need, there is no other intuitive way to show that the AsthmaBuddy is awake than using LED-lights, which are key for the system to work out. Thus, the solution to the second challenge is usage of LED-lights. Cancelling operations however is really hard to find a ``good'' solution from a usability standpoint. 
+
+For instance, if AsthmaBuddy starts counting seconds on a treatment before a child is ready, there will be a need to reset this counter, or basically at any point during a treatment, go back to the last step. At the moment, the only solution we are able to see at this problem is to use RFID-chips to backtrack, modelling the treatment process as a statemachine. 
+
+
 
 
 \section{Planned modifications of existing system}
