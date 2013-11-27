@@ -6,19 +6,19 @@ This chapter will give a brief introduction into the TUI we are planning to crea
 
 \section{Introduction}
 \label{sec:our-solution-introduction}
-From our experiences with Karotz\fnurl{Karotz}{www.karotz.com}, we have found that we do not want to go any further with it. The thought behind Karotz is great, but these thoughts are, in our subjective opinion, poorly executed. If we were to test the concept at people's homes, we would need to preconfigure the units down to the smallest details. Just the fact that we would have to ask families for their WiFi-credentials before testing a system, should be reasons enough.
+From our experiences with Karotz\fnurl{Karotz}{www.karotz.com}, we have decided that we do not want to go further with it. The thought behind Karotz is great, but the thought is, in our subjective opinion, poorly executed. If we were to test the concept at people's homes, we would need to preconfigure the units down to the smallest details. Just the fact that we would have to ask families for their WiFi-credentials before testing a system, should be reasons enough.
 Additionally, the Karotz API is only documented in French, which makes it considerable harder to develop for. The largest challenge by using Karotz is it's price. A Karotz starters kit costs \$200, not including customs to Norway. Making such a large investment on a product parents have no experience with is going to be quite difficult from a commercial standpoint.  
 
 
 
-We have also taken a brief look into Arduino, which is an open source electronics prototyping platform \cite{arduino}. We have seen some of the projects that have been done in Ardunio, and have found that they require competence and knowledge we simply do not have, i.e. digital design and circuit boards. 
+We have also taken a brief look into Arduino, which is an open source electronics prototyping platform \cite{arduino}. We have seen some of the projects that have been done in Arduino, and have found that they require competence and knowledge we simply do not have, i.e. digital design and circuit boards. 
 
 
-The idea we have found most exciting, both for ourselves and as a solution, is Rasperry Pi \cite{rasperrypi}. It is a cheap computer with the size of a credit card, with the original intention of teaching british school children about computer programming \cite{rasperrypi-about}. Since the release early in 2012, it has sold more than 1 million units, and is highly popular among computer enthusiasts \cite{pimillion}. 
+The idea we have found most exciting, both for ourselves and as a solution, is Rasperry Pi \cite{rasperrypi}. It is a cheap computer with the size of a credit card, with the original intention of teaching british school children about computer programming \cite{rasperrypi-about}. Since its release early in 2012, the Raspberry Pi has sold more than 1 million units, and it is highly popular among computer enthusiasts \cite{pimillion}. 
 
 
 \section{What do we want to create?}
-On a high level of abstraction, what we want to create here is a descrete artifact children can have at their rooms, which can remind them to take their medicine, and help them through the process. Our plan for the time being is basically to wrap the Rasperry Pi inside a toy, i.e. teddy bear, a doll, or some other popular, medium sized toy. We do not intend to answer the question of which wrapping is ideal for this product. For the time being, we have given the product the name \emph{AsthmaBuddy}. 
+On a high level of abstraction, what we want to create is a discrete artifact children can have at their rooms, which can remind them to take their medicine, and help them through the process. Our plan for the time being is basically to wrap the Rasperry Pi inside a toy, i.e. teddy bear, a doll, or some other popular, medium sized toy. We do not intend to answer the question of which wrapping is ideal for this product. For the time being, we have given the product the name \emph{AsthmaBuddy}. 
 
 We consider the following as the minimum set of abilities for our TUI:
 
@@ -35,11 +35,11 @@ In order to get a basic understanding of what we are trying to achieve here, we 
 \begin{enumerate}
   \item (AsthmaBuddy): Cough, cough. Come over here kiddo 
   \item (Kid approaches)
-  \item (AsthmaBuddy): I need my asthma medicine now. Could you please help me? The color of the medicine is displayed at my belly.
-  \item (Kid finds the medicine)
+  \item (AsthmaBuddy): I need my asthma medicine now. Could you please help me? The color of the medicine is displayed on my belly.
+  \item (Child finds the medicine)
   \item (When the child holds the medicine towards the mouth of AsthmaBuddy, the RFID chip on the medicine is read, which instructs AsthmaBuddy to continue). 
   \item (AsthmaBuddy): Thanks. Now it is your turn to take your medicine. 
-  \item (AsthmaBuddy): By taking this medication, you make it easier for yourself to breathe. 
+  \item (AsthmaBuddy): This medicine, makes it easier for you to breathe. 
   \item (AsthmaBuddy): Now, find your mask and put it over your nose and mouth. You need to press the button at the top of your medicine before you start breathing. 
   \item (AsthmaBuddy): (Counts for the amount of seconds needed)
   \item (AsthmaBuddy): Great job!
@@ -51,20 +51,20 @@ The idea behind having a voice to AsthmaBuddy is to establish a two-way communca
 \subsection{Components}
 
 \paragraph{RFID}
-We will be using RFID-technology to let children interact with AsthmaBuddy. Our plan is to attach an RFID-chip to each of the childrens' medicines, which in turn can be read by AsthmaBuddy. For instance, during step 5 in the above scenario, a child can hold the medicine towards the mouth of the bear. The type of the medicine is read by AsthmaBuddy, who can notify the child if he/she is starting to take the wrong medicine. 
+We will be using RFID-technology to let children interact with AsthmaBuddy. Our plan is to attach an RFID-chip to each of the childs' medicines, which in turn can be read by AsthmaBuddy. For instance, during step 5 in the above scenario, a child can hold the medicine towards the mouth of the bear. The type of the medicine is read by AsthmaBuddy, who can notify the child if he/she is taking the wrong medicine. 
 
 \paragraph{Speakers}
 The speakers will be used to play prerecorded messages from AsthmaBuddy.
 
 \paragraph{Connect to network}
-Ideally, we want to attach a WIFI shield to our Rasperry Pi, making it able to connect wirelessly. The benefits of this is that it makes the TUI portable. However, this might include having to preconfigure the system as with Karotz as mentioned in Section \ref{sec:our-solution-introduction}. This makes it a problem we will have to research further before deciding on a solution for our prototype. Information we want to send through the network consists mainly of alarm notifications set by parents, i.e. when AsthmaBuddy should giving signals that it needs medication. 
+Ideally, we want to attach a WIFI shield to our Rasperry Pi, making it able to connect wirelessly. The benefits of this is that it makes the TUI portable. However, this might include having to preconfigure the system as with Karotz as mentioned in Section \ref{sec:our-solution-introduction}. This makes it a problem we will have to research further before deciding on a solution for our prototype. Information we want to send through the network consists mainly of alarm notifications set by parents, i.e. when AsthmaBuddy should give signals that it needs medication. 
 
 \paragraph{LED-lights}
-Through LED-lights, we intend to show the color of the medicine that is to be taken. As we cannot assume children are able to read, or to remember the name of the medicine, Aaberg et. al. have found that showing the color is a feasible solution to showing which medicine should be taken \cite{CustomerDriven}. 
+Through LED-lights, we intend to show the color of the medicine that is to be taken. As we cannot assume children are able to read, or to remember the name of the medicine, Aaberg et. al. have found that showing the color is a feasible solution to show which medicine should be taken \cite{CustomerDriven}. 
 
 \subsection{Dealing with Bellotti's Challenges}
 \label{sec:handling-challenges}
-The main challenges Bellotti has identified (see Table \ref{tab:tuichallenges}) is \emph{``How to control or cancel system action in progress''} and \emph{``How to specify and select a possible object for action''}. We have previously stated that there are two cases in which a child will take their medicine, \emph{by need} and \emph{preventive}. An issue that could be rising is how to detect when a child needs to take a medicine by need. Preventive medicines will fire alarms on AsthmaBuddy, and the child automatically knows that the system is ``awake''. However, when a child needs to take it by need, there is no other intuitive way to show that the AsthmaBuddy is awake than using LED-lights, which are key for the system to work out. Thus, the solution to the second challenge is usage of LED-lights. Cancelling operations however is really hard to find a ``good'' solution from a usability standpoint. 
+The main challenges Bellotti has identified (see Table \ref{tab:tuichallenges}) is \emph{``How to control or cancel system action in progress''} and \emph{``How to specify and select a possible object for action''}. We have previously stated that there are two cases in which a child will take their medicine, \emph{by need} and \emph{as a preventive measure}. An issue that could rise is how to detect when a child needs to take a medicine by need. Preventive medicines will fire alarms on AsthmaBuddy, and the child automatically knows that the system is ``awake''. However, when a child needs to take it by need, there is no other intuitive way to show that the AsthmaBuddy is awake than using LED-lights, which are the key for the system to work. Thus, the solution to the second challenge is usage of LED-lights. Cancelling operations, however, is difficult to find a ``good'' solution from a usability standpoint. 
 
 For instance, if AsthmaBuddy starts counting seconds on a treatment before a child is ready, there will be a need to reset this counter, or basically at any point during a treatment, go back to the last step. At the moment, the only solution we are able to see at this problem is to use RFID-chips to backtrack, modelling the treatment process as a statemachine. 
 
@@ -96,7 +96,7 @@ We intend to improve the mobile applications by modifying the following:
 	\\ \hline
 	Support display of air quality meassurements provided by \href{http://luftkvalitet.info}{Norwegian Institute for Air Research}
 	&
-	Asthma is a disease that is closely coupled with air quality in the area. Making these data easily accessible for parents will hopefully help parents to control their children's disease better.
+	Asthma is a disease that is closely coupled with air quality in the area. Making this data easily accessible for parents will hopefully help the parents to control their children's disease better.
 	&
 	Medium  
 	\\ \hline
@@ -123,5 +123,5 @@ We intend to improve the mobile applications by modifying the following:
 \label{tab:intended-modifications}
 \end{table}
 
-In addition to all modifications listed in \ref{tab:intended-modifications} , we need to develop a framework which can be used for basic asthma operations, like starting treatments, receiving credits, etc. As the design should be highly modifiable, these basic operations should be identical across the two platforms.    
+In addition to all modifications listed in \ref{tab:intended-modifications} , we need to develop a framework which can be used for basic asthma operations, such as starting treatments, receiving credits, etc. As the design should be highly modifiable, these basic operations should be identical across the two platforms.    
  
