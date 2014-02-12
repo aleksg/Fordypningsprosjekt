@@ -16,7 +16,9 @@ The Raspberry Pi was initially intended to teach british school children about c
 The specification of a Raspberry Pi (Model B) is included in Table \ref{tab:pi-specs}.    
 
 \begin{table}
-\begin{tabular}{|p{5.0cm} | p{5.0cm} |}
+\begin{tabular}{|p{6.0cm} | p{6.0cm} |}
+\hline 
+\textbf{Property} & \textbf{Specification} \\
 \hline
 CPU & 700 MHz ARM1176JZF-S core \\
 \hline
@@ -46,138 +48,108 @@ Network & 10/100 Mbps Ethernet.  \\
 \subsection{Components}
 In addition to the \rpi{} we needed some components that children are able to interact through. These components and their functionality are summarized in this section. 
 
+
 \subsubsection{RFID Reader}
+A child needs to be able to interact with AsthmaBuddy. We identified two approaches; using a button and/or using RFID technology to do it. We figured that having a big button on the top of a teddy bear would seem somewhat unnatural for a child. Additionally, this could cause problems with the wires inside the teddybear, as a child pushing a button could imply that AsthmaBuddy would be moved around. This could have been avoided by using a battery pack for the \rpi{}, but their capacity does not seem to exceed 24 hours when the \rpi{} is in idle mode. The conclusion was to use RFID technology to proceed in the medication process.
 
 
+The RFID reader we used was a Sparkfun ID-12LA \iref{}. One of the requirements of the USB reader was that it should be able to connect through an USB-port. Thus one of our two USB-ports were sacrificed (see Table \ref{tab:pi-specs}). 
+         
 \subsubsection{USB speakers}
+In order to play sounds to children, we decided to integrate speakers inside AsthmaBuddy. Since we did not want to pull too many wires out of the bear, we decided to use USB-powered speakers, sacrificing our second USB-port.    
 
 \subsubsection{LED lights}
+We used LED lights connected to a breadboard in order to play around with the first prototype.  
 
-\section{Use Cases} 
+\subsubsection{Pi4j}
+Pi4j\fnurl{Pi4j}{http://pi4j.com} is a Java framework that allows development for \rpi{} in Java, without having to write anything in C. 
 
+\section{Use Cases}
+Figure \ref{fig:pi-use-cases} shows a general overview of the use cases we have included in our prototype. A medication process can be started in one out of two ways. 
+A parent can register an alarm by using AsthmAPP. This alarm is then triggered by AsthmaBuddy, giving the child a notification that it is time to take their medicine.
+
+The alternative is if children need to take their medicine by need. If they need to take a medicine by need, they simply register their RFID-tag before children are taken through a quicker process (see Manuscript \iref{}).  
+
+\begin{figure}[H] 
+	\centering
+		\includegraphics[width=0.8\paperwidth]{Pictures/usecases.png}
+	\label{fig:pi-use-cases}
+	\caption{AsthmaBuddy use cases}
+\end{figure}
+
+\subsection{Textual use cases}
+
+%--------- TEXTUAL USE CASE ----------
+%--------- BY NEED TREATMENT ---------
+\begin{table}[H]
+\begin{tabular}{|p{4.0cm} | p{7.0cm} |}
+\hline
+\textbf{Title} & By need treatment \\
+\hline
+\textbf{Preconditions} & - \\
+\hline 
+\textbf{Scenario} & 
+	\begin{enumerate}
+	  \item User triggers treatment by registering RFID-tag
+	  \item System plays sound to instruct (Shake the medicine)
+	  \item System flashes LED-lights to notify user
+	  \item System plays sound to instruct user (Mount medicine in mask, and put mask on)
+	  \item User starts a treatment by using RFID-tag
+	  \item System plays sound to count during treatment (1-2-3-4-5-6-7-8-9-10), while flashing lights for each count
+	  \item System plays sound to tell user he/she has done a good job (Well done)
+	  \item System calculates reward based on health state
+	  \item System plays sound to award user
+	\end{enumerate}
+\\
+\hline
+	\textbf{Extensions} & 
+		x.a User aborts treatment by not continuing the sequence
+\\
+\hline
+\end{tabular}
+\caption{Textual use case: By need treatment}
+\label{tab:textual-use-case}
+\end{table}
+
+
+%--------- PREVENTIVE TREATMENT -------
+\begin{table}[H]
+\begin{tabular}{|p{4.0cm} | p{7.0cm} |}
+\hline
+\textbf{Title} & By need treatment \\
+\hline
+\textbf{Preconditions} & A reminder has been fired \\
+\hline 
+\textbf{Scenario} & 
+	\begin{enumerate}
+	  \item Child registers RFID-tag, to notify that he/she is ready
+	  \item Start instructions by playing sound (It is time to take medicine. Retrieve the medicine)
+	  \item Receive input from RFID-tag
+	  \item System plays sound to instruct user (shake the medicine)
+	  \item Receive input from RFID-tag
+	  \item System plays sound to instruct user
+	  \item System starts counting to 10. 
+	  \item System plays sound to tell the user he/she has done a good job
+	  \item System calculates reward based on health state
+	  \item System plays sound to award user
+	\end{enumerate}
+\\
+\hline
+	\textbf{Extensions} & 
+		x.a Child does not register the RFID-tag when prompted
+\\
+\hline
+\end{tabular}
+\caption{Textual use case: By need treatment}
+\label{tab:textual-use-case}
+\end{table} 
 
 \section{State diagram}
 
-
-
-\section{Introduction}
-\label{sec:our-solution-introduction}
-From our experiences with Karotz\fnurl{Karotz}{www.karotz.com}, we have decided that we do not want to go further with it. The thought behind Karotz is great, but the thought is, in our subjective opinion, poorly executed. If we were to test the concept at people's homes, we would need to preconfigure the units down to the smallest details. Just the fact that we would have to ask families for their WiFi-credentials before testing a system, should be reasons enough.
-Additionally, the Karotz API is only documented in French, which makes it considerable harder to develop for. The largest challenge by using Karotz is it's price. A Karotz starters kit costs \$200, not including customs to Norway. Making such a large investment on a product parents have no experience with is going to be quite difficult from a commercial standpoint.  
-
-
-
-We have also taken a brief look into Arduino, which is an open source electronics prototyping platform\cite{arduino}. We have seen some of the projects that have been done in Arduino, and have found that they require competence and knowledge we simply do not have, i.e. digital design and circuit boards. 
-
-
-The idea we have found most exciting, both for ourselves and as a solution, is Rasperry Pi\cite{rasperrypi}. It is a cheap computer with the size of a credit card, with the original intention of teaching british school children about computer programming\cite{rasperrypi-about}. Since its release early in 2012, the Raspberry Pi has sold more than 1 million units, and it is highly popular among computer enthusiasts\cite{pimillion}. 
-
-
-\section{What do we want to create?}
-On a high level of abstraction, what we want to create is a discrete artifact children can have at their rooms, which can remind them to take their medicine, and help them through the process. Our plan for the time being is basically to wrap the Rasperry Pi inside a toy, i.e. teddy bear, a doll, or some other popular, medium sized toy. We do not intend to answer the question of which wrapping is ideal for this product. For the time being, we have given the product the name \emph{AsthmaBuddy}. 
-
-We consider the following as the minimum set of abilities for our TUI:
-
-\begin{itemize}
-  \item Ability to connect to a network, either through ethernet or WiFi, though both are preferred. 
-  \item Play sounds through speakers
-  \item Ability to read RFID-chips
-  \item Display information about the color of the asthma medicine through LED-lights
-\end{itemize} 
-
-\subsection{A basic scenario}
-In order to get a basic understanding of what we are trying to achieve here, we have included a basic scenario below. Assume that we have our Rasperry Pi inside a teddy bear.  
-
-\begin{enumerate}
-  \item (AsthmaBuddy): Cough, cough. Come over here kiddo 
-  \item (Kid approaches)
-  \item (AsthmaBuddy): I need my asthma medicine now. Could you please help me? The color of the medicine is displayed on my belly.
-  \item (Child finds the medicine)
-  \item (When the child holds the medicine towards the mouth of AsthmaBuddy, the RFID chip on the medicine is read, which instructs AsthmaBuddy to continue). 
-  \item (AsthmaBuddy): Thanks. Now it is your turn to take your medicine. 
-  \item (AsthmaBuddy): This medicine, makes it easier for you to breathe. 
-  \item (AsthmaBuddy): Now, find your mask and put it over your nose and mouth. You need to press the button at the top of your medicine before you start breathing. 
-  \item (AsthmaBuddy): (Counts for the amount of seconds needed)
-  \item (AsthmaBuddy): Great job!
-\end{enumerate}
-
-The idea behind having a voice to AsthmaBuddy is to establish a two-way communcation between children and the artifact. We want children to actually care for our product, which may be achieved through giving the artifact a sense of personality. 
-
-
-\subsection{Components}
-
-\paragraph{RFID}
-We will be using RFID-technology to let children interact with AsthmaBuddy. Our plan is to attach an RFID-chip to each of the childs' medicines, which in turn can be read by AsthmaBuddy. For instance, during step 5 in the above scenario, a child can hold the medicine towards the mouth of the bear. The type of the medicine is read by AsthmaBuddy, who can notify the child if he/she is taking the wrong medicine. 
-
-\paragraph{Speakers}
-The speakers will be used to play prerecorded messages from AsthmaBuddy.
-
-\paragraph{Connect to network}
-Ideally, we want to attach a WIFI shield to our Rasperry Pi, making it able to connect wirelessly. The benefits of this is that it makes the TUI portable. However, this might include having to preconfigure the system as with Karotz as mentioned in Section \ref{sec:our-solution-introduction}. This makes it a problem we will have to research further before deciding on a solution for our prototype. Information we want to send through the network consists mainly of alarm notifications set by parents, i.e. when AsthmaBuddy should give signals that it needs medication. 
-
-\paragraph{LED-lights}
-Through LED-lights, we intend to show the color of the medicine that is to be taken. As we cannot assume children are able to read, or to remember the name of the medicine, Aaberg et. al. have found that showing the color is a feasible solution to show which medicine should be taken\cite{CustomerDriven}. 
 
 \subsection{Dealing with Bellotti's Challenges}
 \label{sec:handling-challenges}
 The main challenges Bellotti has identified (see Table \ref{tab:tuichallenges}) is \emph{``How to control or cancel system action in progress''} and \emph{``How to specify and select a possible object for action''}. We have previously stated that there are two cases in which a child will take their medicine, \emph{by need} and \emph{as a preventive measure}. An issue that could rise is how to detect when a child needs to take a medicine by need. Preventive medicines will fire alarms on AsthmaBuddy, and the child automatically knows that the system is ``awake''. However, when a child needs to take it by need, there is no other intuitive way to show that the AsthmaBuddy is awake than using LED-lights, which are the key for the system to work. Thus, the solution to the second challenge is usage of LED-lights. Cancelling operations, however, is difficult to find a ``good'' solution from a usability standpoint. 
 
 For instance, if AsthmaBuddy starts counting seconds on a treatment before a child is ready, there will be a need to reset this counter, or basically at any point during a treatment, go back to the last step. At the moment, the only solution we are able to see at this problem is to use RFID-chips to backtrack, modelling the treatment process as a statemachine. 
-
-
-
-\section{Planned modifications of existing system}
-\label{sec:plannedmodsofexistingsystems}
-As far as the software goes, we intend to keep the main parts of the architecture Aaberg et. al. created, with the exception of Karotz being replaced by AsthmaBuddy. 
-
-
-We intend to improve the mobile applications by modifying the following:
-\begin{table}
-
-\begin{tabular}{| p{5.0cm} | p{5.0cm} | p{3.0cm} |}
-	\hline
-	\textbf{Modification} & \textbf{Rationale} & \textbf{Priority} \\
-	\hline
-	Modifying the mobile applications to become one single application. CAPP and GAPP will thus become AsthmAPP 
-	&
-	Having two applications is hard to work with, especially when they're so closely connected. It is thus simpler both for us and the user to use one application
-	&
-	High
-	\\ \hline
-	Support a reward system where parents are able to specify their own rewards
-	&
-	We need to give some sort of reward system in order to motivate children.
-	&
-	High 
-	\\ \hline
-	Support display of air quality meassurements provided by \href{http://luftkvalitet.info}{Norwegian Institute for Air Research}
-	&
-	Asthma is a disease that is closely coupled with air quality in the area. Making this data easily accessible for parents will hopefully help the parents to control their children's disease better.
-	&
-	Medium  
-	\\ \hline
-	Modify the GUI of the mobile applications to meet design guidelines
-	&
-	At the time being, there are little to no consistency among views. This is important to make it easier to use.
-	&
-	High 
-	\\ \hline
-	Improved distraction sequence for children
-	& 
-	The current distraction sequence can easily become boring for children over time.
-	&
-	Medium
-	\\ \hline
-	Support several medications during the same treatment sequence.
-	&
-	At the time being it is not supported. Taking more than one medicine at the time occurs more often than one might think
-	&
-	Low 
-	\\ \hline
-\end{tabular}
-\caption{Intended modifications and their rationale}
-\label{tab:intended-modifications}
-\end{table}
-
-In addition to all modifications listed in \ref{tab:intended-modifications} , we need to develop a framework which can be used for basic asthma operations, such as starting treatments, receiving credits, etc. As the design should be highly modifiable, these basic operations should be identical across the two platforms.    
  
