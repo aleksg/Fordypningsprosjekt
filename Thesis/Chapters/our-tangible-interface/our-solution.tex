@@ -45,7 +45,7 @@ Network & 10/100 Mbps Ethernet.  \\
 
 \begin{figure}[H] 
 	\centering
-		\includegraphics[width=0.8\paperwidth]{Pictures/rpi-arch-overview.png}
+		\includegraphics[width=0.6\paperwidth]{Pictures/rpi-arch-overview.png}
 	\caption{Raspberry Pi Model B architecture. \emph{Image source: http://raspberrypi.org/faqs} }
 	\label{fig:pi-arch-overview}
 \end{figure}
@@ -59,7 +59,7 @@ In addition to the \rpi{} we needed some components that children are able to in
 A child needs to be able to interact with AsthmaBuddy. We identified two approaches; using a button and/or using RFID technology to do it. We figured that having a big button on the top of a teddy bear would seem somewhat unnatural for a child. Additionally, this could cause problems with the wires inside the teddybear, as a child pushing a button could imply that AsthmaBuddy would be moved around. This could have been avoided by using a battery pack for the \rpi{}, but their capacity does not seem to exceed 24 hours when the \rpi{} is in idle mode. The conclusion was to use RFID technology to proceed in the medication process.
 
 
-The RFID reader we used was a Sparkfun ID-12LA \iref{}. One of the requirements of the USB reader was that it should be able to connect through an USB-port. Thus one of our two USB-ports were sacrificed (see Table \ref{tab:pi-specs}). 
+The RFID reader we used was a Sparkfun ID-12LA \fnurl{Sparkfun ID-12LA documentation}{http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/ID/ID-2LA,\%20ID-12LA,\%20ID-20LA(2013-4-10).pdf}. One of the requirements of the USB reader was that it should be able to connect through an USB-port. Thus one of our two USB-ports were sacrificed (see Table \ref{tab:pi-specs}). 
          
 \subsubsection{USB speakers}
 In order to play sounds to children, we decided to integrate speakers inside AsthmaBuddy. Since we did not want to pull too many wires out of the bear, we decided to use USB-powered speakers, sacrificing our second USB-port.    
@@ -74,16 +74,16 @@ Pi4j\fnurl{Pi4j}{http://pi4j.com} is a Java framework that allows development fo
 Figure \ref{fig:pi-use-cases} shows a general overview of the use cases we have included in our prototype. A medication process can be started in one out of two ways. 
 A parent can register an alarm by using AsthmAPP. This alarm is then triggered by AsthmaBuddy, giving the child a notification that it is time to take their medicine.
 
-The alternative is if children need to take their medicine by need. If they need to take a medicine by need, they simply register their RFID-tag before children are taken through a quicker process (see Manuscript \iref{}).  
+The alternative is if children need to take their medicine by need. If they need to take a medicine by need, they simply register their RFID-tag before children are taken through a quicker process (see Manuscript \ref{chp:anuscript}).  
 
 \begin{figure}[H] 
 	\centering
 		\includegraphics[width=0.8\paperwidth]{Pictures/usecases.png}
 	\label{fig:pi-use-cases}
-	\caption{AsthmaBuddy use cases}
+	\caption{AsthmaBuddy Use Cases}
 \end{figure}
 
-\subsection{Textual use cases}
+\subsection{Textual Use Cases}
 
 %--------- TEXTUAL USE CASE ----------
 %--------- BY NEED TREATMENT ---------
@@ -153,7 +153,7 @@ The alternative is if children need to take their medicine by need. If they need
 %--------- OTHER USE CASES?? -------
 
 
-\section{State diagram}
+\section{State Diagram}
 When the \rpi{} boots, it retrieves the latest version of the source code from Git, compiles it, and starts running it. If a child approaches \buddy{} and registers a RFID-tag, a medication sequence is started.  
  
 \section{Prototype number 1}
