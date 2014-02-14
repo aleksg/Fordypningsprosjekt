@@ -88,7 +88,7 @@ The alternative is if children need to take their medicine by need. If they need
 %--------- TEXTUAL USE CASE ----------
 %--------- BY NEED TREATMENT ---------
 \begin{table}[H]
-\begin{tabular}{|p{4.0cm} | p{7.0cm} |}
+\begin{tabular}{|p{4.0cm} | p{9.0cm} |}
 \hline
 \textbf{Title} & By need treatment \\
 \hline
@@ -120,7 +120,7 @@ The alternative is if children need to take their medicine by need. If they need
 
 %--------- PREVENTIVE TREATMENT -------
 \begin{table}[H]
-\begin{tabular}{|p{4.0cm} | p{7.0cm} |}
+\begin{tabular}{|p{4.0cm} | p{9.0cm} |}
 \hline
 \textbf{Title} & By need treatment \\
 \hline
@@ -155,6 +155,13 @@ The alternative is if children need to take their medicine by need. If they need
 
 \section{State Diagram}
 When the \rpi{} boots, it retrieves the latest version of the source code from Git, compiles it, and starts running it. If a child approaches \buddy{} and registers a RFID-tag, a medication sequence is started.  
+
+\begin{figure}[H] 
+	\centering
+		\includegraphics[width=0.6\paperwidth]{Pictures/statediagram.png}
+	\caption{AsthmaBuddy State Diagram.}
+	\label{fig:asthmabuddy_statediagram}
+\end{figure}
  
 \section{Prototype number 1}
 
