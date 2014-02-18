@@ -3,12 +3,12 @@
 \label{chp:our-solution}
 
 \section{Background}
-In 2012, we did a similar project using Karotz \fnurl{Karotz}{www.karotz.com} as our platform \cite{CustomerDriven}. The thought behind Karotz is great. It is an open source robot which allows people to build applications and launch it to the Karotz store. However, in our subjective opinion, it is not ideal to work with. The Karotz starters kit costs ~\$ 200, not including customs, thus it is a pretty large investment for a family wanting to buy the product to use with our application. The API is only documented in french, which makes it a hassle, in addition to the fact that it is pretty cumbersome to configure for a ``non-technological'' family. 
+In 2012, we did a similar project using Karotz \fnurl{Karotz}{www.karotz.com} as our platform \cite{CustomerDriven}. The thought behind Karotz is great. It is an open source robot which allows people to build applications and launch it to the Karotz store. However, in our subjective opinion, it is not ideal to work with. The Karotz starters kit costs ~\$200, not including customs, thus it is a pretty large investment for a family wanting to buy the product to use with our application. The API is only documented in French, which makes it a hassle, in addition to the fact that it is pretty cumbersome to configure for a ``non-technological'' family. 
 
 
-We have looked around for other options to create our tangible user interface, i.e. Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform \cite{arduino}, which allows for many different combinations of configurations, while Raspberry Pi is a cheap computer on the size of a credit card. 
-%TODO: Skriv litt mer om hvorfor vi lagde dette pa Pi og ikke Arduino. Litt vagt nu. 
-While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for the two developers.  
+We have looked around for other options to create our tangible user interface, i.e. Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform \cite{arduino}, which allows for many different combinations of configurations, while Raspberry Pi is a cheap computer on the size of a credit card. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide-range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
+While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for us as developers. Arduino programs are normally written in C \cite{strahl2000language}, and while there exists many tutorials and manuals for how to write Arduino code, we found the thought of writing in a programming language we hade little prior knowledge of too challenging. Arduinos generally have low-powered CPUs, in order to keep them cheap. These low-powered CPUs tend to have problems with decoding MP3-files, which would lay constraints on our system. Due to these facts, we choose to develop the system on a Raspberry Pi.
+
 
 \subsection{Raspberry Pi}
 The Raspberry Pi was initially intended to teach british school children about computer programming \cite{rasperrypi-about}. Since its release, it took an unexpected turn when lots of computer enthusiasts bought the product to do their own mini projects for a cheap price. 
@@ -45,7 +45,7 @@ Network & 10/100 Mbps Ethernet.  \\
 
 \begin{figure}[H] 
 	\centering
-		\includegraphics[width=0.8\paperwidth]{Pictures/rpi-arch-overview.png}
+		\includegraphics[width=0.6\paperwidth]{Pictures/rpi-arch-overview.png}
 	\caption{Raspberry Pi Model B architecture. \emph{Image source: http://raspberrypi.org/faqs} }
 	\label{fig:pi-arch-overview}
 \end{figure}
@@ -59,13 +59,13 @@ In addition to the \rpi{} we needed some components that children are able to in
 A child needs to be able to interact with AsthmaBuddy. We identified two approaches; using a button and/or using RFID technology to do it. We figured that having a big button on the top of a teddy bear would seem somewhat unnatural for a child. Additionally, this could cause problems with the wires inside the teddybear, as a child pushing a button could imply that AsthmaBuddy would be moved around. This could have been avoided by using a battery pack for the \rpi{}, but their capacity does not seem to exceed 24 hours when the \rpi{} is in idle mode. The conclusion was to use RFID technology to proceed in the medication process.
 
 
-The RFID reader we used was a Sparkfun ID-12LA \iref{}. One of the requirements of the USB reader was that it should be able to connect through an USB-port. Thus one of our two USB-ports were sacrificed (see Table \ref{tab:pi-specs}). 
+The RFID reader we used was a Sparkfun ID-12LA \fnurl{Sparkfun ID-12LA documentation}{http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/ID/ID-2LA,\%20ID-12LA,\%20ID-20LA(2013-4-10).pdf}. One of the requirements of the USB reader was that it should be able to connect through an USB-port. 
          
 \subsubsection{USB speakers}
-In order to play sounds to children, we decided to integrate speakers inside AsthmaBuddy. Since we did not want to pull too many wires out of the bear, we decided to use USB-powered speakers, sacrificing our second USB-port.    
+In order to play sounds to children, we decided to integrate speakers inside AsthmaBuddy. Since we did not want to pull too many wires out of the bear, we decided to use USB-powered speakers.    
 
 \subsubsection{LED lights}
-We used LED lights connected to a breadboard in order to play around with the first prototype.  
+We used LED lights connected to a breadboard in order to play around with the first prototype. The LED lights emits light in different colors to correspond to what action(s) is expected from the user during a treatment (see more in INSERT REFERENCE TO PROTOTYPE 1).
 
 \subsubsection{Pi4j}
 Pi4j\fnurl{Pi4j}{http://pi4j.com} is a Java framework that allows development for \rpi{} in Java, without having to write anything in C. 
@@ -74,21 +74,21 @@ Pi4j\fnurl{Pi4j}{http://pi4j.com} is a Java framework that allows development fo
 Figure \ref{fig:pi-use-cases} shows a general overview of the use cases we have included in our prototype. A medication process can be started in one out of two ways. 
 A parent can register an alarm by using AsthmAPP. This alarm is then triggered by AsthmaBuddy, giving the child a notification that it is time to take their medicine.
 
-The alternative is if children need to take their medicine by need. If they need to take a medicine by need, they simply register their RFID-tag before children are taken through a quicker process (see Manuscript \iref{}).  
+The alternative is if children need to take their medicine by need. If they need to take a medicine by need, they simply register their RFID-tag before children are taken through a quicker process (see Manuscript \ref{chp:anuscript}).  
 
 \begin{figure}[H] 
 	\centering
 		\includegraphics[width=0.8\paperwidth]{Pictures/usecases.png}
 	\label{fig:pi-use-cases}
-	\caption{AsthmaBuddy use cases}
+	\caption{AsthmaBuddy Use Cases}
 \end{figure}
 
-\subsection{Textual use cases}
+\subsection{Textual Use Cases}
 
 %--------- TEXTUAL USE CASE ----------
 %--------- BY NEED TREATMENT ---------
 \begin{table}[H]
-\begin{tabular}{|p{4.0cm} | p{7.0cm} |}
+\begin{tabular}{|p{4.0cm} | p{9.0cm} |}
 \hline
 \textbf{Title} & By need treatment \\
 \hline
@@ -120,7 +120,7 @@ The alternative is if children need to take their medicine by need. If they need
 
 %--------- PREVENTIVE TREATMENT -------
 \begin{table}[H]
-\begin{tabular}{|p{4.0cm} | p{7.0cm} |}
+\begin{tabular}{|p{4.0cm} | p{9.0cm} |}
 \hline
 \textbf{Title} & By need treatment \\
 \hline
@@ -153,10 +153,30 @@ The alternative is if children need to take their medicine by need. If they need
 %--------- OTHER USE CASES?? -------
 
 
-\section{State diagram}
+\section{Design Rationale}
+When designing \buddy{} we choose to use a teddy bear as an avator for our system. There are several reasons as to why we think this is an appropriate avatar. A teddy bear is well known toy, and has been loved for a long time. In addition a teddy bear is considered gender-neutral [INSERT REFERENCE]. 
+
+
+\section{State Diagram}
 When the \rpi{} boots, it retrieves the latest version of the source code from Git, compiles it, and starts running it. If a child approaches \buddy{} and registers a RFID-tag, a medication sequence is started.  
+
+\begin{figure}[H] 
+	\centering
+		\includegraphics[width=0.6\paperwidth]{Pictures/statediagram.png}
+	\caption{AsthmaBuddy State Diagram.}
+	\label{fig:asthmabuddy_statediagram}
+\end{figure}
  
 \section{Prototype number 1}
+For the first prototype we tried out the following types of interaction with AsthmaBuddy:
+\begin{enumerate}
+	\item{Give AsthmaBuddy a ``High Five''}
+	\item{Hold AsthmaBuddy's hand}
+	\item{Hold smartphone close to AsthmaBuddy's nose}
+	\item{Press AsthmaBuddy's nose}
+	\item{Hold medicine close to AsthmaBuddy's mouth}
+	\item{Hold RFID-chip close to \buddy{}'s nose}
+\end{enumerate}
 
 
 \section{Prototype number 2}
