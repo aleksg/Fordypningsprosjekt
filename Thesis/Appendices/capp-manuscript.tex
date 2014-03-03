@@ -1,20 +1,65 @@
 \chapter{AsthmAPP Manuscript}
 \label{chp:anuscript} %Hoho
-During a medication process, AsthmAPP speaks to a child. The following is a breakdown on the manuscript the applications follow.
+
+AsthmaBuddy and AsthmaBuddy has a prerecorded manuscript, which is included below. 
+
+
+C is the color of the medicine, i.e. C $\in \{ Blue, Orange, Purple \}$.
+
+
+N is the number of stars a child gets, i.e. C $\in \{ 1, 3, 5 \}$ , depending on the current health state of the child.  
+
+
+\section{AsthmaBuddy}
+AsthmaBuddy's manuscript is twofold, depending on the interaction we want to run with.
+\subsection{Instructions}
+The following are the instructions a child receives, and where the manuscript reads ``(Interaction)'', one of the interactions in \ref{chp:manus-interactions} are insterted. The norwegian manuscript is used in the applications, while the english manuscript is included for the reader's convenience. 
+
 \begin{enumerate}
-  \item Hei, jeg heter Blipp. N\r{a} er det p\r{a} tide \r{a} ta pustemedisin. Trykk p\r{a} hodet mitt, s\r{a} forteller jeg deg mer. \emph{Hi, my name is Blipp. It's time to take the breathing medicine. Press my head, and I'll tell you more.}
-  \item Hent den C medisinen og masken du puster i, og trykk p\r{a} hodet mitt n\r{a}r du har hentet dem. \emph{Get the C medicine and the mask you breath in, then press my head when you have fetched them.}
-  \item Rist den C medisinen. Trykk p\r{a} hodet n\r{a}r du er klar. \emph{Shake the blue medicine. Press my head when you are ready}
-  \item Av den C medisinen skal du ta 1 puff. Sett p\r{a} deg masken og gj\o r deg klar. Trykk p\r{a} hodet mitt, s\r{a} teller jeg mens du puster inn og ut. \emph{You are going to take 1 spray of the C medicine. Put on your mask and get ready. Press my head, and I'll count when you breathe in and out.} 
-  \item N\r{a}r jeg sier i fra, skal du trykke 1 gang. Trykk p\r{a} hodet mitt, s\r{a} begynner jeg \r{a} telle. \emph{Upon signal, press the medicine one time. Press my head, and I'll start counting. }
-  \item 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.
-  \item N\r{a} var du flink. \emph{You did great}
-  \item Som bel\o nning f\r{a}r du N stjerner i skattekista di. \emph{As a reward, you'll get S stars in your treasure chest.}
+  \item Hei! Jeg heter Blipp, og n\r{a} er det tid for \r{a} ta pustemedisinen din.(Interaction). \emph{Hi! My name is Blipp. It's time to take your breathing medicine. Press my head, and I'll tell you more (Interaction)}
+  \item Hent en voksen som kan se p\r{a}, og (Interaction). \emph{Fetch an adult who can supervise, and (Interaction)}
+  \item Hent den \textbf{C} medisinen din, og masken du puster i. (Interaction). \emph{Fetch your \textbf{C} medicine, and the mask you're breathing in. (Interaction)}
+  \item Rist den \textbf{C} medisinen din (ristelyd), og fest den p\r{a} masken din. (Interaction). \emph{Shake your \textbf{C} medicine, and attach it to your mask. (Interaction)}
+  \item Sett masken mot munnen min, og tell til 10 mens jeg puster inn og ut. \emph{Put the mask towards my mouth, and count to ten while I breathe in and out. }
+  \item (Pustelyd i 10 sekunder). \emph{(Breathing sound for ten seconds)}
+  \item S\r{a} du hvor lett det var? N\r{a} er det din tur. \emph{Did you see how easy that was? Now it's your turn. }
+  \item Av den \textbf{C} medisinen skal du ta 1 puff. Sett p\r{a} deg masken, og (Interaction). \emph{You are going to take one spray of the \textbf{C} medicine. Put on your mask, and (Interaction). }
+  \item N\r{a}r jeg sier i fra skal du trykke p\r{a} sprayen. Jeg skal telle til 10 mens du puster inn og ut. Klar, ferdig, TRYKK! \emph{When I tell you, you are going to press the spray. I'm going to count to 10 while you breathe in and out. Ready, set, PRESS!}
+  \item En, To, Tre, Fire, Fem, Seks, Syv, \r{a}tte, Ni, Ti. \emph{One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten!}
+  \item Flott innsats! Som belønning f\r{a}r du \textbf{N} stjerner i skattekista di. \emph{Well done. As a reward, I'll put \textbf{N} stars into your treasure chest} 
+  \item Da er vi ferdige for n\r{a}. N\r{a} m\r{a} du huske \r{a} skylle munnen din, s\r{a} sees vi neste gang \emph{We are done for now. Remember to rinse your mouth. We'll see each other next time.}
 \end{enumerate}
 
-The above script has the following properties:
 
-C $\in \{ Blue, Orange, Purple \}$
+ 
+\subsection{Interactions}
+\label{chp:manus-interactions}
+\begin{enumerate}
+\item Hold meg i h\r{a}nda n\r{a}r du er klar. \emph{Hold my hand when you are ready}
+\item Hold mobiltelefonen din foran magen min for \r{a} g\r{a} videre. \emph{Hold your mobile phone in front of my belly in order to proceed}  
+\item Trykk p\r{a} nesen min n\r{a}r du er klar. \emph{Press my nose when you're ready}
+\item Gi meg en high five for \r{a} g\r{a} videre.  \emph{Give me a high five in order to proceed}
+\item Hold medisinen foran munnen min for \r{a} g\r{a} videre. \emph{Hold your medicine in front of my mouth in order to proceed}
+\item Trykk p\r{a} magen min for \r{a} g\r{a} videre. \emph{ Press my belly in order to proceed}
+\item Hold kortet ditt foran magen min for \r{a} g\r{a} videre. \emph{ Hold your card in front of my belly in order to proceed}
+\item Hold kortet ditt foran nesen min. \emph{Hold your card in front of my nose}
+\item Klapp hendene dine for \r{a} g\r{a} videre. \emph{Clap your hands in order to proceed}. 
+\end{enumerate}
 
 
-S $\in \{ 1, 3, 5 \}$ 
+
+\section{AsthmAPP}
+
+\begin{enumerate}
+  \item Hei! Jeg heter Blipp, og n\r{a} er det tid for \r{a} ta pustemedisinen din. Trykk p\r{a} hodet mitt, s\r{a} setter vi i gang. \emph{Hi. My name is Blipp. It's time to take your breathing medicine. Press my head, and I'll tell you more} 
+  \item Hent en voksen som kan f\o lge med, og trykk p\r{a} hodet mitt n\r{a}r dere er klare. \emph{Fetch an adult who can supervise. Press my head to proceed}
+  \item Hent den \textbf{C} medisinen din, og masken du puster i. Trykk p\r{a} hodet mitt n\r{a}r du er klar. \emph{Get the \textbf{C} medicine and the mask you're breathing in. Press my head to proceed}
+  \item Rist den \textbf{C} medisinen (ristelyd), og fest den p\r{a} masken din. Trykk p\r{a} hodet mitt for \r{a} g\r{a} videre. \emph{Shake the \textbf{C} medicine, and attach it to your mask. Press my head to proceed}
+  \item Av den \textbf{C} medisinen skal du ta ett puff. Sett p\r{a} deg masken, og trykk p\r{a} hodet mitt n\r{a}r du er klar. \emph{You are going to take 1 spray of the \textbf{C} medicine. Put on your mask and press my head when you're ready}
+  \item N\r{a}r jeg sier i fra skal du trykke p\r{a} sprayen. Jeg skal telle til 10 mens du puster inn og ut. Klar, ferdig, TRYKK! \emph{When I tell you, you are going to press the spray. I'm going to count to 10 while you breathe in and out. Ready, set, PRESS!}
+  \item En, To, Tre, Fire, Fem, Seks, Syv, \r{a}tte, Ni, Ti. \emph{One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten!}
+  \item Flott innsats! Som bel\o nning f\r{a}r du \textbf{N} stjerner i skattekista di. \emph{Well done. As a reward, I'll put \textbf{N} stars into your treasure chest} 
+  \item Da er vi ferdige for n\r{a}. N\r{a} m\r{a} du huske \r{a} skylle munnen din, s\r{a} sees vi neste gang \emph{We are done for now. Remember to rinse your mouth. We'll see each other next time.}
+\end{enumerate}
+
+ 
