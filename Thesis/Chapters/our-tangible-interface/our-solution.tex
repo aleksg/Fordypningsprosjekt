@@ -96,15 +96,16 @@ The alternative is if children need to take their medicine by need. If they need
 \hline 
 \textbf{Scenario} & 
 	\begin{enumerate}
-	  \item User triggers treatment by registering RFID-tag
-	  \item System plays sound to instruct (Shake the medicine)
-	  \item System flashes LED-lights to notify user
-	  \item System plays sound to instruct user (Mount medicine in mask, and put mask on)
-	  \item User starts a treatment by using RFID-tag
+	  \item User triggers treatment by holding a specific RFID-tag close to AsthmaBuddy
+	  \item System flashes LED-lights to notify user that the system is ready for use
+	  \item System plays sound to instruct the user to shake the medicine
+	  \item System plays sound to instruct user to mount the medicine on the mask and place the mask on his/her face
+	  \item User starts a treatment by interacting with AsthmaBuddy (by pressing it's hand or similar interaction)
 	  \item System plays sound to count during treatment (1-2-3-4-5-6-7-8-9-10), while flashing lights for each count
-	  \item System plays sound to tell user he/she has done a good job (Well done)
+	  \item System plays sound to tell user he/she has done a good job
 	  \item System calculates reward based on health state
-	  \item System plays sound to award user
+	  \item System plays sound to award user with the calculated amount of stars
+	  \item System plays sound to tell the user how many stars he/she has collected totally
 	\end{enumerate}
 \\
 \hline
@@ -124,25 +125,32 @@ The alternative is if children need to take their medicine by need. If they need
 \hline
 \textbf{Title} & Planned treatment \\
 \hline
-\textbf{Preconditions} & A reminder has been fired \\
+\textbf{Preconditions} & The current time corresponds with the time for a planned treatment \\
 \hline 
 \textbf{Scenario} & 
 	\begin{enumerate}
-	  \item Child registers RFID-tag, to notify that he/she is ready
-	  \item Start instructions by playing sound (It is time to take medicine. Retrieve the medicine)
-	  \item Receive input from RFID-tag
-	  \item System plays sound to instruct user (shake the medicine)
-	  \item Receive input from RFID-tag
-	  \item System plays sound to instruct user
-	  \item System starts counting to 10. 
+	  \item The system recognizes the time for a planned treatment
+	  \item The system starts blinking with LED-lights and playing sound to notify user
+	  \item Child registers interacts with AsthmaBuddy, to notify that he/she is ready for the treatment
+	  \item Start instructions by playing sound, telling the user to find a grown-up that can keep watch
+	  \item System waits for interaction to make sure the user is ready
+	  \item System tells the user to mount the medicine on the mask and put the medicine towards AsthmaBuddy's face
+	  \item System plays sound to simulate breathing
+	  \item System plays sound to tell the user how easy it was to take medicines and that it is the user's turn
+	  \item System plays sound to instruct user, telling the user to shake the medicine
+	  \item System waits for interaction to make sure the user is ready
+	  \item System plays sound to instruct user to put the mask on his/her face
+	  \item System plays sound counting to 10. 
 	  \item System plays sound to tell the user he/she has done a good job
 	  \item System calculates reward based on health state
-	  \item System plays sound to award user
+	  \item System plays sound to award user with the calculated amount of stars
+	  \item System makes a HTTPGet call to the server to find the total amount of stars collected
+	  \item System plays sound to inform the user about how many stars the user has collected totally
 	\end{enumerate}
 \\
 \hline
 	\textbf{Extensions} & 
-		x.a Child does not register the RFID-tag when prompted
+		x.a Child does not interact with AsthmaBuddy when prompted
 \\
 \hline
 \end{tabular}
@@ -191,8 +199,41 @@ For the first prototype we tried out the following types of interaction with Ast
 	\item{A variation of the above interactions}
 \end{enumerate}
 
-
 The prototype was not connected to the database. In order to show children their rewards, we simply added some stickers to a sheet of paper. 
+
+
+\section{Evaluation of prototype version 1}
+
+\begin{table}
+\begin{tabular}{|p{5.0cm} | p{6.0cm} | p{3.0cm} |}
+\hline 
+\textbf{Interaction Method} & \textbf{Comments} & \textbf{Will it be in version 2?}\\
+\hline
+	Give AsthmaBuddy a ``High Five'' & & \\
+\hline
+	Hold AsthmaBuddy's hand & & \\
+\hline
+	Hold smartphone close to AsthmaBuddy's belly & & \\
+\hline
+	Press AsthmaBuddy's nose & & \\
+\hline
+	Press \buddy{}'s belly & & \\
+\hline
+	Hold medicine close to AsthmaBuddy's mouth & & \\
+\hline
+	Hold RFID-chip close to \buddy{}'s nose & & \\
+\hline
+	Hold RFID-chip close to \buddy{}'s belly & & \\
+\hline
+	Clap your hands & & \\
+\hline
+	A variation of the above interactions & & \\
+\hline
+\end{tabular}
+\caption{Evaluation of interaction methods for AsthmaBuddy}
+\label{tab:interactioneval}
+\end{table}
+
 
 \section{Prototype version 2}
 
