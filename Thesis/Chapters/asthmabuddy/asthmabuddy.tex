@@ -79,7 +79,6 @@ Pi4j\fnurl{Pi4j}{http://pi4j.com} is a Java framework that allows development fo
 \end{figure}
  
 
-
 \section{Use Cases}
 Figure \ref{fig:pi-use-cases} shows a general overview of the use cases we have included in our prototype. A medication process can be started in one out of two ways. 
 A parent can register an alarm by using AsthmAPP. This alarm is then triggered by AsthmaBuddy, giving the child a notification that it is time to take their medicine.
@@ -170,6 +169,7 @@ The alternative is if children need to take their medicine by need. If they need
 \label{tab:textual-use-case}
 \end{table} 
 
+\input{Chapters/asthmabuddy/asthmabuddy-system-overview.tex}
 
 \section{Design Rationale}
 When designing \buddy{} we choose to use a teddy bear as an avator for our system. There are several reasons as to why we think this is an appropriate avatar. Teddy bears are well known toys, and has been loved for a long time. They are considered gender-neutral \cite{stagnitti1997determining} \cite{cherney2006gender} and in our subjective opinion it is a toy that could be discretely placed in a children's room. With the look of a teddy bear, \buddy{} can easily be placed among other toys and not be too visible. It was also important for us to choose a teddy bear of some size. A too thin bear could lead to problems with fitting the system inside the bear, and could in order lead to scepticism from the children. \buddy{} will bear resemblance to Tamagotchi \cite{tamagotchi} and Furby \cite{furby}, but \buddy{}'s purpose is to motivate, instruct and learn children about asthma, not being a toy meant purely for play. 
@@ -181,16 +181,6 @@ While we were not able to find scientific research done on the use of teddy bear
 
 [Pictures of the bear we chose?]
 
-
-\section{State Diagram}
-When the \rpi{} boots, it retrieves the latest version of the source code from Git, compiles it, and starts running it. If a child approaches \buddy{} and registers a RFID-tag, a medication sequence is started.  
-
-\begin{figure}[H] 
-	\centering
-		\includegraphics[width=0.6\paperwidth]{Pictures/statediagram.png}
-	\caption{AsthmaBuddy State Diagram.}
-	\label{fig:asthmabuddy_statediagram}
-\end{figure}
  
 \section{Prototype version 1}
 Our first prototype was a ``dumb'' version with the purpose of testing out different methods of interaction. We wanted to get as many different experiences as possible, in order to find what kids are thinking as ideal. Even though some of the interaction methods are infeasible to implement during the thesis, we wanted to know what children think of as fun interaction. We also found it important that children were motivated to give us honest results, so we wanted to give them freedom to be innovative and let their imagination play a part.  
