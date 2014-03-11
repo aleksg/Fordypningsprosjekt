@@ -80,96 +80,7 @@ Pi4j\fnurl{Pi4j}{http://pi4j.com} is a Java framework that allows development fo
  
 
 
-\section{Use Cases}
-Figure \ref{fig:pi-use-cases} shows a general overview of the use cases we have included in our prototype. A medication process can be started in one out of two ways. 
-A parent can register an alarm by using AsthmAPP. This alarm is then triggered by AsthmaBuddy, giving the child a notification that it is time to take their medicine.
-
-The alternative is if children need to take their medicine by need. If they need to take a medicine by need, they simply register their RFID-tag before children are taken through a quicker process (see Manuscript \ref{chp:anuscript}).  
-
-\begin{figure}[H] 
-	\centering
-		\includegraphics[width=0.8\paperwidth]{Pictures/usecases.png}
-	\caption{AsthmaBuddy Use Cases}
-	\label{fig:pi-use-cases}
-\end{figure}
-
-\subsection{Textual Use Cases}
-
-%--------- TEXTUAL USE CASE ----------
-%--------- BY NEED TREATMENT ---------
-\begin{table}[H]
-\begin{tabular}{|p{4.0cm} | p{9.0cm} |}
-\hline
-\textbf{Title} & By need treatment \\
-\hline
-\textbf{Preconditions} & - \\
-\hline 
-\textbf{Scenario} & 
-	\begin{enumerate}
-	  \item User triggers treatment by holding a specific RFID-tag close to AsthmaBuddy
-	  \item System flashes LED-lights to notify user that the system is ready for use
-	  \item System plays sound to instruct the user to shake the medicine
-	  \item System plays sound to instruct user to mount the medicine on the mask and place the mask on his/her face
-	  \item User starts a treatment by interacting with AsthmaBuddy (by pressing it's hand or similar interaction)
-	  \item System plays sound to count during treatment (1-2-3-4-5-6-7-8-9-10), while flashing lights for each count
-	  \item System plays sound to tell user he/she has done a good job
-	  \item System calculates reward based on health state
-	  \item System plays sound to award user with the calculated amount of stars
-	  \item System plays sound to tell the user how many stars he/she has collected totally
-	\end{enumerate}
-\\
-\hline
-	\textbf{Extensions} & 
-		x.a User aborts treatment by not continuing the sequence
-\\
-\hline
-\end{tabular}
-\caption{Textual use case: By need treatment}
-\label{tab:textual-use-case}
-\end{table}
-
-
-%--------- PREVENTIVE TREATMENT -------
-
-\begin{table}[H]
-\begin{tabular}{|p{4.0cm} | p{9.0cm} |}
-\hline
-\textbf{Title} & Planned treatment \\
-\hline
-\textbf{Preconditions} & The current time corresponds with the time for a planned treatment \\
-\hline 
-\textbf{Scenario} & 
-	\begin{enumerate}
-	  \itemsep0em
-	  \item The system recognizes the time for a planned treatment
-	  \item The system starts blinking with LED-lights and playing sound to notify user
-	  \item Child registers interacts with AsthmaBuddy, to notify that he/she is ready for the treatment
-	  \item Start instructions by playing sound, telling the user to find a grown-up that can keep watch
-	  \item System waits for interaction to make sure the user is ready
-	  \item System tells the user to mount the medicine on the mask and put the medicine towards AsthmaBuddy's face
-	  \item System plays sound to simulate breathing
-	  \item System plays sound to tell the user how easy it was to take medicines and that it is the user's turn
-	  \item System plays sound to instruct user, telling the user to shake the medicine
-	  \item System waits for interaction to make sure the user is ready
-	  \item System plays sound to instruct user to put the mask on his/her face
-	  \item System plays sound counting to 10. 
-	  \item System plays sound to tell the user he/she has done a good job
-	  \item System calculates reward based on health state
-	  \item System plays sound to award user with the calculated amount of stars
-	  \item System makes a HTTPGet call to the server to find the total amount of stars collected
-	  \item System plays sound to inform the user about how many stars the user has collected totally
-	\end{enumerate}
-\\
-\hline
-	\textbf{Extensions} & 
-		x.a Child does not interact with AsthmaBuddy when prompted
-\\
-\hline
-\end{tabular}
-\caption{Textual use case: By need treatment}
-\label{tab:textual-use-case}
-\end{table} 
-
+\input{Chapters/asthmabuddy/asthmabuddy-system-overview.tex}
 
 \section{Design Rationale}
 When designing \buddy{} we choose to use a teddy bear as an avator for our system. There are several reasons as to why we think this is an appropriate avatar. Teddy bears are well known toys, and has been loved for a long time. They are considered gender-neutral \cite{stagnitti1997determining} \cite{cherney2006gender} and in our subjective opinion it is a toy that could be discretely placed in a children's room. With the look of a teddy bear, \buddy{} can easily be placed among other toys and not be too visible. It was also important for us to choose a teddy bear of some size. A too thin bear could lead to problems with fitting the system inside the bear, and could in order lead to scepticism from the children. \buddy{} will bear resemblance to Tamagotchi \cite{tamagotchi} and Furby \cite{furby}, but \buddy{}'s purpose is to motivate, instruct and learn children about asthma, not being a toy meant purely for play. 
@@ -181,16 +92,6 @@ While we were not able to find scientific research done on the use of teddy bear
 
 [Pictures of the bear we chose?]
 
-
-\section{State Diagram}
-When the \rpi{} boots, it retrieves the latest version of the source code from Git, compiles it, and starts running it. If a child approaches \buddy{} and registers a RFID-tag, a medication sequence is started.  
-
-\begin{figure}[H] 
-	\centering
-		\includegraphics[width=0.6\paperwidth]{Pictures/statediagram.png}
-	\caption{AsthmaBuddy State Diagram.}
-	\label{fig:asthmabuddy_statediagram}
-\end{figure}
  
 \section{Prototype version 1}
 Our first prototype was a ``dumb'' version with the purpose of testing out different methods of interaction. We wanted to get as many different experiences as possible, in order to find what kids are thinking as ideal. Even though some of the interaction methods are infeasible to implement during the thesis, we wanted to know what children think of as fun interaction. We also found it important that children were motivated to give us honest results, so we wanted to give them freedom to be innovative and let their imagination play a part.  
