@@ -105,14 +105,18 @@ When the \rpi{} boots, it retrieves the latest version of the source code from G
 \subsection{Sequence Diagram}
 Figures \ref{fig:ab-sd-byneed} - \ref{fig:ab-sd-completing-treatment} shows sequence diagrams of how the system works internally. Some abstractions have been made, in order to reduce the cluster of arrows. 
 
-\subsubsection{By Need Treatment}
+\paragraph{By Need Treatment}
+We were not able to find a reasonable easy way to let the \buddy{} automatically be aware of the medicine that was to be taken at the start of a treatment. As a result, we used ssh into the \rpi{}, and provided the color of the medicine and the sequence number for the interaction that was to be tested.
 
-\subsubsection{Planned Treatment}
-
-\subsubsection{Playing Instructions}
-
-\subsubsection{Finishing a Treatment}
-
+After inserting these parameters, the LogicHandler retrieves a LinkedList of Interactions that is to be played. After this sequence is ended, the system jumps to \ref{fig:ab-sd-instructions}.
+ 
+\paragraph{Planned Treatment}
+If AsthmaBuddy is started without any parameters, it starts looking through alarm files (see Section \ref{sec:node-server}) every 60 seconds. If no alarm is returned from UserDataManager, it waits. Once an alarm is found, it AsthmaBuddy is notified through onNotificationFired, which starts the treatment process. 
+ 
+\paragraph{Playing Instructions}
+Playing instructions is mainly a loop of running a playing a sound, and turning on and off the LED-lights. 
+\paragraph{Finishing a Treatment}
+When a treatment is finished, i.e. we are out of the while loop in \ref{fig:ab-sd-instructions}, we register the treatment in the database. This ensures that children are able to see the rewards in AsthmAPP. 
 
 
 \begin{sidewaysfigure}
@@ -144,6 +148,7 @@ Figures \ref{fig:ab-sd-byneed} - \ref{fig:ab-sd-completing-treatment} shows sequ
 \end{sidewaysfigure}
 
 \subsection{Node Server}
+\label{sec:node-server}
 In addition to the Java application running on the \rpi{}, we developed a Node.js server\fnurl{Node.js}{http://nodejs.org/}. This backend system was developed in order to easily visualize the rewards given to a child. The initial problem is that AsthmAPP stores data to a MySQL database, with childId as the primary key for most tables. Initially, \buddy{} has no way of knowing which childId to use in order to store the rewards. The current solution to our problem was to develop a Node.js server on AsthmaBuddy, which run as a background process. Whenever we want to switch users, AsthmAPP does an HTTP POST to this server, including the childId as a parameter. The server then retrives JSON-formatted data from a webservice, which includes the rewards a child has been given until now (for instance, by use of the smartphone), and the alarms set for this user. 
 When \buddy{} starts running, it checks for alarms to be fired every 60 seconds. When a child has finished a treatment, AsthmaBuddy updates the database, with the childId previously retrieved, and the amount of stars a child gathered during his or her treatment. Additionally, with the data retrieved from the database, \buddy{} has the capability to tell the user how many stars a child has gathered\footnote{Since this is a prototype, this functionality only works until a child has gathered 20 stars. It became cumbersome to handle rewards totalling more than 20 stars}. 
 
