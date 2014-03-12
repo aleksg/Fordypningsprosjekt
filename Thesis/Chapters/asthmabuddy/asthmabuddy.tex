@@ -79,6 +79,95 @@ Pi4j\fnurl{Pi4j}{http://pi4j.com} is a Java framework that allows development fo
 \end{figure}
  
 
+\section{Use Cases}
+Figure \ref{fig:pi-use-cases} shows a general overview of the use cases we have included in our prototype. A medication process can be started in one out of two ways. 
+A parent can register an alarm by using AsthmAPP. This alarm is then triggered by AsthmaBuddy, giving the child a notification that it is time to take their medicine.
+
+The alternative is if children need to take their medicine by need. If they need to take a medicine by need, they simply register their RFID-tag before children are taken through a quicker process (see Manuscript \ref{chp:anuscript}).  
+
+\begin{figure}[H] 
+	\centering
+		\includegraphics[width=0.8\paperwidth]{Pictures/usecases.png}
+	\caption{AsthmaBuddy Use Cases}
+	\label{fig:pi-use-cases}
+\end{figure}
+
+\subsection{Textual Use Cases}
+
+%--------- TEXTUAL USE CASE ----------
+%--------- BY NEED TREATMENT ---------
+\begin{table}[H]
+\begin{tabular}{|p{4.0cm} | p{9.0cm} |}
+\hline
+\textbf{Title} & By need treatment \\
+\hline
+\textbf{Preconditions} & - \\
+\hline 
+\textbf{Scenario} & 
+	\begin{enumerate}
+	  \item User triggers treatment by holding a specific RFID-tag close to system
+	  \item System flashes LED-lights to notify user that the system is ready for use
+	  \item System plays sound to instruct the user to shake the medicine
+	  \item System plays sound to instruct user to mount the medicine on the mask and place the mask on his/her face
+	  \item User starts a treatment by interacting with system
+	  \item System plays sound to count during treatment (1-2-3-4-5-6-7-8-9-10), while flashing lights for each count
+	  \item System plays sound to tell user he/she has done a good job
+	  \item System calculates reward based on health state
+	  \item System plays sound to award user with the calculated amount of stars
+	  \item System plays sound to tell the user how many stars he/she has collected totally
+	\end{enumerate}
+\\
+\hline
+	\textbf{Extensions} & 
+		x.a User aborts treatment by not continuing the sequence
+\\
+\hline
+\end{tabular}
+\caption{Textual use case: By need treatment}
+\label{tab:textual-use-case}
+\end{table}
+
+
+%--------- PREVENTIVE TREATMENT -------
+
+\begin{table}[H]
+\begin{tabular}{|p{4.0cm} | p{9.0cm} |}
+\hline
+\textbf{Title} & Planned treatment \\
+\hline
+\textbf{Preconditions} & The current time corresponds with the time for a planned treatment \\
+\hline 
+\textbf{Scenario} & 
+	\begin{enumerate}
+	  \itemsep0em
+	  \item The system recognizes the time for a planned treatment
+	  \item The system starts blinking with LED-lights and playing sound to notify user
+	  \item Child interacts with system, to notify that he/she is ready for the treatment
+	  \item Start instructions by playing sound, telling the user to find a grown-up that can keep watch
+	  \item System waits for interaction to make sure the user is ready
+	  \item System tells the user to mount the medicine on the mask and put the medicine towards AsthmaBuddy's face
+	  \item System plays sound to simulate breathing
+	  \item System plays sound to tell the user how easy it was to take medicines and that it is the user's turn
+	  \item System plays sound to instruct user, telling the user to shake the medicine
+	  \item System waits for interaction to make sure the user is ready
+	  \item System plays sound to instruct user to put the mask on his/her face
+	  \item System plays sound counting one to ten
+	  \item System plays sound to tell the user he/she has done a good job
+	  \item System calculates reward based on health state
+	  \item System plays sound to award user with the calculated amount of stars
+	  \item System makes a HTTPGet call to the server to find the total amount of stars collected
+	  \item System plays sound to inform the user about how many stars the user has collected totally
+	\end{enumerate}
+\\
+\hline
+	\textbf{Extensions} & 
+		x.a Child does not interact with AsthmaBuddy when prompted
+\\
+\hline
+\end{tabular}
+\caption{Textual use case: By need treatment}
+\label{tab:textual-use-case}
+\end{table} 
 
 \input{Chapters/asthmabuddy/asthmabuddy-system-overview.tex}
 
