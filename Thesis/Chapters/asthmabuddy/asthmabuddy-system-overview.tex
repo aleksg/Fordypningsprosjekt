@@ -102,6 +102,8 @@ When the \rpi{} boots, it retrieves the latest version of the source code from G
 	\label{fig:asthmabuddy_statediagram}
 \end{figure}
 
+\subsection{Sequence Diagram}
+
 
 \subsection{Node Server}
 In addition to the Java application running on the \rpi{}, we developed a Node.js server\fnurl{Node.js}{http://nodejs.org/}. This backend system was developed in order to easily visualize the rewards given to a child. The initial problem is that AsthmAPP stores data to a MySQL database, with childId as the primary key for most tables. Initially, \buddy{} has no way of knowing which childId to use in order to store the rewards. The current solution to our problem was to develop a Node.js server on AsthmaBuddy, which run as a background process. Whenever we want to switch users, AsthmAPP does an HTTP POST to this server, including the childId as a parameter. The server then retrives JSON-formatted data from a webservice, which includes the rewards a child has been given until now (for instance, by use of the smartphone), and the alarms set for this user. 

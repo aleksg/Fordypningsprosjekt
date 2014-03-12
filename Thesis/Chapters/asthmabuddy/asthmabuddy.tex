@@ -5,17 +5,17 @@
 \section{Background}
 In 2012, we did a similar project using Karotz \fnurl{Karotz}{www.karotz.com} as our platform \cite{CustomerDriven}. The thought behind Karotz is great. It is an open source robot which allows people to build applications and launch it to the Karotz store. However, in our subjective opinion, it is not ideal to work with. The Karotz starters kit costs ~\$200, not including customs, thus it is a pretty large investment for a family wanting to buy the product to use with our application. The API is only documented in French, which makes it a hassle, in addition to the fact that it is pretty cumbersome to configure for a ``non-technological'' family. 
 
-
-We have looked around for other options to create our tangible user interface, i.e. Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform \cite{arduino}, which allows for many different combinations of configurations, while \rpi{} is a cheap computer on the size of a credit card. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide-range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
+\section{Technology}
+We have looked around for other options than Karotz to create our tangible user interface, i.e. Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform \cite{arduino}, which allows for many different combinations of configurations, while \rpi{} is a cheap computer on the size of a credit card. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide-range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
 While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for us as developers. Arduino programs are normally written in C \cite{strahl2000language}, and while there exists many tutorials and manuals for how to write Arduino code, we found the thought of writing in a programming language we hade little prior knowledge of too challenging. Arduinos generally have low-powered CPUs, in order to keep them cheap. These low-powered CPUs tend to have problems with decoding MP3-files, which would lay constraints on our system. Due to these facts, we choose to develop the system on a Raspberry Pi.
 
 
-\subsection{Raspberry Pi}
+\subsection{Raspberry Pi - Specifications overview}
 The \rpi{} was initially intended to teach british school children about computer programming \cite{rasperrypi-about}. Since its release, it took an unexpected turn when lots of computer enthusiasts bought the product to do their own mini projects for a cheap price. 
 
 The specification of a \rpi{} (Model B) is included in Table \ref{tab:pi-specs}. Figure \ref{fig:pi-arch-overview} shows an overview of the \rpi{}.        
 
-\begin{table}
+\begin{table}[H]
 \begin{tabular}{|p{6.0cm} | p{6.0cm} |}
 \hline 
 \textbf{Property} & \textbf{Specification} \\
@@ -45,13 +45,13 @@ Network & 10/100 Mbps Ethernet.  \\
 
 \begin{figure}[H] 
 	\centering
-		\includegraphics[width=0.6\paperwidth]{Pictures/rpi-arch-overview.png}
+		\includegraphics[width=0.3\paperwidth]{Pictures/rpi-arch-overview.png}
 	\caption{Raspberry Pi Model B architecture. \emph{Image source: http://raspberrypi.org/faqs} }
 	\label{fig:pi-arch-overview}
 \end{figure}
  
   
-\subsection{Components}
+\subsection{Additional Components}
 In addition to the \rpi{} we needed some components that children are able to interact through. These components and their functionality are summarized in this section. 
 
 
