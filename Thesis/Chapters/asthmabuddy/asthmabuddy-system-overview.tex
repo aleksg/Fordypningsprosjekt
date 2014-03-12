@@ -103,7 +103,45 @@ When the \rpi{} boots, it retrieves the latest version of the source code from G
 \end{figure}
 
 \subsection{Sequence Diagram}
+Figures \ref{fig:ab-sd-byneed} - \ref{fig:ab-sd-completing-treatment} shows sequence diagrams of how the system works internally. Some abstractions have been made, in order to reduce the cluster of arrows. 
 
+\subsubsection{By Need Treatment}
+
+\subsubsection{Planned Treatment}
+
+\subsubsection{Playing Instructions}
+
+\subsubsection{Finishing a Treatment}
+
+
+
+\begin{sidewaysfigure}
+	\centering
+		\includegraphics[scale=0.6]{Pictures/sd/sd-byneed.png}
+	\caption{By Need Treatment - Sequence Diagram}
+	\label{fig:ab-sd-byneed}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+		\includegraphics[scale=0.6]{Pictures/sd/sd-planned-treatment.png}
+	\caption{Planned Treatment - Sequence Diagram}
+	\label{fig:ab-sd-planned-treatment}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+		\includegraphics[scale=0.6]{Pictures/sd/sd-instructions.png}
+	\caption{Playing Instructions - Sequence Diagram}
+	\label{fig:ab-sd-instructions}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+		\includegraphics[scale=0.6]{Pictures/sd/sd-complete-treatment.png}
+	\caption{Finishing a treatment - Sequence Diagram}
+	\label{fig:ab-sd-completing-treatment}
+\end{sidewaysfigure}
 
 \subsection{Node Server}
 In addition to the Java application running on the \rpi{}, we developed a Node.js server\fnurl{Node.js}{http://nodejs.org/}. This backend system was developed in order to easily visualize the rewards given to a child. The initial problem is that AsthmAPP stores data to a MySQL database, with childId as the primary key for most tables. Initially, \buddy{} has no way of knowing which childId to use in order to store the rewards. The current solution to our problem was to develop a Node.js server on AsthmaBuddy, which run as a background process. Whenever we want to switch users, AsthmAPP does an HTTP POST to this server, including the childId as a parameter. The server then retrives JSON-formatted data from a webservice, which includes the rewards a child has been given until now (for instance, by use of the smartphone), and the alarms set for this user. 
