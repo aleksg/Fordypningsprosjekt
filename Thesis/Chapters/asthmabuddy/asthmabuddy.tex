@@ -7,7 +7,7 @@ In 2012, we did a similar project using Karotz \fnurl{Karotz}{www.karotz.com} as
 
 \section{Technology}
 We have looked around for other options than Karotz to create our tangible user interface, i.e. Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform\cite{arduino}, which allows for many different combinations of configurations, while \rpi{} is a cheap computer on the size of a credit card. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide-range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
-While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for us as developers. Arduino programs are normally written in C\cite{strahl2000language}, and while there exists many tutorials and manuals for how to write Arduino code, we found the thought of writing in a programming language we hade little prior knowledge of too challenging. Arduinos generally have low-powered CPUs, in order to keep them cheap. These low-powered CPUs tend to have problems with decoding MP3-files, which would lay constraints on our system. Due to these facts, we choose to develop the system on a Raspberry Pi.
+While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for us as developers. Arduino programs are normally written in C\cite{strahl2000language}, and while there exists many tutorials and manuals for how to write Arduino code, we found the thought of writing in a programming language we had little prior knowledge of too challenging. Arduinos generally have low-powered CPUs, in order to keep them cheap. These low-powered CPUs tend to have problems with decoding MP3-files, which would lay constraints on our system. Due to these facts, we choose to develop the system on a Raspberry Pi.
 
 
 \subsection{Raspberry Pi - Specifications overview}
@@ -99,9 +99,9 @@ While we were not able to find scientific research done on the use of teddy bear
 \section{Prototype version 1}
 \label{sec:proto1}
 Our first prototype was a ``dumb'' version with the purpose of testing out different methods of interaction. We wanted to get as many different experiences as possible, in order to find what kids are thinking as ideal. Even though some of the interaction methods are infeasible to implement during the thesis, we wanted to know what children think of as fun interaction. We also found it important that children were motivated to give us honest results, so we wanted to give them freedom to be innovative and let their imagination play a part.  
+%TODO: Skrive om
+[TODO: Change to something useful, and actual\ldots] As a result, the first prototype was a simple state machine. The usability test was performed on NSEP's usability lab. Terje R\o sand sat in the backroom filming the sequence, while having a computer with ssh-connection to AsthmaBuddy. Whenever he observed that the children performed the method of interaction, he pressed enter in order for AsthmaBuddy to progress it's medication sequence. 
 
-As a result, the first prototype was a simple state machine. The usability test was performed on NSEP's usability lab. Terje R\o sand sat in the backroom filming the sequence, while having a computer with ssh-connection to AsthmaBuddy. Whenever he observed that the children performed the method of interaction, he pressed enter in order for AsthmaBuddy to progress it's medication sequence. 
- 
 For the first prototype we tried out the following types of interaction with AsthmaBuddy:
 \begin{enumerate}
 	\item{Give AsthmaBuddy a ``High Five''}
@@ -119,7 +119,12 @@ For the first prototype we tried out the following types of interaction with Ast
 The prototype was not connected to the database. In order to show children their rewards, we simply added some stickers to a sheet of paper. 
 
 
-\section{Evaluation of prototype version 1}
+
+\subsection{Information Gathering}
+
+During the development phase we interviewed a couple of domain experts and parents in order to gather information about how they perform asthma treatments. 
+
+\subsection{Evaluation of prototype version 1}
 
 \begin{table}[H]
 \begin{tabular}{|p{5.0cm} | p{6.0cm} | p{3.0cm} |}
@@ -150,6 +155,16 @@ The prototype was not connected to the database. In order to show children their
 \caption{Evaluation of interaction methods for AsthmaBuddy}
 \label{tab:interactioneval}
 \end{table}
+
+\paragraph{Operating time}
+The longest time for taking a planned treatment was about 2 minutes for an experienced user, and [XX] minutes for an inexperienced user. This treatment included the part where \buddy completes the treatment before the child. [SETT INN HVOR LANG TID DET TAR TIL VANLIG]. [SETT INN SAMMENLIGNING]. [VURDER OG KONKLUDER].     
+
+A By Need treatment was registered to take about a minute for an experienced user. Usually, it takes approximately [XX] minutes to do a By Need treatment \footnote{Information gathered from parents}. [SETT INN SAMMENLIGNING]. [VURDER OG KONKLUDER].  
+
+\paragraph{Feedback}
+%Potential improvements
+%New Interaction methods
+%
 
 
 \section{Prototype version 2}
