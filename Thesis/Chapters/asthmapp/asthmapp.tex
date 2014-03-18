@@ -38,7 +38,7 @@ Figure \ref{fig:capp_stars} shows a screenshot for the application when the chil
 
 \subsection{Shop}
 \label{sec:description-shop}
-In the shop, children are allowed to buy rewards from parents. Figure \ref{fig:capp_store} shows a inside-view of our shop. Children can buy a reward by pressing the selected reward in the menu. Due to time constraints and lack of good software solutions, we have not been able to implement voice over, so the children might need help with reading the name of the rewards. The possibility of adding pictures to represent the reward should make it easier for children to understand. 
+In the shop, children are allowed to buy rewards from parents. Figure \ref{fig:child-possible-rewards} and \ref{fig:child-bought-rewards} shows an inside-view of our shop. Children can buy a reward by pressing the selected reward in the menu. Due to time constraints and lack of good software solutions, we have not been able to implement voice over, so the children might need help with reading the name of the rewards. The possibility of adding pictures to represent the reward should make it easier for children to understand. 
 
 
 
@@ -56,66 +56,88 @@ The following steps are included in instructions:
   \item Let the child wash his/her mouth
 \end{enumerate} 
 
-
+\begin{figure}
+	\begin{minipage}[t]{0.25\linewidth}
+		\centering
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/kid-menu.png}
+		\caption{Main menu of child partition}
+		\label{fig:child-menu}
+	\end{minipage}
+	\hspace{1cm}
+	\begin{minipage}[t]{0.25\linewidth}
+		\centering
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/child-possible-rewards.png}
+		\caption{Possible rewards a child can choose from}
+		\label{fig:child-possible-rewards}
+	\end{minipage}
+	\hspace{1cm}
+	\begin{minipage}[t]{0.25\linewidth}
+		\centering
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/child-bought-reward.png}
+		\caption{A child has bought the reward}
+		\label{fig:child-bought-rewards}
+	\end{minipage}
+\end{figure}
 
 \begin{figure}
-	\begin{minipage}[b]{0.4\linewidth}
+	\begin{minipage}[t]{0.4\linewidth}
 		\centering
-			\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/parent_main_menu.png}
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/parent-menu.png}
 		\caption{Main menu of partent partition}
 		\label{fig:parent_main_menu}
 	\end{minipage}
-	\begin{minipage}[b]{0.4\linewidth}
+	\hspace{3cm}
+	\begin{minipage}[t]{0.4\linewidth}
 		\centering
-			\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/capp_start_treatment.png}
-		\caption{Starting a treatment}
-		\label{fig:capp_start_treatment}
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/medicine-plans.png}
+		\caption{Available medicine plans}
+		\label{fig:parent_medicine_plans}
+	\end{minipage}
+	%NEW LINE
+	\begin{minipage}[t]{0.4\linewidth}
+		\centering
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/add-medicine-to-plan.png}
+		\caption{Adding a medicine to a plan}
+		\label{fig:add_medicine_to_plan}
 	\end{minipage}
 	\hspace{3cm}
-	\begin{minipage}[b]{0.4\linewidth}
+		\begin{minipage}[t]{0.4\linewidth}
 		\centering
-			\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/shop.png}
-		\caption{The shop}
-		\label{fig:capp_store}
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/register-medicine-taken.png}
+		\caption{Register a medicine that was taken without the help of \buddy{} or AsthmAPP}
+		\label{fig:register_medicine_taken}
 	\end{minipage}
-		\begin{minipage}[b]{0.4\linewidth}
+	%NEW LINE
+		\begin{minipage}[t]{0.4\linewidth}
 		\centering
-			\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/medicine_plan.png}
-		\caption{List of medicine plans}
-		\label{fig:edit_medicine_plan}
-	\end{minipage}
-		\begin{minipage}[b]{0.4\linewidth}
-		\centering
-			\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/medicine_plan_close_view.png}
-		\caption{Edit medicine plan}
-		\label{fig:edit_medicine_plan}
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/log.png}
+		\caption{Medicine log}
+		\label{fig:medicine-log}
 	\end{minipage}
 	\hspace{3cm}
-		\begin{minipage}[b]{0.4\linewidth}
+		\begin{minipage}[t]{0.4\linewidth}
 		\centering
-			\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/register_treatment.png}
-		\caption{Register treatment}
-		\label{fig:register_treatment}
-	\end{minipage}  
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/award.png}
+		\caption{Overview of rewards a child can get}
+		\label{fig:parent-awards}
+	\end{minipage}
 \end{figure}
-
 
 \begin{figure}
-		\begin{minipage}[b]{0.4\linewidth}
+	\begin{minipage}[t]{0.4\linewidth}
 		\centering
-			\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/rewards.png}
-		\caption{List of rewards}
-		\label{fig:rewards}
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/create-award.png}
+		\caption{Creating a reward. Parents can either choose a reward from our standard image set, or they can take one from their gallery}
+		\label{fig:parent-create-reward}
 	\end{minipage}
-	\hspace{3cm}
-		\begin{minipage}[b]{0.4\linewidth}
+	 \hspace{3cm}
+	 \begin{minipage}[t]{0.4\linewidth}
 		\centering
-			\includegraphics[width=0.20\paperwidth]{Pictures/app-screenshots/add_reward.png}
-		\caption{List of rewards}
-		\label{fig:add_reward}
-	\end{minipage}   
+			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/pin-challenge.png}
+		\caption{In order to access the parent partition, users have to complete a PIN-challenge}
+		\label{fig:parent-pin}
+	\end{minipage}
 \end{figure}
-
 
 \section{Parent Partition}
 
@@ -135,19 +157,19 @@ In order to access the parent partition, the user is prompted with a PIN challen
 \subsection{Medicine plan}
 \label{sec:description-medicine-plan}
 Creating a medicine plan for asthma treatment is highly connected to the Traffic Light System explained in Appendix \ref{chp:traffic-light}.
-Users can have three different plans, depending on which health state they are currently in. As we are targeting children, we can not assume that they are aware of which category they are currently in, and as a result, we let their parents control it. Figure \ref{fig:gapp-view-plans} and \ref{fig:edit_medicine_plan} shows the view in which one may the change medicine plan their child are currently on, in addition to setting alarms where appropriate. For instance, one might set an alarm at 07:00, which makes the user aware before it is time to leave for school. Changing medicine plan is done by selecting the checkbox at the left side of the panel.  
+Users can have three different plans, depending on which health state they are currently in. As we are targeting children, we can not assume that they are aware of which category they are currently in, and as a result, we let their parents control it. Figure \ref{fig:gapp-view-plans} and \ref{fig:add_medicine_to_plan} shows the view in which one may the change medicine plan their child are currently on, in addition to setting alarms where appropriate. For instance, one might set an alarm at 07:00, which makes the user aware before it is time to leave for school. Changing medicine plan is done by selecting the checkbox at the left side of the panel.  
 
 
 \subsection{Register Treatment}
 \label{sec:description-register-medicine}
-What happens if a child need their medicine, but the application or our TUI is not nearby? They would probably be disappointed because they did not get their star, and did not get any rewards. Fortunately, it is possible to register a medicine that has been taken afterwards, which entitle the child the amount of stars they should have gotten. \emph{Register Treatment} allows parents to register the medicine, at any given day prior to current time (See Figure \ref{fig:register_treatment}).  
+What happens if a child need their medicine, but the application or our TUI is not nearby? They would probably be disappointed because they did not get their star, and did not get any rewards. Fortunately, it is possible to register a medicine that has been taken afterwards, which entitle the child the amount of stars they should have gotten. \emph{Register Treatment} allows parents to register the medicine, at any given day prior to current time (See Figure \ref{fig:register_medicine_taken}).  
 
 
 \subsection{Medicine log}
 \label{sec:description-medicine-log}
 The \emph{Medicine log} can be used by parents to show how many times a child has taken their medicine. One of the main reasons that children does not take their medicine is lack of communication between parents. Having an option to show medicine log, give parents the ability to check and see whether they have taken the necessary amount at a given day.
 
-Figure [INSERT REFERENCE] shows the calendar view of the application. The view is a bit complicatedThe cells show any given day of a month. In addition, there is a top bar in the view. The top bar indicates which health state (or health plan) the child was in at the day represented below. At the bottom of the screen, there are three panels. The left one shows which medicine that has been taken at a selected day. The topbar indicates which day is shown. The middle one shows the air quality in Trondheim \footnote{Measured by NILU - www.http://luftkvalitet.info/}. The right shows the pollen distribution of the 6 most common pollen types \footnote{Measured by NAAF - www.http://www.pollenvarslingen.no/}. The idea behind this is that asthma symptoms can often be the same as allergy symptoms, and if parents are able to recongize a pattern between health state and pollen distribution, they might want to take their child to a hospital.    
+Figure \ref{fig:medicine-log} shows the calendar view of the application. The view is a bit complicated. The cells show any given day of a month. In addition, there is a top bar in the view. The top bar indicates which health state (or health plan) the child was in at the day represented below. At the bottom of the screen, there are three panels. The left one shows which medicine that has been taken at a selected day. The topbar indicates which day is shown. The middle one shows the air quality in Trondheim \fnurl{Measured by NILU}{http://luftkvalitet.info/}. The right shows the pollen distribution of the 6 most common pollen types \fnurl{Measured by NAAF}{http://www.pollenvarslingen.no/}. The idea behind this is that asthma symptoms can often be the same as allergy symptoms, and if parents are able to recongize a pattern between health state and pollen distribution, they might want to take their child to a hospital.    
 
 
 \subsection{Manual}
@@ -157,7 +179,7 @@ The manual contains excactly the same information as shown in Section \ref{sec:d
 
 \subsection{Reward}
 \label{sec:description-manage-rewards}
-Figure \ref{fig:rewards} shows the list of possible rewards a child might receive. They are added by parents through \emph{Add reward}. The idea of having parents set their children's rewards is to specify rewards according to children's interest (see Section \ref{sec:gamificationinapp}). Figure \ref{fig:add_reward} shows how one may add a reward. Users inserts a description, then either take a photo or select one out of our standard images. It is possible to set a reward on \emph{Repeat}, which will make the reward appear multiple times, each time with an increased cost.        
+Figure \ref{fig:parent-awards} shows the list of possible rewards a child might receive. They are added by parents through \emph{Add reward}. The idea of having parents set their children's rewards is to specify rewards according to children's interest (see Section \ref{sec:gamificationinapp}). Figure \ref{fig:parent-create-reward} shows how one may add a reward. Users inserts a description, then either take a photo or select one out of our standard images. It is possible to set a reward on \emph{Repeat}, which will make the reward appear multiple times, each time with an increased cost.        
 When the user press \emph{Save} (Lagre), the reward is added and children have the possibility to buy it. 
  
  
