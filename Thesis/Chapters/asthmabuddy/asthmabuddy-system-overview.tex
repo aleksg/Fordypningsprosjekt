@@ -148,8 +148,16 @@ When a treatment is finished, i.e. we are out of the while loop in Figure \ref{f
 	\label{fig:ab-sd-completing-treatment}
 \end{sidewaysfigure}
 
+
+\begin{sidewaysfigure}
+	\centering
+		\includegraphics[scale=0.6]{Pictures/sd/sd-synchronizing.png}
+	\caption{Synchronizing - Sequence Diagram}
+	\label{fig:ab-sd-synchronizing}
+\end{sidewaysfigure}
+
 \subsection{Node Server}
 \label{sec:node-server}
-In addition to the Java application running on the \rpi{}, we developed a Node.js server\fnurl{Node.js}{http://nodejs.org/}. This backend system was developed in order to easily visualize the rewards given to a child. The initial problem is that AsthmAPP stores data to a MySQL database, with childId as the primary key for most tables. Initially, \buddy{} has no way of knowing which childId to use in order to store the rewards. The current solution to our problem was to develop a Node.js server on AsthmaBuddy, which run as a background process. Whenever we want to switch users, AsthmAPP does an HTTP POST to this server, including the childId as a parameter. The server then retrives JSON-formatted data from a webservice, which includes the rewards a child has been given until now (for instance, by use of the smartphone), and the alarms set for this user. 
-When \buddy{} starts running, it checks for alarms to be fired every 60 seconds. When a child has finished a treatment, AsthmaBuddy updates the database, with the childId previously retrieved, and the amount of stars a child gathered during his or her treatment. Additionally, with the data retrieved from the database, \buddy{} has the capability to tell the user how many stars a child has gathered\footnote{Since this is a prototype, this functionality only works until a child has gathered 20 stars. It became cumbersome to handle rewards totalling more than 20 stars}. 
+In addition to the Java application running on the \rpi{}, we developed a Node.js server\fnurl{Node.js}{http://nodejs.org/}. This backend system was developed in order to easily visualize the rewards given to a child after a treatment using \buddy{}. The initial problem is that AsthmAPP stores data to a MySQL database, with childId as the primary key for most tables. Initially, \buddy{} has no way of knowing which childId to use in order to store the rewards. The current solution to our problem was to develop a Node.js server on AsthmaBuddy, which run as a background process. Whenever we want to switch users, AsthmAPP does an HTTP POST to this server, including the childId as a parameter. The server then retrives JSON-formatted data from our webservice, which includes the rewards a child has been given until now (for instance, by use of the smartphone), and the alarms set for this user. 
+When \buddy{} starts running, it checks for alarms to be fired every 60 seconds. When a child has finished a treatment, AsthmaBuddy updates the database, with the childId previously retrieved, and the amount of stars a child gathered during his or her treatment. Additionally, with the data retrieved from the database, \buddy{} has the capability to tell the user how many stars a child has gathered\footnote{Since this is a prototype, this functionality only works until a child has gathered 20 stars. It became cumbersome to handle rewards totalling more than 20 stars}. This process is shown in Figure \ref{fig:ab-sd-synchronizing}.
 
