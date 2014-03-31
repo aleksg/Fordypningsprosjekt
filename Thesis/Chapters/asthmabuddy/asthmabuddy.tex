@@ -84,6 +84,7 @@ Figure \ref{fig:pi-fritzing} shows a digital overview of \buddy{}. The green fig
 The grey lines and the lamp represents our LED light. It is connected to three of the GPIO (General Purpose I/O) ports on the \rpi{}, through a resistor. The last leg of the LED light is connected to ground on the \rpi{}, without a resistor.
 
 \section{Design Rationale}
+\subsection{Why a teddy bear?}
 When designing \buddy{} we choose to use a teddy bear as an avator for our system. There are several reasons as to why we think this is an appropriate avatar. Teddy bears are well known toys, and has been loved for a long time. They are considered gender-neutral\cite{stagnitti1997determining}\cite{cherney2006gender} and in our subjective opinion it is a toy that could be discretely placed in a children's room. With the look of a teddy bear, \buddy{} can easily be placed among other toys and not be too visible. It was also important for us to choose a teddy bear of some size. A too thin bear could lead to problems with fitting the system inside the bear, and could in order lead to scepticism from the children. \buddy{} will bear resemblance to Tamagotchi\cite{tamagotchi} and Furby\cite{furby}, but \buddy{}'s purpose is to motivate, instruct and learn children about asthma, not being a toy meant purely for play. 
 
 While designing our system we also wanted to make sure our system did not have robot-like features or robotic similarities. While children tend to find technology very interesting, we want to make \buddy{} seem as natural as possible, making a stuffed animal buddy, rather than a technological toy. We believe that these design choices serves our purpose of making children more aware of their asthma, while not being a constant reminder and a stress element.
@@ -92,7 +93,39 @@ Norwegian fire fighters have used a teddy bear in order to calm down children wh
 While we were not able to find scientific research done on the use of teddy bears in dramatic situations, we found this news article interesting and a relevant mention to our research.
 
 [Pictures of the bear we chose?]
+
+\subsection{Interaction design}
+When we started developing the interaction design of \buddy{}, we had a brainstorming session with the intentions of coming up with reasonable interaction patterns.        
+By ``reasonable'', we put effort in the fact that it should be relatively cheap to implement (for instance, implementing functionality like speech recognition was considered unreasonable).
+
+\begin{table}[H]
+
+	\begin{tabular}{| p{3.0cm} | p{6.0cm} | p{6.0cm} |}
+		\hline
+		\textbf{Interaction Process} & \textbf{Rationale} & \textbf{Possible implementation} \\
+		\hline
+		Give \buddy{} a ``High five'' & Demonstrates to children that \buddy{} is friendly. It is intended that a child should keep \buddy{}'s arm up, and high five \buddy{} with the other arm & A gyroscope and a preassure sensor combined could verify that a high five has been received. \\
+		\hline
+		Hold \buddy{}'s hand & Demonstrates to children that \buddy{} is friendly. & Preassure sensor within the hand of \buddy{} could solve this. \\
+		\hline
+		Hold smartphone close to AsthmaBuddy's belly & Could demonstrate the ``smartness'' of \buddy{}, i.e. it can communicate with other things. & Could be solved by Bluetooth. \\
+		\hline 
+		Press \buddy{}'s nose. & Demonstrates to children that \buddy{} is friendly. & Preassure sensor within the nose of \buddy{} could solve this. \\
+		\hline
+		Press \buddy{}'s belly. & Same as above & Same as above \\
+		\hline
+		Hold medicine close to \buddy{}'s mouth & Demonstrates that \buddy{} also needs his medicine. & An RFID-tag attached to the medicine, and an RFID-reader inside the nose of \buddy{} could be used here to control the flow. \\ 
+		\hline
+		Hold RFID-tag close to \buddy{}'s mouth & Is a relatively easy way to proceed with the process. & A loose RFID-tag could be used together with an integrated RFID-reader, in order to proceed. \\ 
+		\hline
+		Hold RFID-tag close to \buddy{}'s belly & Same as above & Same as above \\
+		\hline
+		Clap your hands & Should be a fun way of interacting with systems, considering the age of our target group & Sound recognition could be used here. \\ 
+		\hline
+	\end{tabular}
+\end{table}
  
+\subsection{}
  
 \input{Chapters/asthmabuddy/asthmabuddy-system-overview.tex}
  
@@ -110,8 +143,8 @@ For the first prototype we tried out the following types of interaction with Ast
 	\item{Press AsthmaBuddy's nose}
 	\item{Press \buddy{}'s belly}
 	\item{Hold medicine close to AsthmaBuddy's mouth}
-	\item{Hold RFID-chip close to \buddy{}'s nose}
-	\item{Hold RFID-chip close to \buddy{}'s belly}
+	\item{Hold RFID-tag close to \buddy{}'s nose}
+	\item{Hold RFID-tag close to \buddy{}'s belly}
 	\item{Clap your hands}
 	\item{A variation of the above interactions}
 \end{enumerate}
@@ -127,6 +160,7 @@ During the development phase we interviewed a couple of domain experts and paren
 \subsection{Evaluation of prototype version 1}
 
 \paragraph{Evaluation of interaction methods}
+\label{chp:interaction-methods}
 \begin{table}[H]
 \begin{tabular}{|p{5.0cm} | p{6.0cm} | p{3.0cm} |}
 \hline 
