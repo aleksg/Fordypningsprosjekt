@@ -1,0 +1,81 @@
+Intro til prosjektet
+
+- Bruker behandlingsskjema istedenfor trafikklysskjema.
+
+- Har dere som grunnlag at barnet ikke vil ta medisin?
+[Ja. Fordi dersom det ikke er noe problem, er jo alt bra].
+Hun hadde problemer i starten, men har etter hvert skjønt selv at hun blir bedre.
+
+- Samle opp stjerner. Det er helt opp til foreldrene hva de ønsker å gi. Det trenger ikke være materielle ting.
+Når du skriver en logg. Det er veldig irriterende at sprayen går tom, så vi skriver en manuell logg. 
+De ulike medisinene har ulikt antall doser. Appen burde kunne gi en varsling om at det snart går tomt for doser av den enkelte medisin. 
+
+
+- Vise frem AstmaBuddy. Han har lyd/lys/RFID og en Raspberry Pi. 
+RFID-brikker på medisinen kan være en interaksjonsmetode. 
+
+Forutsetter det at barna har egen mobil?
+[Nei, vi tenker at foreldrene skal passe på].
+Jeg tror det er vanlig at barn har egen mobil. Det kan gi dem en ansvarsfølelse dersom barna selv får lov til å ha appen.
+
+
+- Har det vært et problem å få barnet til å ta medisin?
+Barnet var 4 år da hun/han begynte. Det var et problem, og barnet var redd for å ta medisinen. Det tok ca. en uke før barnet selv skjønte at han/hun trengte medisinen.
+
+
+- Har dere brukt belønninger?
+Ja, vi lovte barnet en tur på Pirbadet hvis hun/han var flink den første uken. 
+Det å måtte gi en dyr premie hver uke ville blitt krevende. 
+Dere må være forsiktige med hvordan premiene settes, fordi det er forskjell på barn.
+
+
+- Vi har vært i kontakt med en barnepsykolog, hun anbefalte at belønningen kommer raskt etter behandlingen.
+For mitt barn var det å oppleve at pusten ble bedre var en belønning i seg selv, og den var mer verdt enn premien barnet fikk.
+
+
+- Brukte dere noe alarm på mobil eller lignende for å huske på når medisinene skulle tas?
+Nei. Det var i hovedsak å huske å ta medisinen før skolen og før leggetid. 
+Dersom barnet fikk akutt anfall, skal det tas først blå medisin og deretter skal det ventes 5 minutter før den oransje medisinen. Bamsen kan hjelpe barnet med å holde orden på hvor lang tid det er gått. 
+[Tror du bamsen kunne fortalt en historie eller lignende for å gjøre de 5minuttene "kortere"]
+Barnet mitt er veldig forståelsesfull, men andre barn kan være utålmodige, og da kan det være lurt å ha noe for å distrahere dem. 
+
+- Hadde dere en loggføring på når barnet fulgte hvilken plan?
+Nei, jeg har ganske god hukommelse, så jeg bruker å huske når barnet har vært syk.
+
+
+- Når barnet er på skolen/barnehage. Har det vært et problem at medisiner ikke blir tatt?
+Hun har ikke behov for å ta medisin midt på dagen, med mindre det er akutt. Hun har ekstra utstyr med seg for å være forberedt.
+Det største problemet er de voksne ansvarspersonene kan være redd for å gjøre feil. 
+
+
+- Har det gått mye tid til opplæring når andre passer på barnet?
+Ja, vi er nøye med å fortelle andre som passer barnet hvordan det fungerer. Vi forteller dem at de må passe på barnet og at barnet ikke får lov til å ta medisinen alene. 
+
+
+- Personvern
+Bare ta hensyn til norsk lovgivning, så bør alt være i orden. Så lenge det ikke er noen identifiserende opplysninger ser jeg ikke noen problemer.
+
+
+- Bamsen er veldig stasjonær. Hva tror du om det at den ikke kan tas med?
+Det kommer jo til å bli et problem med å måtte sette opp bamsen hvis den frakobles.
+For mitt barn tror jeg ikke det vil være et problem at bamsen ikke er der hele tiden.
+
+
+- Ser du noen andre nytteverdier for bamsen?
+Pollenvarsel er nyttig. Hva skal bamsen gjøre hvis det er mye støv? Skal den sette i gang robot-støvsugeren min?
+Internet of things! Koble med robotstøvsuger, kondenser. Dingser er gøy!
+Koble en RFID med en bestemt beholder, slik at bamsen vet hvor mange doser som er igjen. Å holde medisinen ved bamsen burde gi svar på hvor mange doser du har igjen. 
+
+
+Pollenvarsling på app blir for generelt, jeg har trær i hagen min. De kan blomstre før den andre trær. 
+Vi så liten hensikt i å benytte målingen av luftkvalitet, fordi det ofte er kun for sentrumsnære områder, og hjelper lite der hvor vi bor. 
+
+
+- Når det er akutt anfall. Tror du at du hadde brukt bamsen?
+Nei, aldri. Det vil ta for lang tid, og det er viktigere å gi medisinen. Det hadde vært nyttig å kunne etterregistrere bruken av medisinen. 
+
+- Hvor lang tid bruker barnet på å gjennomføre en medisinering?
+Det tar normalt 1-2 minutter.
+
+
+Andre typer medisin kan ha større nytte av bamsen, fordi astmamedisin har en så klar direkte virkning. 
