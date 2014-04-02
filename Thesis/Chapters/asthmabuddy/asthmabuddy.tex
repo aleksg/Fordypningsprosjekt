@@ -85,7 +85,7 @@ The grey lines and the lamp represents our LED light. It is connected to three o
 
 \section{Design Rationale}
 \subsection{Why a Teddy Bear?}
-When designing \buddy{} we choose to use a teddy bear as an avator for our system. There are several reasons as to why we think this is an appropriate avatar. Teddy bears are well known toys, and has been loved for a long time. They are considered gender-neutral\cite{stagnitti1997determining}\cite{cherney2006gender} and in our subjective opinion it is a toy that could be discretely placed in a children's room. With the look of a teddy bear, \buddy{} can easily be placed among other toys and not be too visible. It was also important for us to choose a teddy bear of some size. A too thin bear could lead to problems with fitting the system inside the bear, and could in order lead to scepticism from the children. \buddy{} will bear resemblance to Tamagotchi\cite{tamagotchi} and Furby\cite{furby}, but \buddy{}'s purpose is to motivate, instruct and learn children about asthma, not being a toy meant purely for play. 
+When designing \buddy{} we choose to use a teddy bear as an avator for our system. There are several reasons as to why we think this is an appropriate avatar. Teddy bears are well known toys, and has been loved for a long time. They are considered gender-neutral\cite{stagnitti1997determining}\cite{cherney2006gender} and in our subjective opinion it is a toy that could be discretely placed in a children's room. With the look of a teddy bear, \buddy{} can easily be placed among other toys and not be too visible. It was also important for us to choose a teddy bear of some size. A too thin bear could lead to problems with fitting the system inside the bear, and could in order lead to scepticism from the children. \buddy{} will have similarities to Tamagotchi\cite{tamagotchi} and Furby\cite{furby}, but \buddy{}'s purpose is to motivate, instruct and learn children about asthma, not being a toy meant purely for play. 
 
 While designing our system we also wanted to make sure our system did not have robot-like features or robotic similarities. While children tend to find technology very interesting, we want to make \buddy{} seem as natural as possible, making a stuffed animal buddy, rather than a technological toy. We believe that these design choices serves our purpose of making children more aware of their asthma, while not being a constant reminder and a stress element. 
 
@@ -130,34 +130,71 @@ By ``reasonable'', we imply that the underlying functionality should be relative
 \label{sec:answeringchampoux}
 In Section \ref{sec:champoux} we described the development framework presented by Champoux \etal{}. When developing \buddy{}, we tried to answer the proposed questions that we considered relevant. 
 
+\textbf{BO1: What should the user experience?}
+The user should experience an interactive guide to applying an asthma treatment correctly. \buddy{} should give correct information in an understandable manner. 
 
-\begin{table}[h]
-	\begin{tabular}{| p{2.5cm} | p{4.0cm} | p{6.7cm} |}
-	\hline
-	\textbf{Category} & \textbf{Question} & \textbf{Answer} \\
-	\hline
-	\textbf{Defining the Boundaries} & \textbf{BO1} What should the user experience? & Answer \\
-	\cline{2-3}
-	 & \textbf{BO2} What are the human tasks? & Answer \\
-	\cline{2-3}
-	 & \textbf{BO3} What should the artefact represent and control? & Answer \\
-	\cline{2-3}
-	 & \textbf{BO4} What are the conventions (Physical ergonomics vs electromechanical)? & Answer \\
-	\hline
-	\textbf{Orienting the Concepts} & \textbf{OC5a} What is the nature of the interaction for each sub task (Continuous vs Discrete vs Assembly)? & Answer \\
-	\cline{2-3}
-	 & \textbf{OC6} Does the sub-task need any relational interaction? & Answer \\
-	\hline
-	\textbf{Fitting the Components} & \textbf{FC7} What are the relations between the objects and the actions? & Answer \\
-	\cline{2-3}
-	 & \textbf{FC8} What is the task order when using the artefact? & Answer \\
-	\hline	
-	\end{tabular}
-	\caption{Something useful}
-	\label{tab:answeringchampoux}
-\end{table}  
 
+\textbf{BO2: What are the human tasks?}
+\begin{itemize}
+  \item Fetch an adult
+  \item Fetch inhaler and mask
+  \item Shake medicine
+  \item Attach the inhaler to the mask
+  \item Put the mask around your mouth
+\end{itemize}
+
+\textbf{BO3: What should the artefact represent and control?}
+\buddy{} represents a caregiver, who supervises children during their treatment. The artefact controls that children take their medicine at the correct time, and in a correct manner.   
+
+\textbf{BO4: What are the conventions?}
+Children have their inhaler and mask stored within a short distance of \buddy{}. Their RFID-tags are attached on their inhalers.    
+
+\textbf{OC5a: What is the nature of the interaction for each sub task (Continuous vs Discrete vs Assembly)?}
+The subtasks performed when taking a medicine is the following:
+\begin{enumerate}
+  \item Fetch parents
+  \item Fetch inhaler
+  \item Fetch mask
+  \item Prepare medicine
+  	\begin{enumerate}
+  	  \item Shake the inhaler
+  	  \item Attach inhaler to the mask
+  	 \end{enumerate}
+  \item Inhale dosage
+  	\begin{enumerate}
+  	  \item Hold medicine towards mouth
+  	  \item Press the inhaler
+  	  \item Breathe heavily for 10 seconds
+  	 \end{enumerate}
+  \item Optional, depending on the medicine: Rinse mouth
+\end{enumerate}
+
+Step 4 is an assembly task, 5(c) is a continuous task for a short period of time, while the remaining tasks are all discrete.  
+
+\textbf{OC6: Does the sub-task need any relational interaction?}
+None of the sub-tasks needs relational interaction.
+[Pieter: Vil RFID-tag og RFID-leser her telle som en form for relational interaction?]
  
+\subsection{Dealing with Bellotti's challenges}
+
+Section \ref{sec:challenges-with-TUI} introduced some of the challenges that are exposed when designing tangible interfaces. Here, we'll discuss how we intend to handle the challenges presented, by answering his questions that we found relevant. 
+
+\textbf{Address: How do I address one of many possible devices?}
+One of the challenges mentioned here is ``How to not address the system''. This is an interesting challenge when the system is intended for children, as they like to pick things up and carry them around. \buddy{} will only start a treatment in two ways, either by an alarm firing or an RFID-tag attached to an inhaler is read. The RFID-reader is only capable of reading within a distance of 3-5 cm. Thus, as long as no alarms is fired, and an inhaler with attached RFID-tag is not withing the reach of the RFID-reader, the system should not respond.  
+
+\textbf{Attention: How do I know the system is ready and attending to my actions?}
+\buddy{} will as mentioned previously have a LED-light on it's nose. When this light is green, the user can expect that the system is running. 
+
+\textbf{Action: How do I effect a meaningful action, control its extent and possibly specify a target or targets for my action?}
+The part that regards specifying a target or several targets is considered irrelevant. The interesting part is how the user can effect a meaningful action and control its extent. This will be taken care of by interactions between the user and \buddy{}. \buddy{} will never run several instructions at once. It will always give short and clear instructions, and wait for feedback from the user in order to proceed. 
+
+\textbf{Alignment: How do I know the system is doing the right thing?}
+By listening when \buddy{} speaks, the user should be aware of what is going on. There is not a lot of room for human errors here. By following the normal sequence of operation, the worst thing that can happen is a system crash. This will be handled by shutting down the lights, and \buddy{} will not be running.  
+
+\textbf{Accident: How do I avoid mistakes?}
+Again, as long as the user is paying attention to what \buddy{} says, and does the intended interaction. A part of the challenge here is to recover from mistakes that has happened. For instance, if the user goes further proceeds further than was actually intended, and missed out on an instruction they needed, \buddy{} should have a way to go back to missed instruction. This was handled by having a separate ``back''-interaction method.
+[TODO: Finn en interaksjon som kaller Back].   
+
 \input{Chapters/asthmabuddy/asthmabuddy-system-overview.tex}
  
 
