@@ -105,6 +105,42 @@ When the \rpi{} boots, it retrieves the latest version of the source code from G
 \subsection{Sequence Diagram}
 Figures \ref{fig:ab-sd-byneed} - \ref{fig:ab-sd-completing-treatment} shows sequence diagrams of how the system works internally. Some abstractions have been made, in order to reduce the cluster of arrows. 
 
+\begin{sidewaysfigure}[htbp]
+	\centering
+		\includegraphics[scale=0.6]{Pictures/sd/sd-byneed.png}
+	\caption{By Need Treatment - Sequence Diagram}
+	\label{fig:ab-sd-byneed}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[htbp]
+	\centering
+		\includegraphics[scale=0.6]{Pictures/sd/sd-planned-treatment.png}
+	\caption{Planned Treatment - Sequence Diagram}
+	\label{fig:ab-sd-planned-treatment}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[htbp]
+	\centering
+		\includegraphics[scale=0.6]{Pictures/sd/sd-instructions.png}
+	\caption{Playing Instructions - Sequence Diagram}
+	\label{fig:ab-sd-instructions}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[htbp]
+	\centering
+		\includegraphics[scale=0.6]{Pictures/sd/sd-complete-treatment.png}
+	\caption{Finishing a treatment - Sequence Diagram}
+	\label{fig:ab-sd-completing-treatment}
+\end{sidewaysfigure}
+
+
+\begin{sidewaysfigure}[htbp]
+	\centering
+		\includegraphics[scale=0.6]{Pictures/sd/sd-synchronizing.png}
+	\caption{Synchronizing - Sequence Diagram}
+	\label{fig:ab-sd-synchronizing}
+\end{sidewaysfigure}
+
 \paragraph{By Need Treatment}
 We were not able to find a reasonable easy way to let the \buddy{} automatically be aware of the medicine that was to be taken at the start of a treatment. As a result, we used ssh into the \rpi{}, and provided the color of the medicine and the sequence number for the interaction that was to be tested.
 
@@ -119,42 +155,6 @@ Playing instructions is mainly a loop of running a playing a sound, and turning 
 \paragraph{Finishing a Treatment}
 When a treatment is finished, i.e. we are out of the while loop in Figure \ref{fig:ab-sd-instructions}, we register the treatment in the database. This ensures that children are able to see the rewards in AsthmAPP. 
 
-
-\begin{sidewaysfigure}
-	\centering
-		\includegraphics[scale=0.6]{Pictures/sd/sd-byneed.png}
-	\caption{By Need Treatment - Sequence Diagram}
-	\label{fig:ab-sd-byneed}
-\end{sidewaysfigure}
-
-\begin{sidewaysfigure}
-	\centering
-		\includegraphics[scale=0.6]{Pictures/sd/sd-planned-treatment.png}
-	\caption{Planned Treatment - Sequence Diagram}
-	\label{fig:ab-sd-planned-treatment}
-\end{sidewaysfigure}
-
-\begin{sidewaysfigure}
-	\centering
-		\includegraphics[scale=0.6]{Pictures/sd/sd-instructions.png}
-	\caption{Playing Instructions - Sequence Diagram}
-	\label{fig:ab-sd-instructions}
-\end{sidewaysfigure}
-
-\begin{sidewaysfigure}
-	\centering
-		\includegraphics[scale=0.6]{Pictures/sd/sd-complete-treatment.png}
-	\caption{Finishing a treatment - Sequence Diagram}
-	\label{fig:ab-sd-completing-treatment}
-\end{sidewaysfigure}
-
-
-\begin{sidewaysfigure}
-	\centering
-		\includegraphics[scale=0.6]{Pictures/sd/sd-synchronizing.png}
-	\caption{Synchronizing - Sequence Diagram}
-	\label{fig:ab-sd-synchronizing}
-\end{sidewaysfigure}
 
 \subsection{Node Server}
 \label{sec:node-server}
