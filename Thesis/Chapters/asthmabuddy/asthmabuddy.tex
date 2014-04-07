@@ -202,9 +202,7 @@ Again, as long as the user is paying attention to what \buddy{} says, and does t
 
 \section{Prototype version 1}
 \label{sec:proto1}
-Our first prototype was a ``dumb'' version with the purpose of testing out different methods of interaction. We wanted to get as many different experiences as possible, in order to find what kids are thinking as ideal. Even though some of the interaction methods are infeasible to implement during the thesis, we wanted to know what children think of as fun interaction. We also found it important that children were motivated to give us honest results, so we wanted to give them freedom to be innovative and let their imagination play a part.  
-%TODO: Skrive om
-[TODO: Change to something useful, and actual\ldots] As a result, the first prototype was a simple state machine. The usability test was performed on NSEP's usability lab. Terje R\o sand sat in the backroom filming the sequence, while having a computer with ssh-connection to AsthmaBuddy. Whenever he observed that the children performed the method of interaction, he pressed enter in order for AsthmaBuddy to progress it's medication sequence. 
+Our first prototype was a ``dumb'' version with the purpose of testing out different methods of interaction. We wanted to get as many different experiences as possible, in order to find which methods of interaction will work with \ab{}. We did not have the time to implement all of the interaction methods listed. In order to simulate the interactions we used the Wizard-of-Oz technique\cite{wilson1988rapid}. 
 
 For the first prototype we tried out the following types of interaction with AsthmaBuddy:
 \begin{enumerate}
@@ -220,13 +218,6 @@ For the first prototype we tried out the following types of interaction with Ast
 	\item{A variation of the above interactions}
 \end{enumerate}
 
-The prototype was not connected to the database. In order to show children their rewards, we simply added some stickers to a sheet of paper. 
-
-
-
-\subsection{Information Gathering}
-
-During the development phase we interviewed a couple of domain experts and parents in order to gather information about how they perform asthma treatments. 
 
 \subsection{Evaluation of prototype version 1}
 
@@ -271,7 +262,11 @@ A By Need treatment was registered to take about a minute for an experienced use
 \paragraph{Feedback}
 We got some feedback regarding the \emph{by need} treatments. Some parents stated that they would not use \buddy{} to complete a by need treatment, as their child was suffering from an asthma attack. However, one of the parents noted that if children were grown custom to performing their treatment with \buddy{}, it could create a dependency toward it, i.e. \buddy{} could help the child to calm down. Whether or not the by need functionality would actually be used needs more research, as \buddy{} would need to be placed within a home and be nearby when such an attack occurs. 
 
-  
+In order for \ab{} to be useful for inexperienced users, it could have even clearer and more informative instructions. Even though it may seem self-explanatory to take the cap off the medicine before mounting it on the mask, it may not be that obvious to new users. Since \ab{}'s purpose is to instruct and inform, it should have a completely ``foolproof'' instructions. For instance some of the test users tried to attach the inhaler to the mask without removing the protective cap from the inhaler. Since the mask's mount is made from rubber, it gave them the idea that you should just push the medicine into the mount by force. 
+
+When using \ab{} it may sometimes be difficult to hear all the instructions. There should be support for replay of latest command.
+
+One of the users commented that \ab{} should be able to operate as a stand-alone system if the parents do not allow the children to borrow a smart phone and the child does not have a smart phone of his/her own. The same test user commented that she would not take the time to use \ab{} for two minutes every time the child needed to take a treatment, and that \ab{} would become boring after a period of time. 
 %Potential improvements
 %New Interaction methods
 %
