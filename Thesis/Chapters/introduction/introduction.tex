@@ -17,12 +17,13 @@ The evaluation of the project will be done through co-design sessions and usabil
 %TODO: Should change this to give more ``meat to the bone''
 %Better now?
 \subsection{Asthma Among Children}
-According to NAAF, 20\% of the Norwegian population has or has had asthma by the age of 10, and 8\% of the adult population suffers from asthma\cite{NAAF}. Many of the children find it unpleasant to use their medicine as they often do not understand why the medicine must be taken. Children suffering from asthma may have to attend numerous appointments with an asthma specialist. This requires time and effort from the parents, and some may have to take time off work. In this project we will solely focus on treatment done by the use of an inhaler (with or without the mask) and disk formed medication. We chose to exclude the use of the nebulizer, since the nebulizer treatments differs so much from the use of inhalers.
+According to NAAF, 20\% of the Norwegian population has or has had asthma by the age of 10, and 8\% of the adult population suffers from asthma\cite{NAAFStat}. Many of the children find it unpleasant to use their medicine as they often do not understand why the medicine must be taken. Children suffering from asthma may have to attend numerous appointments with an asthma specialist. This requires time and effort from the parents, and some may have to take time off work. In this project we will solely focus on treatment done by the use of an inhaler (with or without the mask) and disk formed medication. We chose to exclude the use of the nebulizer, since the nebulizer treatments differs so much from the use of inhalers.
 
-We hope to motivate children suffering from asthma, since following a treatment plan can lead to a more controlled form of asthma, where attacks occur less often\cite{ginasthma}. 
-Research done by \r{A}sheim showed that children suffering from HRS-virus\fnurl{Center for Disease Control : HSRV}{http://www.cdc.gov/rsv/} were easily distracted and motivated to finish treatments when shown a non-interactive flash-video during the treatment\cite{Asheim610877}. We have seen other projects using gamification elements have positive results, such as Get Up and Move made by Penados \etal{}\cite{penadosget}\footnote{A short summary of the relevance of Penados' research is given in Section \ref{sec:gum}}. 
-Mobile technology, tangible user interfaces and gamification may make the children more aware of their disease. Awareness may lead to a better understanding of why they need to take their medicine on a daily basis. 
-By using gamification elements we hope to motivate the children to follow their treatment plan more accurately, and by making a dynamic and user-centered reward system, we hope to make a system that will be interesting for children for a longer period of time.  
+We hope to motivate children suffering from asthma to follow their treatment plan, as following their plan can lead to a more controlled form of asthma, where attacks occur less frequently\cite{ginasthma}. 
+Research done by Asheim showed that children suffering from HRS-virus\fnurl{Center for Disease Control : HSRV}{http://www.cdc.gov/rsv/} were easily distracted and motivated to finish treatments when shown a non-interactive flash-video during the treatment\cite{asheim2012konsept}. We have seen other projects using gamification elements have positive results, such as Get Up and Move made by Penados \etal{}\cite{penadosget}\footnote{A short summary of the relevance of Penados' research is given in Section \ref{sec:gum}}. 
+By using mobile technology, tangible user interfaces and may make the children more aware of their disease and thus make them better understand why they must take their medicine on a daily basis. 
+By using gamification elements we hope to motivate the children to use the system more often, and by making a dynamic and user-centered reward system, we hope to make a system that will be interesting for children for a longer period of time.  
+
 
 
 \section{Research Questions}
@@ -46,42 +47,19 @@ The main goal for this study is to figure out in which ways technology can help 
 % Improved prototypes
 % Validation tests
 
-The first step of our research was to do find recent trends in our research area. The literature study gave us some principles to work from, especially regarding tangible interfaces and gamification. 
+The first step of our research was to do find recent trends in our research area. We did a literature study that gave us some principles to work from, especially regarding tangible interfaces and gamification. 
  
 Based on the literature study, we started developing prototypes. The Android application Aaberg \etal{} built was modified, giving \app{} more focus on introducing gamification elements to the treatment of asthmatic children. Starting from scratch, we created a Tangible User Interface by developing a \rpi{} application, and putting the \rpi{} inside a teddy bear. This Tangible User Interface was given the name \ab{}.       
 
-After the first prototypes was developed, we interviewed domain experts, by using a ``semi-structured'' interviewing-approach. The goal for the interviews was to receive feedback on the prototypes and it's reward system, in addition to explore new functionality we could incorporate in \ab{} and \app{}. 
+After the first prototypes was developed, we interviewed domain experts, by using a ``semi-structured'' interviewing-approach. The goal for the interviews was to receive feedback on the prototypes and it's reward system, in addition to explore new functionality we could incorporate in \ab{} and \app{}. By interviewing domain experts, we were able to receive feedback that we could not have gotten by continuous user testing on children, as they might be nervous or have difficulties explaining their thoughts and opinions.  
 
-Our interview subjects consisted of two parents of children with asthma, one PhD in psychology, two nurses with expertise around asthma, one PhD candidate in industrial design, one senior advisor at NAAF and an industrial designer previously involved in the BLOPP project. 
+Our interview subjects consisted of two parents of children with asthma, one PhD in psychology, two nurses with expertise on asthma, one PhD candidate in industrial design, one senior advisor at NAAF and one industrial designer previously involved in the BLOPP project. 
 
-Based on the feedback gathered from the domain experts, we did one more development cycle of \ab{} and \app{}. 
+After finishing the interviews, we did a round of user tests of \ab{} on fellow students, to test the Token+Constraint approach of \ab{}. Additionally, we tested \ab{}'s ability to explain the treatment process to inexperienced users. Based on the feedback gathered from the domain experts and the user tests, we did one more development cycle of \ab{} and \app{}.
 
-After the last development cycle, we did a validation test on children. 
-
-[CONTINUE TOMORROW]
-
-We will expand on the Android application Aaberg \etal{} with focus on gamification elements. We will also create a prototype for a tangible interface, called \buddy{}. We will build these prototypes on information gained in the following steps:
-
-\begin{enumerate}
-  \item We will start out by interviewing parents and domain experts to find out more about children's medication habits.
-  \item The prototypes will then be tested by potential users and parents of asthmatic children. 
-  \item Based on feedback from the user tests, we will design new prototypes.
-  \item Step 2 and 3 will be repeated once. 
-  \item The final prototype will be user tested by children with asthma. 
-\end{enumerate}
-  
-%Hva vi ønsker å få ut av de ulike stegene
-The rationale for doing Step 1 is to create a foundation to build upon on the later steps. 
-Collecting information about how children take their medicine under normal conditions gives us insight into the main problems in relation to taking medication. Having insight to the problems our users meet is a useful way to make sure the final product will be suited to meet the users needs. We also want to gather ideas for how the TUI should be designed in terms of functionality and look.
-
-The mobile application was already built on the start of this project. The main focus for the mobile application will be to test the gamification elements of the mobile application. 
-
-We will build the TUI using a Raspberry Pi, with additional components in order to play sounds, display lights and different I/O. A detailed description of the TUI is given in Chapter \ref{chp:our-solution}. 
+After the last development cycle, we tested the prototypes on N children \iref{}. The purpose of the user tests was to gather children's thoughts around the prototypes, discover difficulties when they interacted with \ab{}, and to explore whether or not the gamification system implemented worked in the short run.  
 
 
-Based on the feedback gathered in our first round of user testing and focus groups, we will make a second version of the prototype. This prototype will then again be brought back to our test persons and domain experts in order to receive feedback on the improved design.
-
-The final prototype will undergo user testing by children in order to determine if the system is understood by the children and if the children enjoys using the system. We will not necessarily measure the usability in terms of a SUS-score\cite{brooke1996sus}, but rather by using the methods presented in Section \ref{sec:usabilitytestchildren}, since we believe these methods to be more appropriate.
 
 \subsection{Theoretical Motivation Behind Interviews}
 
@@ -91,15 +69,6 @@ The purpose of conducting these interviews, was to ensure that the end product w
 
 The problems of using this approach, is that it limits creativity of our subjects. For instance, people might be shocked over the research we're doing, and thus might not be in the correct mindset to give as good as possible feedback as far as creativity goes. We tried to minimize this threat by giving our subjects a brief understanding of our work beforehand, such that they could be able to explore their own opinions before meeting with us.
 
-We collected data by having one interviewer, while the other was taking notes. We also recorded the interviews, in order to be able to play back these. The people we collected data from was
-
-[TODO: Should we mention people by name?]
-\begin{itemize}
-  \item Nanna S\o nnichsen Kayed. PhD in psychology, with experiences in reward systems while raising children.  
-  \item A couple of parents with children suffering from asthma. 
-  \item X domain experts, including people working for the Blopp project and NAAF (The Norwegian Asthma and Allergy Association).  
-  \item X asthma nurses
-\end{itemize} 
 
 \section{Thesis Outline}
 Chapter \ref{chp:background} provides the reader with backround information around Asthma, and some of the projects that have previously been developed by Blopp, in addition to introduce the reader on the state of the art. 
