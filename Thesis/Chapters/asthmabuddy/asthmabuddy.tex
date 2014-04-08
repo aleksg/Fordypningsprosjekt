@@ -94,9 +94,25 @@ While we were not able to find scientific research done on the use of teddy bear
 
 A teddy bear has also been used as an avatar for giving instructions on how to apply a treatment correctly. Glaxo Smith Kline, a leading company within consumer health care uses a teddy bear in their instruction manual for the use of asthma medicine and the breathing chamber\cite{glaxosmithkline}. 
 
-[Pictures of the bear we chose?]
+\begin{figure}[H] 
+	\begin{minipage}[b]{0.4\linewidth}
+	\centering
+		\includegraphics[width=0.3\paperwidth]{Pictures/abandinhaler.jpg}
+	\caption[AsthmaBuddy holding a mask and an inhaler]{AsthmaBuddy holding a mask and an inhaler}
+	\label{fig:asthmabuddyandinhaler}
+	\end{minipage}
+	\hspace{2.0cm}
+	\begin{minipage}[b]{0.4\linewidth}
+		\centering
+			\includegraphics[width=0.3\paperwidth]{Pictures/abbluelight.jpg}
+		\caption{AsthmaBuddy with his nose light turned on\footnote{The bear was bought from www.bemybear.com, since their kits suited our needs.}}
+		\label{fig:asthmabuddyandlightnose}
+	\end{minipage}
+\end{figure}
+
 
 \subsection{Interaction design}
+\label{sec:interactiondesign}
 When we started developing the interaction design of \buddy{}, we had a brainstorming session with the intentions of coming up with reasonable interaction patterns.        
 By ``reasonable'', we imply that the underlying functionality should be relatively cheap to implement. The interactions should also be fun for the children to perform, in addition to being efficient.  
 
@@ -273,13 +289,16 @@ One of the users commented that \ab{} should be able to operate as a stand-alone
 
 
 \section{Prototype version 2}
+\label{sec:abversion2}
+The improved version of \ab{}, named \ab{} 2.0, had some changes done since version 1.0. As stated in Table \ref{tab:interactioneval}, some of the interaction methods were removed. \ab{} also received some new features, such as a method for letting children more easily check the amount of stars they have gathered. By registering an RFID tag, \ab{} tells how many stars the child has. This was implemented to make \ab{} more of a stand-alone system, and to avoid the problem were parents may not want the children to use their smart phone to use \app{}. 
+
+\ab{} 2.0 now syncs achieved stars automatically between \app{} and \ab{}. This was done to automate some tasks that previously needed manual interaction, and to create a tighter coupling between the two prototypes. 
+
+Some small changes was made to the use of the LED light on \ab{}'s nose. \ab{} 1.0 changed the color of its nose fairly often. This was intended to make the treatment process more interesting; however, it ended up being more confusing than helpful, and was therefore changed. 
 
 
-\section{Evaluation}
+\section{Evaluation of \ab{}}
 
-
-
-\section{Further improvements}
 
  
 %\subsection{Dealing with Bellotti's Challenges}
