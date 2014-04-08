@@ -90,7 +90,9 @@ When designing \buddy{} we choose to use a teddy bear as an avator for our syste
 While designing our system we also wanted to make sure our system did not have robot-like features or robotic similarities. While children tend to find technology very interesting, we want to make \buddy{} seem as natural as possible, making a stuffed animal buddy, rather than a technological toy. We believe that these design choices serves our purpose of making children more aware of their asthma, while not being a constant reminder and a stress element. 
 
 Norwegian fire fighters have used a teddy bear in order to calm down children who find themselves in dramatic situations \fnurl{NRK: Firefighters use teddy bears to calm down children}{http://www.nrk.no/trondelag/bamser-i-utrykningsbilene-1.11548966}. The fire fighters state that the children respond positively to the teddy bear. 
-While we were not able to find scientific research done on the use of teddy bears in dramatic situations, we found this news article interesting and a relevant mention to our research.
+While we were not able to find scientific research done on the use of teddy bears in dramatic situations, we found this news article interesting and a relevant mention to our research. 
+
+A teddy bear has also been used as an avatar for giving instructions on how to apply a treatment correctly. Glaxo Smith Kline, a leading company within consumer health care uses a teddy bear in their instruction manual for the use of asthma medicine and the breathing chamber\cite{glaxosmithkline}. 
 
 [Pictures of the bear we chose?]
 
@@ -200,9 +202,7 @@ Again, as long as the user is paying attention to what \buddy{} says, and does t
 
 \section{Prototype version 1}
 \label{sec:proto1}
-Our first prototype was a ``dumb'' version with the purpose of testing out different methods of interaction. We wanted to get as many different experiences as possible, in order to find what kids are thinking as ideal. Even though some of the interaction methods are infeasible to implement during the thesis, we wanted to know what children think of as fun interaction. We also found it important that children were motivated to give us honest results, so we wanted to give them freedom to be innovative and let their imagination play a part.  
-%TODO: Skrive om
-[TODO: Change to something useful, and actual\ldots] As a result, the first prototype was a simple state machine. The usability test was performed on NSEP's usability lab. Terje R\o sand sat in the backroom filming the sequence, while having a computer with ssh-connection to AsthmaBuddy. Whenever he observed that the children performed the method of interaction, he pressed enter in order for AsthmaBuddy to progress it's medication sequence. 
+Our first prototype was a ``dumb'' version with the purpose of testing out different methods of interaction. We wanted to get as many different experiences as possible, in order to find which methods of interaction will work with \ab{}. We did not have the time to implement all of the interaction methods listed. In order to simulate the interactions we used the Wizard-of-Oz technique\cite{wilson1988rapid}. 
 
 For the first prototype we tried out the following types of interaction with AsthmaBuddy:
 \begin{enumerate}
@@ -218,13 +218,6 @@ For the first prototype we tried out the following types of interaction with Ast
 	\item{A variation of the above interactions}
 \end{enumerate}
 
-The prototype was not connected to the database. In order to show children their rewards, we simply added some stickers to a sheet of paper. 
-
-
-
-\subsection{Information Gathering}
-
-During the development phase we interviewed a couple of domain experts and parents in order to gather information about how they perform asthma treatments. 
 
 \subsection{Evaluation of prototype version 1}
 
@@ -235,25 +228,25 @@ During the development phase we interviewed a couple of domain experts and paren
 \hline 
 \textbf{Interaction Method} & \textbf{Comments} & \textbf{Will it be in version 2?}\\
 \hline
-	Give AsthmaBuddy a ``High Five'' & & \\
+	Give AsthmaBuddy a ``High Five'' & Worked out fine. A high five is cool and may make \ab{} seem more friendly to the children. & Yes \\
 \hline
-	Hold AsthmaBuddy's hand & & \\
+	Hold AsthmaBuddy's hand & Easy to understand and use during a treatment. Should give feedback to indicate that the user has interacted correctly & Yes\\
 \hline
-	Hold smartphone close to AsthmaBuddy's belly & & \\
+	Hold smartphone close to AsthmaBuddy's belly & Smart phones are cool, but may be easily damaged if lost on the ground. To risky to let small children handle the smart phone. The size of smart phones may require use of two hands, which may cause complications for the children. & No \\
 \hline
-	Press AsthmaBuddy's nose & & \\
+	Press AsthmaBuddy's nose & Users tended to press the LED light on the nose. Risk of damage to light. & No\\
 \hline
-	Press \buddy{}'s belly & & \\
+	Press \buddy{}'s belly & Easy to understand and use during a treatment. Should give feedback to indicate that the user has interacted correctly & Yes\\
 \hline
-	Hold medicine close to AsthmaBuddy's mouth & & \\
+	Hold medicine close to AsthmaBuddy's mouth & Created some complications when the user was supposed to hold the mask to his/her mouth and then hold the medicine close to \ab{}'s mouth to proceed. & No \\
 \hline
 	Hold RFID-chip close to \buddy{}'s nose & The thickness of \buddy{}'s nose made it difficult for the RFID tag to communicate with our reader, this caused problems for the user. & No \\
 \hline
-	Hold RFID-chip close to \buddy{}'s belly & & \\
+	Hold RFID-chip close to \buddy{}'s belly & Works OK. Letting children have their ``magic token'' which interacts with \ab{} may be cool for them. & Yes\\
 \hline
-	Clap your hands & & \\
+	Clap your hands & Worked out OK. At one point the user has to clap hands when having the mask in his/her hands, which may cause some problems, but should not be a big problem. & Yes\\
 \hline
-	A variation of the above interactions & & \\
+	A variation of the above interactions & Confusing for users. The confusion may take the fun out of it & May be considered in a revised form.\\
 \hline
 \end{tabular}
 \caption{Evaluation of interaction methods for AsthmaBuddy}
@@ -261,7 +254,7 @@ During the development phase we interviewed a couple of domain experts and paren
 \end{table}
 
 \paragraph{Operating time}
-The longest time for taking a planned treatment was about 2 minutes for an experienced user, and about 2.5 minutes for an inexperienced user. This treatment included the part where \buddy{} completes the treatment before the child. [SETT INN HVOR LANG TID DET TAR TIL VANLIG]. [SETT INN SAMMENLIGNING]. [VURDER OG KONKLUDER].     
+The longest time for taking a planned treatment was about 2 minutes for an experienced user, and about 2.5 minutes for an inexperienced user. This treatment included the part where \buddy{} completes the treatment before the child. A normal treatment taken without \ab{} usually takes 1-2 minutes, according to test users. Since \ab{} only takes 0.5-1.5 minutes longer than normal, it should not be considered a time-waster. From another point-of-view, if a child does not want to take his/her medication, it may take a long time. If \ab{} can help on shortening the time spent arguing with the children, a huge amount of time may be saved.      
 
 A By Need treatment was registered to take about a minute for an experienced user. Usually, it takes approximately [XX] minutes to do a By Need treatment \footnote{Information gathered from parents}. [SETT INN SAMMENLIGNING]. [VURDER OG KONKLUDER].  
 
@@ -269,7 +262,11 @@ A By Need treatment was registered to take about a minute for an experienced use
 \paragraph{Feedback}
 We got some feedback regarding the \emph{by need} treatments. Some parents stated that they would not use \buddy{} to complete a by need treatment, as their child was suffering from an asthma attack. However, one of the parents noted that if children were grown custom to performing their treatment with \buddy{}, it could create a dependency toward it, i.e. \buddy{} could help the child to calm down. Whether or not the by need functionality would actually be used needs more research, as \buddy{} would need to be placed within a home and be nearby when such an attack occurs. 
 
-  
+In order for \ab{} to be useful for inexperienced users, it could have even clearer and more informative instructions. Even though it may seem self-explanatory to take the cap off the medicine before mounting it on the mask, it may not be that obvious to new users. Since \ab{}'s purpose is to instruct and inform, it should have a completely ``foolproof'' instructions. For instance some of the test users tried to attach the inhaler to the mask without removing the protective cap from the inhaler. Since the mask's mount is made from rubber, it gave them the idea that you should just push the medicine into the mount by force. 
+
+When using \ab{} it may sometimes be difficult to hear all the instructions. There should be support for replay of latest command.
+
+One of the users commented that \ab{} should be able to operate as a stand-alone system if the parents do not allow the children to borrow a smart phone and the child does not have a smart phone of his/her own. The same test user commented that she would not take the time to use \ab{} for two minutes every time the child needed to take a treatment, and that \ab{} would become boring after a period of time. 
 %Potential improvements
 %New Interaction methods
 %
