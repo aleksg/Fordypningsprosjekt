@@ -3,12 +3,15 @@
 \label{chp:our-solution}
 
 \section{Background}
-In 2012, we did a similar project using Karotz \fnurl{Karotz}{www.karotz.com} as our platform\cite{CustomerDriven}. The thought behind Karotz is great. It is an open source robot which allows people to build applications and launch it to the Karotz store. However, in our subjective opinion, it is not ideal to work with. The Karotz starters kit costs ~\$200, not including customs, thus it is a pretty large investment for a family wanting to buy the product to use with our application. The API is only documented in French, which makes it a hassle, in addition to the fact that it is pretty cumbersome to configure for a ``non-technological'' family. 
+As mentioned in Chapter \ref{chp:background}; in 2012, we did a similar project using Karotz\fnurl{Karotz}{www.karotz.com} as the platform for the tangible user interface\cite{CustomerDriven}.
+This project left us with mixed feelings towards Karotz as a platform. The thought behind Karotz is great. It is an open source robot which allows people to build applications and launch it to the Karotz store. However, in our subjective opinion, it is not ideal to work with. The Karotz starters kit costs ~\$200, not including customs. Thus it is a pretty large investment for a family wanting to use our application. The API is only documented in French, which makes it a hassle to develop on, in addition to the fact that it is pretty cumbersome to configure for a ``non-technological'' family. 
 
+We researched other options than Karotz to create our tangible user interface. The alternatives we looked into was Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform\cite{arduino}, which allows for many different combinations of configurations. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide-range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
+While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for us as developers. Arduino programs are normally written in C\cite{strahl2000language}, which we had little to no prior experience with. Additionally, Arduinos generally have low-powered CPUs, in order to keep them cheap. These low-powered CPUs tend to have problems with decoding MP3-files, which would lay heavy constraints on our system (without using sounds or a display, it is hard to communicate with children). Due to these facts, we choose to develop the system on a Raspberry Pi.
+
+Our tangible user interface was planned to contain a lot of the same functionality that KAPP had, with some modifications. The reason we chose to develop on a different platform was to make the system more user friendly, specifically lower the requirement for technical knowledge needed to introduce \ab{} to an inexperienced user, by following the ``Plug and Play'' principle.
+ 
 \section{Technology}
-We have looked around for other options than Karotz to create our tangible user interface, i.e. Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform\cite{arduino}, which allows for many different combinations of configurations, while \rpi{} is a cheap computer on the size of a credit card. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide-range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
-While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for us as developers. Arduino programs are normally written in C\cite{strahl2000language}, and while there exists many tutorials and manuals for how to write Arduino code, we found the thought of writing in a programming language we had little prior knowledge of too challenging. Arduinos generally have low-powered CPUs, in order to keep them cheap. These low-powered CPUs tend to have problems with decoding MP3-files, which would lay constraints on our system. Due to these facts, we choose to develop the system on a Raspberry Pi.
-
 
 \subsection{Raspberry Pi - Specifications Overview}
 The \rpi{} was initially intended to teach british school children about computer programming\cite{rasperrypi-about}. Since its release, it took an unexpected turn when lots of computer enthusiasts bought the product to do their own mini projects for a cheap price. 
@@ -54,7 +57,7 @@ Network & 10/100 Mbps Ethernet.  \\
 	\begin{minipage}[b]{0.4\linewidth}
 		\centering
 			\includegraphics[width=0.3\paperwidth]{Pictures/pi-fritzing-model.png}
-		\caption{Digital schematic over \rpi{} }
+		\caption{Digital schematic of the components}
 		\label{fig:pi-fritzing}
 	\end{minipage}
 \end{figure}
@@ -97,17 +100,17 @@ A teddy bear has also been used as an avatar for giving instructions on how to a
 Included below is two pictures of how \ab{} looks in its final form. 
 
 \begin{figure}[H] 
-	\begin{minipage}[b]{0.4\linewidth}
+	\begin{minipage}[t]{0.4\linewidth}
 	\centering
 		\includegraphics[width=0.3\paperwidth]{Pictures/abandinhaler.jpg}
 	\caption[AsthmaBuddy holding a mask and an inhaler]{AsthmaBuddy holding a mask and an inhaler}
 	\label{fig:asthmabuddyandinhaler}
 	\end{minipage}
 	\hspace{2.0cm}
-	\begin{minipage}[b]{0.4\linewidth}
+	\begin{minipage}[t]{0.4\linewidth}
 		\centering
 			\includegraphics[width=0.3\paperwidth]{Pictures/abbluelight.jpg}
-		\caption{AsthmaBuddy with his nose light turned on\footnote{The bear was bought from www.bemybear.com, since their kits suited our needs.}}
+		\caption{AsthmaBuddy with his nose light turned on}
 		\label{fig:asthmabuddyandlightnose}
 	\end{minipage}
 \end{figure}
@@ -285,11 +288,9 @@ In order for \ab{} to be useful for inexperienced users, it could have even clea
 When using \ab{} it may sometimes be difficult to hear all the instructions. There should be support for replay of latest command.
 
 One of the users commented that \ab{} should be able to operate as a stand-alone system if the parents do not allow the children to borrow a smart phone and the child does not have a smart phone of his/her own. The same test user commented that she would not take the time to use \ab{} for two minutes every time the child needed to take a treatment, and that \ab{} would become boring after a period of time. 
-%Potential improvements
-%New Interaction methods
-%
 
 
+	
 \section{Prototype version 2}
 \label{sec:abversion2}
 The improved version of \ab{}, named \ab{} 2.0, had some changes done since version 1.0. As stated in Table \ref{tab:interactioneval}, some of the interaction methods were removed. \ab{} also received some new features, such as a method for letting children more easily check the amount of stars they have gathered. By registering an RFID tag, \ab{} tells how many stars the child has. This was implemented to make \ab{} more of a stand-alone system, and to avoid the problem were parents may not want the children to use their smart phone to use \app{}. 
@@ -302,10 +303,4 @@ Some small changes was made to the use of the LED light on \ab{}'s nose. \ab{} 1
 \section{Evaluation of \ab{}}
 
 
- 
-%\subsection{Dealing with Bellotti's Challenges}
-%\label{sec:handling-challenges}
-%The main challenges Bellotti has identified (see Table \ref{tab:tuichallenges}) is \emph{``How to control or cancel system action in progress''} and \emph{``How to specify and select a possible object for action''}. We have previously stated that there are two cases in which a child will take their medicine, \emph{by need} and \emph{as a preventive measure}. An issue that could rise is how to detect when a child needs to take a medicine by need. Preventive medicines will fire alarms on AsthmaBuddy, and the child automatically knows that the system is ``awake''. However, when a child needs to take it by need, there is no other intuitive way to show that the AsthmaBuddy is awake than using LED-lights, which are the key for the system to work. Thus, the solution to the second challenge is usage of LED-lights. Cancelling operations, however, is difficult to find a ``good'' solution from a usability standpoint. 
-
-%For instance, if AsthmaBuddy starts counting seconds on a treatment before a child is ready, there will be a need to reset this counter, or basically at any point during a treatment, go back to the last step. At the moment, the only solution we are able to see at this problem is to use RFID-chips to backtrack, modelling the treatment process as a statemachine. 
  
