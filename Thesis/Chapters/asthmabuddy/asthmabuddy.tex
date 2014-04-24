@@ -3,11 +3,12 @@
 \label{chp:our-solution}
 
 \section{Background}
-In 2012, we did a similar project using Karotz \fnurl{Karotz}{www.karotz.com} as our platform\cite{CustomerDriven}. The thought behind Karotz is great. It is an open source robot which allows people to build applications and launch it to the Karotz store. However, in our subjective opinion, it is not ideal to work with. The Karotz starters kit costs ~\$200, not including customs, thus it is a pretty large investment for a family wanting to buy the product to use with our application. The API is only documented in French, which makes it a hassle, in addition to the fact that it is pretty cumbersome to configure for a ``non-technological'' family. 
+As mentioned in Chapter \ref{chp:background}; in 2012, we did a similar project using Karotz\fnurl{Karotz}{www.karotz.com} as the platform for the tangible user interface\cite{CustomerDriven}.
+This project left us with mixed feelings towards Karotz as a platform. The thought behind Karotz is great. It is an open source robot which allows people to build applications and launch it to the Karotz store. However, in our subjective opinion, it is not ideal to work with. The Karotz starters kit costs ~\$200, not including customs. Thus it is a pretty large investment for a family wanting to use our application. The API is only documented in French, which makes it a hassle to develop on, in addition to the fact that it is pretty cumbersome to configure for a ``non-technological'' family. 
 
 \section{Technology}
-We have looked around for other options than Karotz to create our tangible user interface, i.e. Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform\cite{arduino}, which allows for many different combinations of configurations, while \rpi{} is a cheap computer on the size of a credit card. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide-range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
-While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for us as developers. Arduino programs are normally written in C\cite{strahl2000language}, and while there exists many tutorials and manuals for how to write Arduino code, we found the thought of writing in a programming language we had little prior knowledge of too challenging. Arduinos generally have low-powered CPUs, in order to keep them cheap. These low-powered CPUs tend to have problems with decoding MP3-files, which would lay constraints on our system. Due to these facts, we choose to develop the system on a Raspberry Pi.
+We researched other options than Karotz to create our tangible user interface. The alternatives we looked into was Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform\cite{arduino}, which allows for many different combinations of configurations. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide-range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
+While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for us as developers. Arduino programs are normally written in C\cite{strahl2000language}, which we had little to no prior experience with. Additionally, Arduinos generally have low-powered CPUs, in order to keep them cheap. These low-powered CPUs tend to have problems with decoding MP3-files, which would lay heavy constraints on our system (without using sounds or a display, it is hard to communicate with children). Due to these facts, we choose to develop the system on a Raspberry Pi.
 
 
 \subsection{Raspberry Pi - Specifications Overview}
@@ -54,7 +55,7 @@ Network & 10/100 Mbps Ethernet.  \\
 	\begin{minipage}[b]{0.4\linewidth}
 		\centering
 			\includegraphics[width=0.3\paperwidth]{Pictures/pi-fritzing-model.png}
-		\caption{Digital schematic over \rpi{} }
+		\caption{Digital schematic of the components}
 		\label{fig:pi-fritzing}
 	\end{minipage}
 \end{figure}
