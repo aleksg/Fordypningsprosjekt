@@ -3,11 +3,19 @@
 
 This chapter will give a description of AsthmAPP, through textual description and screenshots. Please note that the main language of the application is Norwegian. We have translated the text where it seemed appropriate. 
 
-\section{Basic System Architecture}
-\label{sec:architecture}
-Figure \ref{fig:basic-architecture} shows an overview of the architecture we intend to use for our solution. We reused some of the components Aaberg et. al. created during Customer Driven Project\cite{CustomerDriven}. 
+\section{Architecture and Technology}
 
-We have access to a MySQL-server hosted at NTNU, which we will access by a PHP-server hosted at NTNU. The main reason we have to access the database through a server layer, is that it is quite cumbersome to connect to the database if a device is not connected at NTNU's network. In addition, by having a webservice do some of the work for us, it becomes easier to parse results from the database through JSON. By making this choice, system scalability is reduced, but modifiability is increased, which we considered a good trade-off at the current stage of our project.    
+\subsection{System Architecture}
+\label{sec:architecture}
+Figure \ref{fig:basic-architecture} shows an overview of the architecture we used for our products (\ab{} included). We reused some of the components Aaberg et. al. created during Customer Driven Project\cite{CustomerDriven}. 
+
+Data is stored at a MySQL database hosted by NTNU. \app{} and \ab{} access the database through a PHP-server, which is also hosted by NTNU. The reason we access the database through a PHP-server is twofold. First, it is difficult to access the database when a device is not located on the local network at NTNU. It would be required that a user had VPN installed to access the NTNU network at their smartphones, which is not ideal from a performance point-of-view.
+
+Second, by having a webservice that interprets the results given by the database, it becomes easier for the client to deserialize these results, as they are given as JSON-objects\footnote{JavaScript Object Notation}.    
+
+When one of the applications want to store data to the database, they do a HTTP POST, with the data as POST parameters, to a predefined route on the webservice. When the application wants to retrieve data from the database, it does a HTTP GET to the webservice, which extracts the data requested from the database, formats it to JSON, and returns the data to the application.  
+
+By having a webservice layer between the applications and the database, the system scalability suffers, but modifiability is increased, which we considered as a good trade-off at the current state of our project. 
 
 \begin{figure}
 		\centering
@@ -15,6 +23,15 @@ We have access to a MySQL-server hosted at NTNU, which we will access by a PHP-s
 		\caption{System Architecture}
 		\label{fig:basic-architecture}
 \end{figure}
+
+\subsection{Technology and Frameworks Used in AsthmAPP}
+\label{sec:techandframeinapp}
+\app{} is developed in native Android code, which implies using Java as the programming language and the Android Application Framework\fnurl{Android Application Framework}{http://developer.android.com/develop/index.html}. Additionally, we used the following frameworks to ease the development: 
+
+\paragraph{Gson} As mentioned in previously, our webservice gives out JSON-formatted objects of data stored in our database. We used Google's Gson-library\fnurl{Google Gson}{https://code.google.com/p/google-gson/} to deserialize these objects into Java objects.
+
+\paragraph{JodaTime} Java's default implementation of time is cumbersome to work with, with a lot of it's functionality deprecated. JodaTime\fnurl{JodaTime}{http://www.joda.org/joda-time/} is an open source project that seeks to handle time in a proper manner on the Java platform.     
+
 
 \section{How Usability Research has Affected our Design}
 \label{sec:usability-affect-design}
@@ -170,7 +187,8 @@ What happens if a child need their medicine, but the application or our TUI is n
 \label{sec:description-medicine-log}
 The \emph{Medicine log} can be used by parents to show how many times a child has taken their medicine. One of the main reasons that children does not take their medicine is lack of communication between parents. Having an option to show medicine log, give parents the ability to check and see whether they have taken the necessary amount at a given day.
 
-Figure \ref{fig:medicine-log} shows the calendar view of the application, which we will explain into details. The cells show any given day of a month. In addition, there is a top bar in the view. The top bar indicates which health state (or health plan) the child was in at the day represented below. At the bottom of the screen, there are three panels. The left panel shows which medicine that has been taken at a selected day. The topbar of this panel indicates which day is shown. The middle panel shows the air quality in Trondheim\fnurl{Measured by NILU}{http://luftkvalitet.info/}. The right panel shows the pollen distribution of the 6 most common pollen types\fnurl{Measured by NAAF}{http://www.pollenvarslingen.no/}. The idea behind this is that asthma symptoms can often be the same as allergy symptoms, and if parents are able to recongize a pattern between health state and pollen distribution, they might want to take their child to a hospital.    
+
+Figure \ref{fig:medicine-log} shows the calendar view of the application, which we will explain into details. The calendar module used is an open source component developed by Chris Goo, which we modified for our purposes. The cells show any given day of a month. In addition, there is a top bar in the view. The top bar indicates which health state (or health plan) the child was in at the day represented below. At the bottom of the screen, there are three panels. The left panel shows which medicine that has been taken at a selected day. The topbar of this panel indicates which day is shown. The middle panel shows the air quality in Trondheim\fnurl{Measured by NILU}{http://luftkvalitet.info/}. The right panel shows the pollen distribution of the 6 most common pollen types\fnurl{Measured by NAAF}{http://www.pollenvarslingen.no/}. The idea behind this is that asthma symptoms can often be the same as allergy symptoms, and if parents are able to recongize a pattern between health state and pollen distribution, they might want to take their child to a hospital.    
 
 
 \subsection{Manual}
