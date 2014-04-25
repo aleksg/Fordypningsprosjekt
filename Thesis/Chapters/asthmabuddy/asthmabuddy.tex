@@ -39,7 +39,7 @@ Power Source & 5 volt MicroUSB \\
 \hline
 Storage & SD card (available with preinstalled OS) \\
 \hline
-Network & 10/100 Mbps Ethernet.  \\
+Network & 10/100 Mbps Ethernet  \\
 \hline
 \end{tabular}
 \caption{Raspberry Pi specifications}
@@ -68,7 +68,7 @@ In addition to the \rpi{} we needed some components that children are able to in
 
 
 \paragraph{RFID Reader}
-In order to interact with \ab{}, children can register RFID-tags against \ab{}'s stomach. The RFID-reader we used was a Sparkfun ID-12LA \fnurl{Sparkfun ID-12LA documentation}{http://tiny.cc/sparkfundoc}. The requirements when choosing the reader was that it should be able to connect through an USB-port, and be able to communicate with UNIX-systems.
+In order to interact with \ab{}, children can register RFID-tags against \ab{}'s stomach. The RFID-reader we used was a Sparkfun ID-12LA\fnurl{Sparkfun ID-12LA documentation}{http://tiny.cc/sparkfundoc}. The requirements when choosing the reader was that it should be able to connect through an USB-port, and be able to communicate with UNIX-systems.
          
 \paragraph{USB speakers}
 In order to play sounds to children, we decided to integrate speakers inside AsthmaBuddy. Since we did not want to pull too many wires out of the bear, we decided to use USB-powered speakers.    
@@ -105,11 +105,11 @@ We used JLayer\fnurl{Javazoom JLayer}{http://www.javazoom.net/index.shtml} to ha
 
 \section{Design Rationale}
 \subsection{Why a Teddy Bear?}
-When designing \buddy{} we choose to use a teddy bear as an avator for our system. There are several reasons as to why we think this is an appropriate avatar. Teddy bears are well known toys, and has been loved for a long time. They are considered gender-neutral\cite{stagnitti1997determining}\cite{cherney2006gender} and in our subjective opinion it is a toy that could be discretely placed in a children's room. With the look of a teddy bear, \buddy{} can easily be placed among other toys and not be too visible. It was also important for us to choose a teddy bear of some size. A too thin bear could lead to problems with fitting the system inside the bear, and could in order lead to scepticism from the children. \buddy{} will have similarities to Tamagotchi\cite{tamagotchi} and Furby\cite{furby}, but \buddy{}'s purpose is to motivate, instruct and learn children about asthma, not being a toy meant purely for play. 
+When designing \buddy{} we choose to use a teddy bear as an avatar for our system. There are several reasons as to why we think this is an appropriate avatar. Teddy bears are well known toys, and has been loved for a long time. They are considered gender-neutral\cite{stagnitti1997determining}\cite{cherney2006gender} and in our subjective opinion it is a toy that could be discretely placed in a children's room. With the look of a teddy bear, \buddy{} can easily be placed among other toys and not stand out. It was also important for us to choose a teddy bear of some size. A too thin bear could lead to problems with fitting the system inside the bear, and could in order lead to scepticism from the children. \buddy{} will have similarities to Tamagotchi\cite{tamagotchi} and Furby\cite{furby}, but \buddy{}'s purpose is to motivate, instruct and learn children about asthma, not being a toy meant purely for play. 
 
 While designing our system we also wanted to make sure our system did not have robot-like features or robotic similarities. While children tend to find technology very interesting, we want to make \buddy{} seem as natural as possible, making a stuffed animal buddy, rather than a technological toy. We believe that these design choices serves our purpose of making children more aware of their asthma, while not being a constant reminder and a stress element. 
 
-Norwegian fire fighters have used a teddy bear in order to calm down children who find themselves in dramatic situations \fnurl{NRK: Firefighters use teddy bears to calm down children}{http://www.nrk.no/trondelag/bamser-i-utrykningsbilene-1.11548966}. The fire fighters state that the children respond positively to the teddy bear. 
+Norwegian fire fighters have used a teddy bear in order to calm down children who find themselves in dramatic situations\fnurl{NRK: Firefighters use teddy bears to calm down children}{http://www.nrk.no/trondelag/bamser-i-utrykningsbilene-1.11548966}. The fire fighters state that the children respond positively to the teddy bear. 
 While we were not able to find scientific research done on the use of teddy bears in dramatic situations, we found this news article interesting and a relevant mention to our research. 
 
 A teddy bear has also been used as an avatar for giving instructions on how to apply a treatment correctly. Glaxo Smith Kline, a leading company within consumer health care uses a teddy bear in their instruction manual for the use of asthma medicine and the breathing chamber\cite{glaxosmithkline}. 
@@ -168,7 +168,7 @@ By ``reasonable'', we imply that the underlying functionality should be relative
 
 \subsection{Answering to Champoux's Development Framework}
 \label{sec:answeringchampoux}
-In Section \ref{sec:champoux} we described the development framework presented by Champoux \etal{}. When developing \buddy{}, we tried to answer the proposed questions that we considered relevant. 
+In Section \ref{sec:champoux} we described the development framework presented by Champoux \etal{} When developing \buddy{}, we tried to answer the proposed questions that we considered relevant. 
 
 \textbf{BO1: What should the user experience?}
 The user should experience an interactive guide to applying an asthma treatment correctly. \buddy{} should give correct information in an understandable manner. 
@@ -220,7 +220,11 @@ None of the sub-tasks needs relational interaction.
 Section \ref{sec:challenges-with-TUI} introduced some of the challenges that are exposed when designing tangible interfaces. Here, we'll discuss how we intend to handle the challenges presented, by answering his questions that we found relevant. 
 
 \textbf{Address: How do I address one of many possible devices?}
+<<<<<<< HEAD
+One of the challenges mentioned here is ``How to not address the system''. This is an interesting challenge when the system is intended for children, as they like to pick things up and carry them around. \buddy{} will only start a treatment in two ways, either by an alarm firing or an RFID-tag attached to an inhaler is read. The RFID-reader is only capable of reading within a distance of 3 - 5 cm. Thus, as long as no alarms is fired, and an inhaler with attached RFID-tag is not withing the reach of the RFID-reader, the system should not respond.  
+=======
 One of the challenges mentioned here is ``How to not address the system''. This is an interesting challenge when the system is intended for children, as they are likely to pick things up and carry them around. If a child picks up \ab{}, it could be interpreted as an interaction. We solved this potential problem by only starting treatments in one of two ways, either by an alarm firing or an RFID-tag attached to an inhaler is read by \ab{}. The RFID-reader is only capable of reading within a distance of 3-5 cm. Thus, as long as no alarms is fired, and an inhaler with attached RFID-tag is not withing the reach of the RFID-reader, the system should not respond.  
+>>>>>>> ec822be8e0a1d20cadbcde08c42f3f12dbe83d43
 
 \textbf{Attention: How do I know the system is ready and attending to my actions?}
 As mentioned previously, \buddy{} has a LED-light on it's nose. When the light is green, the user can expect that the system is running in idle mode. 
@@ -316,5 +320,3 @@ Some small changes was made to the use of the LED light on \ab{}'s nose. \ab{} 1
 
 \section{Evaluation of \ab{}}
 
-
- 
