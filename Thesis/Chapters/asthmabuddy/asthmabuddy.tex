@@ -68,23 +68,33 @@ In addition to the \rpi{} we needed some components that children are able to in
 
 
 \paragraph{RFID Reader}
-A child needs to be able to interact with AsthmaBuddy. We identified two approaches; using a button and/or using RFID technology to do it. We figured that having a big button on the top of a teddy bear would seem somewhat unnatural for a child. Additionally, this could cause problems with the wires inside the teddybear, as a child pushing a button could imply that AsthmaBuddy would be moved around. This could have been avoided by using a battery pack for the \rpi{}, but their capacity does not seem to exceed 24 hours when the \rpi{} is in idle mode. The conclusion was to use RFID technology to proceed in the medication process.
-
-
-The RFID reader we used was a Sparkfun ID-12LA \fnurl{Sparkfun ID-12LA documentation}{http://tiny.cc/sparkfundoc}. One of the requirements of the USB reader was that it should be able to connect through an USB-port. 
+In order to interact with \ab{}, children can register RFID-tags against \ab{}'s stomach. The RFID-reader we used was a Sparkfun ID-12LA \fnurl{Sparkfun ID-12LA documentation}{http://tiny.cc/sparkfundoc}. The requirements when choosing the reader was that it should be able to connect through an USB-port, and be able to communicate with UNIX-systems.
          
 \paragraph{USB speakers}
 In order to play sounds to children, we decided to integrate speakers inside AsthmaBuddy. Since we did not want to pull too many wires out of the bear, we decided to use USB-powered speakers.    
 
 \paragraph{LED lights}
 We used LED lights connected to a breadboard in order to play around with the first prototype. The LED lights emits light in different colors to correspond to what action(s) is expected from the user during a treatment (see more in \ref{sec:proto1}).
-
-\paragraph{Pi4j}
-Pi4j\fnurl{Pi4j}{http://pi4j.com} is a Java framework that allows development for \rpi{} in Java, without having to write anything in C. 
-
+ 
 
 Figure \ref{fig:pi-fritzing} shows a digital overview of \buddy{}. The green figure to the left is our \rpi{}. While it is also connected to a power supply and an internet cable, we chose not to include these in our figure. The red figure to the right is the RFID reader. It is connected to the \rpi{} through an USB cable. The black figure on top is the speaker, connected to the \rpi{} through the audio port. 
 The grey lines and the lamp represents our LED light. It is connected to three of the GPIO (General Purpose I/O) ports on the \rpi{}, through a resistor. The last leg of the LED light is connected to ground on the \rpi{}, without a resistor.
+
+\subsection{Components Considered for Use}
+A child needs to be able to interact with AsthmaBuddy. We identified two approaches; using a button and/or using RFID technology to do it. We figured that having a big button on the top of a teddy bear would seem somewhat unnatural for a child. Additionally, this could cause problems with the wires inside the teddybear, as a child pushing a button could imply that AsthmaBuddy would be moved around. This could have been avoided by using a battery pack for the \rpi{}, but their capacity does not seem to exceed 24 hours when the \rpi{} is in idle mode. The conclusion was to use RFID technology to proceed in the medication process.
+
+[TODO: Skrive om].
+[REMEMBER TO WRITE THAT THEY ARE SIMULATED BEFORE INTERACTION DESIGN (CHP 8.3.2)]
+\subsection{Frameworks and Libraries Used in \ab{}} 
+
+\paragraph{Pi4j}
+We wanted to write the code on our \rpi{} in Java, as it was our most familiar programming language. However, it is cumbersome to use \rpi{}'s GPIO-ports and serial communications with Java and no frameworks. Pi4j\fnurl{Pi4j}{http://pi4j.com} solved this problem, by making the necessary abstractions.
+
+\paragraph{Gson}
+As mentioned in Chapter \ref{chp:description}, our webservice gives out JSON-formatted objects of data stored in our database. We used Google's Gson-library\fnurl{Google Gson}{https://code.google.com/p/google-gson/} to deserialize these objects into Java objects.   
+
+\paragraph{JLayer}
+We used JLayer\fnurl{Javazoom JLayer}{http://www.javazoom.net/index.shtml} to handle the decoding of our recorded mp3-files. 
 
 \section{Design Rationale}
 \subsection{Why a Teddy Bear?}
@@ -126,23 +136,23 @@ By ``reasonable'', we imply that the underlying functionality should be relative
 		\hline
 		\textbf{Interaction Process} & \textbf{Rationale} & \textbf{Possible implementation} \\
 		\hline
-		Give \buddy{} a ``High five'' & Demonstrates to children that \buddy{} is friendly. It is intended that a child should keep \buddy{}'s arm up, and high five \buddy{} with the other arm & A gyroscope and a preassure sensor combined could verify that a high five has been received. \\
+		Give \buddy{} a ``High five'' & Demonstrates to children that \buddy{} is friendly. It is intended that a child should keep \buddy{}'s arm up, and high five \buddy{} with the other arm. & A gyroscope and a preassure sensor combined could verify that a high five has been received. \\
 		\hline
 		Hold \buddy{}'s hand & Demonstrates to children that \buddy{} is friendly. & Preassure sensor within the hand of \buddy{} could solve this. \\
 		\hline
 		Hold smartphone close to AsthmaBuddy's belly & Could demonstrate the ``smartness'' of \buddy{}, i.e. it can communicate with other things. & Could be solved by Bluetooth. \\
 		\hline 
-		Press \buddy{}'s nose. & Demonstrates to children that \buddy{} is friendly. & Preassure sensor within the nose of \buddy{} could solve this. \\
+		Press \buddy{}'s nose & Demonstrates to children that \buddy{} is friendly. & Preassure sensor within the nose of \buddy{} could solve this. \\
 		\hline
-		Press \buddy{}'s belly. & Same as above & Same as above \\
+		Press \buddy{}'s belly & Same as above. & Same as above. \\
 		\hline
 		Hold medicine close to \buddy{}'s mouth & Demonstrates that \buddy{} also needs his medicine. & An RFID-tag attached to the medicine, and an RFID-reader inside the nose of \buddy{} could be used here to control the flow. \\ 
 		\hline
 		Hold RFID-tag close to \buddy{}'s mouth & Is a relatively easy way to proceed with the process. & A loose RFID-tag could be used together with an integrated RFID-reader, in order to proceed. \\ 
 		\hline
-		Hold RFID-tag close to \buddy{}'s belly & Same as above & Same as above \\
+		Hold RFID-tag close to \buddy{}'s belly & Same as above. & Same as above. \\
 		\hline
-		Clap your hands & Should be a fun way of interacting with systems, considering the age of our target group & Sound recognition could be used here. \\ 
+		Clap your hands & Should be a fun way of interacting with systems, considering the age of our target group. & Sound recognition could be used here. \\ 
 		\hline
 	\end{tabular}
 	\label{tab:interaction-rationale}
@@ -203,10 +213,10 @@ None of the sub-tasks needs relational interaction.
 Section \ref{sec:challenges-with-TUI} introduced some of the challenges that are exposed when designing tangible interfaces. Here, we'll discuss how we intend to handle the challenges presented, by answering his questions that we found relevant. 
 
 \textbf{Address: How do I address one of many possible devices?}
-One of the challenges mentioned here is ``How to not address the system''. This is an interesting challenge when the system is intended for children, as they like to pick things up and carry them around. \buddy{} will only start a treatment in two ways, either by an alarm firing or an RFID-tag attached to an inhaler is read. The RFID-reader is only capable of reading within a distance of 3-5 cm. Thus, as long as no alarms is fired, and an inhaler with attached RFID-tag is not withing the reach of the RFID-reader, the system should not respond.  
+One of the challenges mentioned here is ``How to not address the system''. This is an interesting challenge when the system is intended for children, as they are likely to pick things up and carry them around. If a child picks up \ab{}, it could be interpreted as an interaction. We solved this potential problem by only starting treatments in one of two ways, either by an alarm firing or an RFID-tag attached to an inhaler is read by \ab{}. The RFID-reader is only capable of reading within a distance of 3-5 cm. Thus, as long as no alarms is fired, and an inhaler with attached RFID-tag is not withing the reach of the RFID-reader, the system should not respond.  
 
 \textbf{Attention: How do I know the system is ready and attending to my actions?}
-\buddy{} will as mentioned previously have a LED-light on it's nose. When this light is green, the user can expect that the system is running. 
+As mentioned previously, \buddy{} has a LED-light on it's nose. When the light is green, the user can expect that the system is running in idle mode. 
 
 \textbf{Action: How do I effect a meaningful action, control its extent and possibly specify a target or targets for my action?}
 The part that regards specifying a target or several targets is considered irrelevant. The interesting part is how the user can effect a meaningful action and control its extent. This will be taken care of by interactions between the user and \buddy{}. \buddy{} will never run several instructions at once. It will always give short and clear instructions, and wait for feedback from the user in order to proceed. 
@@ -251,13 +261,13 @@ For the first prototype we tried out the following types of interaction with Ast
 \hline
 	Give AsthmaBuddy a ``High Five'' & Worked out fine. A high five is cool and may make \ab{} seem more friendly to the children. & Yes \\
 \hline
-	Hold AsthmaBuddy's hand & Easy to understand and use during a treatment. Should give feedback to indicate that the user has interacted correctly & Yes\\
+	Hold AsthmaBuddy's hand & Easy to understand and use during a treatment. Should give feedback to indicate that the user has interacted correctly. & Yes\\
 \hline
 	Hold smartphone close to AsthmaBuddy's belly & Smart phones are cool, but may be easily damaged if lost on the ground. To risky to let small children handle the smart phone. The size of smart phones may require use of two hands, which may cause complications for the children. & No \\
 \hline
 	Press AsthmaBuddy's nose & Users tended to press the LED light on the nose. Risk of damage to light. & No\\
 \hline
-	Press \buddy{}'s belly & Easy to understand and use during a treatment. Should give feedback to indicate that the user has interacted correctly & Yes\\
+	Press \buddy{}'s belly & Easy to understand and use during a treatment. Should give feedback to indicate that the user has interacted correctly. & Yes\\
 \hline
 	Hold medicine close to AsthmaBuddy's mouth & Created some complications when the user was supposed to hold the mask to his/her mouth and then hold the medicine close to \ab{}'s mouth to proceed. & No \\
 \hline
@@ -275,19 +285,16 @@ For the first prototype we tried out the following types of interaction with Ast
 \end{table}
 
 \paragraph{Operating time}
-The longest time for taking a planned treatment was about 2 minutes for an experienced user, and about 2.5 minutes for an inexperienced user. This treatment included the part where \buddy{} completes the treatment before the child. A normal treatment taken without \ab{} usually takes 1-2 minutes, according to test users. Since \ab{} only takes 0.5-1.5 minutes longer than normal, it should not be considered a time-waster. From another point-of-view, if a child does not want to take his/her medication, it may take a long time. If \ab{} can help on shortening the time spent arguing with the children, a huge amount of time may be saved.      
-
-A By Need treatment was registered to take about a minute for an experienced user. Usually, it takes approximately [XX] minutes to do a By Need treatment \footnote{Information gathered from parents}. [SETT INN SAMMENLIGNING]. [VURDER OG KONKLUDER].  
-
+The longest duration for taking a planned treatment was about 2 minutes for an experienced user, and about 2.5 minutes for an inexperienced user. This treatment included the part where \buddy{} completes the treatment before the child. A normal treatment taken without \ab{} usually takes 1-2 minutes, according to our interview subjects. Since \ab{} only takes 0.5-1.5 minutes longer than normal, it should not be considered a time-waster. From another point-of-view, if a child does not want to take his/her medication, it may cause an argument and take more time to complete the treatment. If \ab{} can help on shortening the time spent arguing with the children, a huge amount of time may be saved.      
 
 \paragraph{Feedback}
 We got some feedback regarding the \emph{by need} treatments. Some parents stated that they would not use \buddy{} to complete a by need treatment, as their child was suffering from an asthma attack. However, one of the parents noted that if children were grown custom to performing their treatment with \buddy{}, it could create a dependency toward it, i.e. \buddy{} could help the child to calm down. Whether or not the by need functionality would actually be used needs more research, as \buddy{} would need to be placed within a home and be nearby when such an attack occurs. 
 
-In order for \ab{} to be useful for inexperienced users, it could have even clearer and more informative instructions. Even though it may seem self-explanatory to take the cap off the medicine before mounting it on the mask, it may not be that obvious to new users. Since \ab{}'s purpose is to instruct and inform, it should have a completely ``foolproof'' instructions. For instance some of the test users tried to attach the inhaler to the mask without removing the protective cap from the inhaler. Since the mask's mount is made from rubber, it gave them the idea that you should just push the medicine into the mount by force. 
+In order for \ab{} to be useful for inexperienced users, it could have even clearer and more informative instructions. Even though it may seem self-explanatory to take the cap off the medicine before mounting it on the mask, it may not be that obvious to new users. Since \ab{}'s purpose is to instruct and inform, it should have a completely ``foolproof'' instructions. For instance some of the test users tried to attach the inhaler to the mask without removing the protective cap from the inhaler. Since the mask's mount is made from rubber, it gave them the idea that you should just push the medicine into the mount by force, which is incorrect. 
 
 When using \ab{} it may sometimes be difficult to hear all the instructions. There should be support for replay of latest command.
 
-One of the users commented that \ab{} should be able to operate as a stand-alone system if the parents do not allow the children to borrow a smart phone and the child does not have a smart phone of his/her own. The same test user commented that she would not take the time to use \ab{} for two minutes every time the child needed to take a treatment, and that \ab{} would become boring after a period of time. 
+One of the users commented that \ab{} should be able to operate as a stand-alone system if the parents do not allow the children to borrow a smart phone and the child does not have a smart phone of his/her own. The same test user commented that she would not take the time to use \ab{} for two minutes every time the child needed to take a treatment, and that \ab{} might become boring after a period of time. 
 
 
 	
@@ -295,7 +302,7 @@ One of the users commented that \ab{} should be able to operate as a stand-alone
 \label{sec:abversion2}
 The improved version of \ab{}, named \ab{} 2.0, had some changes done since version 1.0. As stated in Table \ref{tab:interactioneval}, some of the interaction methods were removed. \ab{} also received some new features, such as a method for letting children more easily check the amount of stars they have gathered. By registering an RFID tag, \ab{} tells how many stars the child has. This was implemented to make \ab{} more of a stand-alone system, and to avoid the problem were parents may not want the children to use their smart phone to use \app{}. 
 
-\ab{} 2.0 now syncs achieved stars automatically between \app{} and \ab{}. This was done to automate some tasks that previously needed manual interaction, and to create a tighter coupling between the two prototypes. 
+\ab{} 2.0 now synchronizes achieved stars automatically between \app{} and \ab{}. This was done to automate some tasks that previously needed manual interaction, and to create a tighter coupling between the two prototypes. 
 
 Some small changes was made to the use of the LED light on \ab{}'s nose. \ab{} 1.0 changed the color of its nose fairly often. This was intended to make the treatment process more interesting; however, it ended up being more confusing than helpful, and was therefore changed. 
 

@@ -27,21 +27,21 @@ The alternative is if children need to take their medicine by need. If they need
 \textbf{Scenario} & 
 	\begin{enumerate}
 	  \itemsep0em
-	  \item User triggers treatment by holding a specific RFID-tag close to AsthmaBuddy
-	  \item System flashes LED-lights to notify user that the system is ready for use
-	  \item System plays sound to instruct the user to shake the medicine
-	  \item System plays sound to instruct user to mount the medicine on the mask and place the mask on his/her face
-	  \item User starts a treatment by interacting with AsthmaBuddy (by pressing it's hand or similar interaction)
-	  \item System plays sound to count during treatment (1-2-3-4-5-6-7-8-9-10), while flashing lights for each count
-	  \item System plays sound to tell user he/she has done a good job
-	  \item System calculates reward based on health state
-	  \item System plays sound to award user with the calculated amount of stars
-	  \item System plays sound to tell the user how many stars he/she has collected totally
+	  \item User triggers treatment by holding a specific RFID-tag close to AsthmaBuddy.
+	  \item System flashes LED-lights to notify user that the system is ready for use.
+	  \item System plays sound to instruct the user to shake the medicine.
+	  \item System plays sound to instruct user to mount the medicine on the mask and place the mask on his/her face.
+	  \item User starts a treatment by interacting with AsthmaBuddy (by pressing it's hand or similar interaction).
+	  \item System plays sound to count during treatment (1-2-3-4-5-6-7-8-9-10), while flashing lights for each count.
+	  \item System plays sound to tell user he/she has done a good job.
+	  \item System calculates reward based on health state.
+	  \item System plays sound to award user with the calculated amount of stars.
+	  \item System plays sound to tell the user how many stars he/she has collected totally.
 	\end{enumerate}
 \\
 \hline
 	\textbf{Extensions} & 
-		x.a User aborts treatment by not continuing the sequence
+		x.a User aborts treatment by not continuing the sequence.
 \\
 \hline
 \end{tabular}
@@ -57,28 +57,28 @@ The alternative is if children need to take their medicine by need. If they need
 \hline
 \textbf{Title} & Planned treatment \\
 \hline
-\textbf{Preconditions} & The current time corresponds with the time for a planned treatment \\
+\textbf{Preconditions} & The current time corresponds with the time for a planned treatment. \\
 \hline 
 \textbf{Scenario} & 
 	\begin{enumerate}
 	  \itemsep0em
-	  \item The system recognizes the time for a planned treatment
-	  \item The system starts blinking with LED-lights and playing sound to notify user
-	  \item Child registers interacts with AsthmaBuddy, to notify that he/she is ready for the treatment
-	  \item Start instructions by playing sound, telling the user to find a grown-up that can keep watch
-	  \item System waits for interaction to make sure the user is ready
-	  \item System tells the user to mount the medicine on the mask and put the medicine towards AsthmaBuddy's face
-	  \item System plays sound to simulate breathing
-	  \item System plays sound to tell the user how easy it was to take medicines and that it is the user's turn
-	  \item System plays sound to instruct user, telling the user to shake the medicine
-	  \item System waits for interaction to make sure the user is ready
-	  \item System plays sound to instruct user to put the mask on his/her face
+	  \item The system recognizes the time for a planned treatment.
+	  \item The system starts blinking with LED-lights and playing sound to notify user.
+	  \item Child registers interacts with AsthmaBuddy, to notify that he/she is ready for the treatment.
+	  \item Start instructions by playing sound, telling the user to find a grown-up that can keep watch.
+	  \item System waits for interaction to make sure the user is ready.
+	  \item System tells the user to mount the medicine on the mask and put the medicine towards AsthmaBuddy's face.
+	  \item System plays sound to simulate breathing.
+	  \item System plays sound to tell the user how easy it was to take medicines and that it is the user's turn.
+	  \item System plays sound to instruct user, telling the user to shake the medicine.
+	  \item System waits for interaction to make sure the user is ready.
+	  \item System plays sound to instruct user to put the mask on his/her face.
 	  \item System plays sound counting to 10. 
-	  \item System plays sound to tell the user he/she has done a good job
-	  \item System calculates reward based on health state
-	  \item System plays sound to award user with the calculated amount of stars
-	  \item System makes a HTTPGet call to the server to find the total amount of stars collected
-	  \item System plays sound to inform the user about how many stars the user has collected totally
+	  \item System plays sound to tell the user he/she has done a good job.
+	  \item System calculates reward based on health state.
+	  \item System plays sound to award user with the calculated amount of stars.
+	  \item System makes a HTTPGet call to the server to find the total amount of stars collected.
+	  \item System plays sound to inform the user about how many stars the user has collected totally.
 	\end{enumerate}
 \\
 \hline
@@ -143,8 +143,7 @@ Figures \ref{fig:ab-sd-byneed} - \ref{fig:ab-sd-completing-treatment} shows sequ
 
 \paragraph{By Need Treatment}
 We were not able to find a reasonable easy way to let the \buddy{} automatically be aware of the medicine that was to be taken at the start of a treatment. As a result, we used ssh into the \rpi{}, and provided the color of the medicine and the sequence number for the interaction that was to be tested.
-
-After inserting these parameters, the LogicHandler retrieves a LinkedList of Interactions that is to be played. After this sequence is ended, the system jumps to \ref{fig:ab-sd-instructions}.
+After inserting these parameters, the LogicHandler retrieves a \code{LinkedList} of Interactions that is to be played. After this sequence is ended, the system jumps to \ref{fig:ab-sd-instructions}.
  
 \paragraph{Planned Treatment}
 If AsthmaBuddy is started without any parameters, it starts looking through alarm files (see Section \ref{sec:node-server}) every 60 seconds. If no alarm is returned from UserDataManager, it waits. Once an alarm is found, it AsthmaBuddy is notified through onNotificationFired, which starts the treatment process. 
@@ -159,5 +158,5 @@ When a treatment is finished, i.e. we are out of the while loop in Figure \ref{f
 \subsection{Node Server}
 \label{sec:node-server}
 In addition to the Java application running on the \rpi{}, we developed a Node.js server\fnurl{Node.js}{http://nodejs.org/}. This backend system was developed in order to easily visualize the rewards given to a child after a treatment using \buddy{}. The initial problem is that AsthmAPP stores data to a MySQL database, with childId as the primary key for most tables. Initially, \buddy{} has no way of knowing which childId to use in order to store the rewards. The current solution to our problem was to develop a Node.js server on AsthmaBuddy, which run as a background process. Whenever we want to switch users, AsthmAPP does an HTTP POST to this server, including the childId as a parameter. The server then retrives JSON-formatted data from our webservice, which includes the rewards a child has been given until now (for instance, by use of the smartphone), and the alarms set for this user. 
-When \buddy{} starts running, it checks for alarms to be fired every 60 seconds. When a child has finished a treatment, AsthmaBuddy updates the database, with the childId previously retrieved, and the amount of stars a child gathered during his or her treatment. Additionally, with the data retrieved from the database, \buddy{} has the capability to tell the user how many stars a child has gathered\footnote{Since this is a prototype, this functionality only works until a child has gathered 20 stars. It became cumbersome to handle rewards totalling more than 20 stars}. This process is shown in Figure \ref{fig:ab-sd-synchronizing}.
+When \buddy{} starts running, it checks for alarms to be fired every 60 seconds. When a child has finished a treatment, AsthmaBuddy updates the database, with the childId previously retrieved, and the amount of stars a child gathered during his or her treatment. With the data retrieved from the database, \buddy{} has the capability to tell the user how many stars a child has gathered\footnote{Since this is a prototype, this functionality only works until a child has gathered 20 stars. It became cumbersome to handle rewards totalling more than 20 stars}. This process is shown in Figure \ref{fig:ab-sd-synchronizing}.
 
