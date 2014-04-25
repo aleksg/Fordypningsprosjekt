@@ -81,17 +81,24 @@ Figure \ref{fig:pi-fritzing} shows a digital overview of \buddy{}. The green fig
 The grey lines and the lamp represents our LED light. It is connected to three of the GPIO (General Purpose I/O) ports on the \rpi{}, through a resistor. The last leg of the LED light is connected to ground on the \rpi{}, without a resistor.
 
 \subsection{Components Considered for Use}
-A child needs to be able to interact with AsthmaBuddy. We identified two approaches; using a button and/or using RFID technology to do it. We figured that having a big button on the top of a teddy bear would seem somewhat unnatural for a child. Additionally, this could cause problems with the wires inside the teddybear, as a child pushing a button could imply that AsthmaBuddy would be moved around. This could have been avoided by using a battery pack for the \rpi{}, but their capacity does not seem to exceed 24 hours when the \rpi{} is in idle mode. The conclusion was to use RFID technology to proceed in the medication process.
+In addition to the components mentioned in the last section, we considered using buttons, touch sensors and a microphone. Even though we did not use these components, we simulated them during user tests using the Wizard-of-Oz technique. 
 
-[TODO: Skrive om].
-[REMEMBER TO WRITE THAT THEY ARE SIMULATED BEFORE INTERACTION DESIGN (CHP 8.3.2)]
+\paragraph{Buttons}
+One or more buttons could have been used on \ab{}. Buttons could have been used to manage boolean values, for instance if the progression of an instruction needed a yes/no answer. We did not include buttons, as it could disturb the impression of \ab{} as a regular teddy bear, i.e. it would look more mechanical. Additionally, we were not able to restrict the amount of buttons needed. 
+
+\paragraph{Touch sensors}
+A touch sensor could serve the same purpose as a single button. We did not include this component, as it would require a set of low level programming skills. 
+
+\paragraph{Microphone}
+A microphone could be used for speech recognition purposes. However, the \rpi{} does not have the processing power required to do speech recognition. Additionally, it would require writing code that is able to distinguish between noises\footnote{We were not able to find any open source libraries that are able to do speech recognition for the Norwegian language}. We belive it could have been a cool feature that would help establishing a relationship between the user and \ab{}.    
+
 \subsection{Frameworks and Libraries Used in \ab{}} 
 
 \paragraph{Pi4j}
 We wanted to write the code on our \rpi{} in Java, as it was our most familiar programming language. However, it is cumbersome to use \rpi{}'s GPIO-ports and serial communications with Java and no frameworks. Pi4j\fnurl{Pi4j}{http://pi4j.com} solved this problem, by making the necessary abstractions.
 
 \paragraph{Gson}
-As mentioned in Chapter \ref{chp:description}, our webservice gives out JSON-formatted objects of data stored in our database. We used Google's Gson-library\fnurl{Google Gson}{https://code.google.com/p/google-gson/} to deserialize these objects into Java objects.   
+Refer Section ref{sec:techandframeinapp} for a description of Gson.    
 
 \paragraph{JLayer}
 We used JLayer\fnurl{Javazoom JLayer}{http://www.javazoom.net/index.shtml} to handle the decoding of our recorded mp3-files. 
