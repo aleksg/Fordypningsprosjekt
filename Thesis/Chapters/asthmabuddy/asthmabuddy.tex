@@ -220,11 +220,8 @@ None of the sub-tasks needs relational interaction.
 Section \ref{sec:challenges-with-TUI} introduced some of the challenges that are exposed when designing tangible interfaces. Here, we'll discuss how we intend to handle the challenges presented, by answering his questions that we found relevant. 
 
 \textbf{Address: How do I address one of many possible devices?}
-<<<<<<< HEAD
-One of the challenges mentioned here is ``How to not address the system''. This is an interesting challenge when the system is intended for children, as they like to pick things up and carry them around. \buddy{} will only start a treatment in two ways, either by an alarm firing or an RFID-tag attached to an inhaler is read. The RFID-reader is only capable of reading within a distance of 3 - 5 cm. Thus, as long as no alarms is fired, and an inhaler with attached RFID-tag is not withing the reach of the RFID-reader, the system should not respond.  
-=======
-One of the challenges mentioned here is ``How to not address the system''. This is an interesting challenge when the system is intended for children, as they are likely to pick things up and carry them around. If a child picks up \ab{}, it could be interpreted as an interaction. We solved this potential problem by only starting treatments in one of two ways, either by an alarm firing or an RFID-tag attached to an inhaler is read by \ab{}. The RFID-reader is only capable of reading within a distance of 3-5 cm. Thus, as long as no alarms is fired, and an inhaler with attached RFID-tag is not withing the reach of the RFID-reader, the system should not respond.  
->>>>>>> ec822be8e0a1d20cadbcde08c42f3f12dbe83d43
+One of the challenges mentioned here is ``How to not address the system''. This is an interesting challenge when the system is intended for children, as they are likely to pick things up and carry them around. If a child picks up \ab{}, it could be interpreted as an interaction. We solved this potential problem by only starting treatments in one of two ways, either by an alarm firing or an RFID-tag attached to an inhaler is read by \ab{}. The RFID-reader is only capable of reading within a distance of 3 - 5 cm. Thus, as long as no alarms is fired, and an inhaler with attached RFID-tag is not withing the reach of the RFID-reader, the system should not respond.  
+
 
 \textbf{Attention: How do I know the system is ready and attending to my actions?}
 As mentioned previously, \buddy{} has a LED-light on it's nose. When the light is green, the user can expect that the system is running in idle mode. 
@@ -266,7 +263,7 @@ For the first prototype we tried out the following types of interaction with Ast
 \paragraph{Evaluation of interaction methods}
 \label{chp:interaction-methods}
 \begin{table}[H]
-\begin{tabular}{|p{5.0cm} | p{6.0cm} | p{3.0cm} |}
+\begin{tabular}{|p{4.0cm} | p{7.5cm} | p{2.5cm} |}
 \hline 
 \textbf{Interaction Method} & \textbf{Comments} & \textbf{Will it be in version 2?}\\
 \hline
@@ -288,7 +285,7 @@ For the first prototype we tried out the following types of interaction with Ast
 \hline
 	Clap your hands & Worked out OK. At one point the user has to clap hands when having the mask in his/her hands, which may cause some problems, but should not be a big problem. & Yes\\
 \hline
-	A variation of the above interactions & Confusing for users. The confusion may take the fun out of it & May be considered in a revised form.\\
+	A variation of the above interactions & Confusing for users. The confusion may take the fun out of it. & May be considered in a revised form.\\
 \hline
 \end{tabular}
 \caption{Evaluation of interaction methods for AsthmaBuddy}
