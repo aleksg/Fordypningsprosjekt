@@ -2,10 +2,10 @@
 \label{sec:systemoverview}
 
 \subsection{Use Cases}
-Figure \ref{fig:pi-use-cases} shows a general overview of the use cases we have included in our prototype. A medication process can be started in one out of two ways. 
-A parent can register an alarm by using AsthmAPP. This alarm is then triggered by the \code{AsthmaBuddy} instance running\footnote{The reader should take notice that the tangible user interface \ab{} differs from the program running on the \rpi{}, which is called \code{AsthmaBuddy}(note the change of font)}, giving the child a notification that it is time to take their medicine.
+Figure \ref{fig:pi-use-cases} shows a general overview of the use cases we have included in our prototype. A medication process can be started set off two ways:
+A parent can register an alarm by using AsthmAPP. This alarm is then set of by the \code{AsthmaBuddy} instance running\footnote{The reader should take notice that the tangible user interface \ab{} differs from the program running on the \rpi{}, which is called \code{AsthmaBuddy}(note the change of font)}, giving the child a notification that it is time to take the relevant medicine.
 
-The alternative is if children need to take their medicine by need. If they need to take a medicine by need, they simply register their RFID-tag before children are taken through a quicker process (see Manuscript \ref{chp:anuscript}).  
+The alternative to a registered alarm is if a child needs to take the medicine by need. In such case, the child or parent simply registers the RFID-tag before the child is guided through a quicker process (see Manuscript \ref{chp:anuscript}).  
 
 \begin{figure}[H] 
 	\centering
@@ -37,7 +37,7 @@ The alternative is if children need to take their medicine by need. If they need
 	  \item System plays sound to count during treatment (1-2-3-4-5-6-7-8-9-10), while flashing lights for each count.
 	  \item System plays sound to tell user he/she has done a good job.
 	  \item System calculates reward based on health state.
-	  \item System plays sound to award user with the calculated amount of stars.
+	  \item System plays sound to award user with the calculated number of stars.
 	  \item System plays sound to tell the user how many stars he/she has collected totally.
 	\end{enumerate}
 \\
@@ -66,7 +66,7 @@ The alternative is if children need to take their medicine by need. If they need
 	  \itemsep0em
 	  \item The system recognizes the time for a planned treatment.
 	  \item The system starts blinking with LED-lights and playing sound to notify user.
-	  \item Child registers interacts with AsthmaBuddy, to notify that he/she is ready for the treatment.
+	  \item Child interacts with AsthmaBuddy, to notify that he/she is ready for the treatment.
 	  \item Start instructions by playing sound, telling the user to find a grown-up that can keep watch.
 	  \item System waits for interaction to make sure the user is ready.
 	  \item System tells the user to mount the medicine on the mask and put the medicine towards AsthmaBuddy's face.
@@ -78,8 +78,8 @@ The alternative is if children need to take their medicine by need. If they need
 	  \item System plays sound counting to 10. 
 	  \item System plays sound to tell the user he/she has done a good job.
 	  \item System calculates reward based on health state.
-	  \item System plays sound to award user with the calculated amount of stars.
-	  \item System makes a HTTPGet call to the server to find the total amount of stars collected.
+	  \item System plays sound to award user with the calculated number of stars.
+	  \item System makes a HTTPGet call to the server to find the total number of stars collected.
 	  \item System plays sound to inform the user about how many stars the user has collected totally.
 	\end{enumerate}
 \\
@@ -155,11 +155,11 @@ If an \code{AsthmaBuddy} instance is started without any parameters, it starts l
 Playing instructions is mainly a loop of running a playing a sound, and turning on and off the LED-lights through the \code{LightEmitter} instance. 
 
 \paragraph{Finishing a Treatment}
-When a treatment is finished, i.e. we are out of the while loop in Figure \ref{fig:ab-sd-instructions}, we register the treatment in the database. This ensures that children are able to see the rewards in AsthmAPP. 
+When a treatment is finished, i.e. we are out of the while loop in Figure \ref{fig:ab-sd-instructions}, we register the treatment in the database. This ensures that the child is able to see the rewards in AsthmAPP. 
 
 
 \subsection{Node Server}
 \label{sec:node-server}
-In addition to the Java application running on the \rpi{}, we developed a Node.js server\fnurl{Node.js}{http://nodejs.org/}. This backend system was developed in order to easily visualize the rewards given to a child after a treatment using \buddy{}. The initial problem is that AsthmAPP stores data to a MySQL database, with \code{childId} as the primary key for most tables. Initially, \buddy{} has no way of knowing which \code{childId} to use in order to store the rewards. The current solution to our problem was to develop a Node.js server on AsthmaBuddy, which run as a background process. Whenever we want to switch users, AsthmAPP does an HTTP POST to this server, including the \code{childId} as a parameter. The server then retrives JSON-formatted data from our webservice, which includes the rewards a child has been given until now (for instance, by use of the smartphone), and the alarms set for this user. 
-When \buddy{} starts running, it checks for alarms to be fired every 60 seconds. When a child has finished a treatment, \code{AsthmaBuddy} updates the database, with the \code{childId} previously retrieved, and the amount of stars a child gathered during his or her treatment. With the data retrieved from the database, \buddy{} has the capability to tell the user how many stars a child has gathered\footnote{Since this is a prototype, this functionality only works until a child has gathered 20 stars. It became cumbersome to handle rewards totalling more than 20 stars}. This process is shown in Figure \ref{fig:ab-sd-synchronizing}.
+In addition to the Java application running on the \rpi{}, we developed a Node.js server\fnurl{Node.js}{http://nodejs.org/}. This backend system was developed in order to easily visualize the rewards given to a child after a treatment using \buddy{}. The initial problem is that AsthmAPP stores data to a MySQL database, with \code{childId} as the primary key for most tables. Initially, \buddy{} has no way of knowing which \code{childId} to use in order to store the rewards. The current solution to our problem was to develop a Node.js server on AsthmaBuddy, which run as a background process. Whenever we want to switch users, AsthmAPP does an HTTP POST to this server, including the \code{childId} as a parameter. The server then retrives JSON-formatted data from our webservice, which includes the rewards a child has been given until now (for instance, by using a smartphone), and the alarms set for this user. 
+When \buddy{} starts running, it checks for alarms to be set off every 60 seconds. When a child has finished a treatment, \code{AsthmaBuddy} updates the database, with the \code{childId} previously retrieved, and the number of stars a child collected during his/her treatment. With the data retrieved from the database, \buddy{} has the capability to tell the user how many stars a child has collected\footnote{Since this is a prototype, this functionality only works until a child has collected 20 stars. It became cumbersome to handle rewards totalling more than 20 stars}. This process is shown in Figure \ref{fig:ab-sd-synchronizing}.
 
