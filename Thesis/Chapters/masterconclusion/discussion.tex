@@ -139,22 +139,22 @@ Children in the age of 3 - 5 years old understand that they get better from taki
 \subsubsection{TUI as a Tool for Motivating}
 \label{sec:tuiasatoolformotivating}
 
-\paragraph{Feedback}
+\textbf{Feedback}
 
 Tangible user interfaces could be used to give feedback to children about their treatment. They could for instance notify how good they have been at taking their medicine during a week, and notify if they have forgotten a medicine at a day. This feedback should however be discrete and implemented in a non-obtrusive manner, as parents could interpret \ab{} as yet another annoying toy in the house.   
 
 
-\paragraph{Calming children down before a treatment}
+\textbf{Calming children down before a treatment}
 
 If children are scared before they take their medicine, tangible user interfaces could help calming children down. A friendly character such as a teddy bear might help distract the children from the situation and make them forget about what scared them in the first place. 
 
 
-\paragraph{Turn the process into a game}
+\textbf{Turn the process into a game}
 
 TUIs could be used to motivate children by turning each treatment into a game. At the moment, \ab{} and \app{} makes the long run process into a game. A TUI could be used to turn a single treatment into a game, eg. by saying that \textit{``If you take the cap off the medicine, you get ten points''} and \textit{``If you breathe for ten seconds, you get a hundred points''}. Then children could do the math to calculate their total sum, that the TUI can state is correct or incorrect. 
 
 
-\paragraph{Responsibility}
+\textbf{Responsibility}
 
 A TUI could be used to make children more responsible regarding their own disease. Children could for instance be prompted to check whether there is enough medicine in their inhaler, and be responsible for telling their parents if they need new supply. \ab{} could be used for the same purpose by waiting to fire off an alarm, and check to see if the child reacts upon this. If the child reacts, it could provide positive feedback, and if the child does not react, it could give a strict notice that they can't rely entirely on a stuffed animal\footnote{This could prove to have a negative effect, but is an option to give children more responsibility.}.  
 %TODO: Should we write this somewhere
@@ -163,14 +163,14 @@ A TUI could be used to make children more responsible regarding their own diseas
 \subsubsection{TUI as a Tool for Distracting}
 \label{sec:tuiasatoolfordistracting}
 
-\paragraph{Distracting children while taking a medicine}
+\textbf{Distracting children while taking a medicine}
 In its current state, \ab{} distracts children while taking their medicine by counting to 10, which is the number of seconds a child should breathe in his/her breathing chamber. Additionally, the LED-light at its nose is blinking, which we will discuss further in Section \ref{sec:dosanddontsfortui}. 
 
 Since we only have 10 seconds to work with, there are big limitations on what \ab{} can actually do in order to distract them in a natural way. It could be argued that having \ab{} by their side is actually enough distraction, as they have something to look on. If a TUI with movable parts had been developed, these parts could be used to give children something else to look on, by for instance introducing them to a new dance once in while.        
 
 A more interesting case would be to distract children that are using a nebulizer in their treatment, as these often lasts for about 10 minutes or more. Children would then have to rely on something more exciting, like an audio book. 
 
-\paragraph{Distracting children between medicines}
+\textbf{Distracting children between medicines}
 
 Children often have to take two different medicines after eachother, but not immediately. A reguler scheme is to first take Ventoline, then wait for five minutes, before a dosage of Flutide should be taken. One of the interview subjects pointed out that: 
 
@@ -183,7 +183,7 @@ He further noted that it was easy to get ``overly excited'' and take the Flutide
 \label{sec:tuiasatoolforinforming}
 For children with astma there is a lot to remember. We have already discussed the theme of learning about asthma, which is a very important aspect. There is still more to remember, and we have found some ideas for what the tangible user interface may help for. 
 
-\paragraph{Counting doses left in the inhaler}
+\textbf{Counting doses left in the inhaler}
 
 One of the interviewees noted that: 
 
@@ -192,7 +192,7 @@ One of the interviewees noted that:
 Since the inhalers have a certain amount of doses in them, and the amount of doses varies between different medicines and their vendors, it may require an effort to remember how many doses are left. The disk-formed medicine often come with an indicator, while inhalers do not. Inhalers make a ``poof'' sound when pressed, and this sound may occur regardless of whether or not there are any doses left. By using a RFID on the medicine and a RFID-reader on the TUI, may keep up with how many doses have been taken, and the system automatically warns the user when the number of doses is running low. There are many other ways to solve this digitally, but we believe that having \buddy{} count how many doses are left and  tell the user by sound could be fun for children and helpful for parents.
 
 
-\paragraph{Pollution levels and pollen forecast}
+\textbf{Pollution levels and pollen forecast}
 
 There are many different applications and web pages for reading and recieving information about air quality and pollen forecast. These web sites often offer data to third party services. AsthmAPP has the functionality for getting air quality readings and pollen forecast in the same application (see Section \ref{sec:description-medicine-log}).
 \buddy{} could help the children with the same functionality, starting the day by telling how the air quality and pollen readings are for the day. 
@@ -200,7 +200,7 @@ There are many different applications and web pages for reading and recieving in
 In a future version, \buddy{} could calculate and foresee the amount of medicine needed when there is much pollen or bad air quality and update its alarm schedule based on the knowledge gathered. However, this is a functionality which will require research and we do not have the knowledge to judge if this is possible to implement or whether it is useful for the users. 
 
 
-\paragraph{Reminders}
+\textbf{Reminders}
 
 \buddy{} has functionality for firing alarms based on the treatment plan set in AsthmAPP. This makes it easier for the children and parents to remember to apply the treatment at the planned time. While taking medicine is often a routine for families with asthmatic children, \buddy{} could be a useful embodyment of a reminder. 
 
@@ -234,11 +234,11 @@ In the future, \buddy{} could communicate with dust sensors, that could indicate
 \subsubsection{Do's and Don'ts when Using a TUI}
 \label{sec:dosanddontsfortui}
 
-\paragraph{Mobility}
+\textbf{Mobility}
 
 When developing a TUI for children it is important that the TUI is mobile. Children become attached to their toys and like to take them with them. To make the most out of a tool such as \buddy{} it is important that the children may take it with them. The problem of power usage may be solved by a battery. The problem of recharging can be solved by charging at night. It is also possible to buy a WiFi shield for the \rpi{} that could process communication to a server. This would solve mobility within a home. However, it would not solve the problem when a child is travelling, for instance by car. Being able to use \ab{} in a car would require their parents to have created a hotspot.   
 
-\paragraph{Use of colored lights}
+\textbf{Use of colored lights}
 
 With \buddy{} we tried the use of LED lights to make \buddy{} more interesting than a normal teddy bear. During a treatment the LED light would indicate which medicine was supposed to be taken, by beaming lights in the same color, blink to count the seconds when breathing and using red light to indicate the seriousness of having to find an adult to overview the process. 
 
@@ -251,6 +251,6 @@ One of our interview subjects, a PhD candidate of product design stated in an in
 We believe that the use of colored lights as a distraction method during a treatment is a complete field of research on it's own. There already exists some research, such as M\ae hlum's ``Concept for Increased User Acceptability When Treating Children With Respiratory Infections\cite{mahlum2013}''. During our project, we have not conducted enough research to draw conclusions on the use of colored lights during treatments. 
 
 
-\paragraph{Interaction Methods}
+\textbf{Interaction Methods}
 
 \buddy{} in its prototype form was not able to sense interaction, and was operated by using a ``Wizard-of-Oz technique''\cite{wilson1988rapid}. \buddy{} was not able to give feedback that the user did interaction correctly. The only form of confirmation was that the next sound clip would start playing. This may lead to confusion and uncertainties among users as to whether they interact correctly. \iref{}

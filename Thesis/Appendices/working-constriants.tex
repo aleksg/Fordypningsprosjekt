@@ -2,7 +2,7 @@
 \chapter{Constraints}
 \label{chp:securityrequirements}
 
-By law, we have some constraints in order to proceed start usability testing. This Appenix cover these. 
+By law, we have some constraints in order to proceed start usability testing. This Appendix cover these. 
 
 \section{The Health Register Act}
 \label{sec:helseregisterloven}
@@ -12,7 +12,7 @@ Norway has specific laws for storing of medical information. The most significan
 The most significant consequences is that the information has to be stored on servers on Norwegian soil. This eliminates the option of using cloud-based services such as Amazon EC2, Windows Azure or Google App Engine. 
 
 %https://helseforskning.etikkom.no/ikbViewer/page/prosjekterirek/prosjektregister/prosjekt?p_document_id=245952&p_parent_id=248861&_ikbLanguageCode=us
-In addition, we need permission from \emph{REK} \fnurl{Regional Committees for Medical and Health Research Ethics}{https://helseforskning.etikkom.no/} in order to store medical records in the application. This document is attached as Appendix [INSERT REFERENCE]. If the mobile application were ever to be deployed to Google Play, or AsthmaBuddy commercialized, we would need permission from \emph{The Data Protection Authority}, but it is not required if the application is just for research purposes. 
+In addition, we need permission from \emph{REK}\fnurl{Regional Committees for Medical and Health Research Ethics}{https://helseforskning.etikkom.no/} in order to store medical records in the application. This document is attached as Appendix \ref{app:consentform}. If the mobile application were ever to be deployed to Google Play, or AsthmaBuddy commercialized, we would need permission from \emph{The Data Protection Authority}, but it is not required if the application is just for research purposes. 
 
 \section{Measures for Anonymization}
-Pursuant to section 16 of the Health Register Act \cite{helseregisterloven} all information that may identify a person, must be encrypted, i.e. it should be impossible to find which person a specific record corresponds to by looking at a database dump.  
+Pursuant to section 16 of the Health Register Act\cite{helseregisterloven} all information that may identify a person, must be encrypted, i.e. it should be impossible to find which person a specific record corresponds to by looking at a database dump. We chose to rename medicines mentioned in the application, in order to obscure their connection to their real-life counterparts. 
