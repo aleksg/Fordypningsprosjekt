@@ -1,23 +1,53 @@
 
 \subsection{Introduction to Usability}
-[Should we have a small section here to discuss basic usability, and what is has to do with our system?]
+There are many ways to describe the term usability. 
+
+The International Organization for Standardization(ISO) uses the following definition\cite{isousability}:
+
+\textit{``Extent to which a system, product or service can be used by specified
+users to achieve specified goals with effectiveness, efficiency
+and satisfaction in a specified context of use.''}
+
+The same document defines the term ``context of use'' as:
+
+\textit{``Users, tasks, equipment (hardware, software and materials), and
+the physical and social environments in which a product is used.''}
+
+These definitions cover how the system is used, the user's thoughts about the use and the context of the system. This can be broken down further into several subgoals in order to achieve better usability, and to give a better insight as to what usability is. 
+These subgoals are:
+
+\begin{enumerate}
+\item{How precisely is the user able to perform a task by using the application?}
+\item{How much resources (for example time, or number of tries) was used to perform the given task using the application?}
+\item{How many errors occurred?}
+\item{Did the user find the use satisfactory?}
+\end{enumerate}
+
+Schneiderman stated eight golden rules in order to achieve a good usability of computer systems\cite{shneiderman2003designing}. In his rules he mentions consistency, informative feedback, reducing short term memory load and permitting easy reversal of actions. These eight golden rules have since their publication become a central part of usability engineering.
+
+Today usability is extremely important in order to achieve success for a system. The users expect a functional and easy-to-use system. From the user's point of view, working with a product which is easily understood, leads to increased productivity, which again may lead to increased sales/usage\cite{folmer2004architecting}. Proper usability engineering may also lead to lower costs for the developers and higher chances for projects being finished on time\cite{nielsen1994usability}. 
 
 \subsection{Purpose}
 \label{sec:usabilitypurpose}
-Usability tests are usually performed in order to detect errors in a system. We wanted to perform usability tests in a slightly different manner. In addition to discover errors, we observed how children take their medicine in combination with technology. We used the results of the usability tests to find potential for improvement and design ideas for  the product.
+Usability tests are usually performed in order to detect errors in a system. We wanted to perform usability tests in a slightly different manner. In addition to discover errors, we observed how children take their medicine in combination with technology. We used the results of the usability tests to find potential for improvements and design ideas for the product, in addition to validate whether or not our solution worked in a satisfactory manner.
  
 The tasks given to the participants were created with routine use of the application in mind. Usability tests were performed with the help of participants with no prior knowledge of the application. These participants were chosen in order to receive valuable feedback on usability problems with the current design and structure, and to prevent invalid feedback from users who already know how to perform the tasks. In addition, this situation resembled everyday life of the users.
+
+As one of the systems we tested was an Android application, the question of whether we should test it on an emulator installed on a computer, or by the use of a smartphone was raised. While the emulator allows for easier screen and input capturing, it suffers from the drawbacks that interaction is performed through a mouse and a keyboard, in addition to running far slower than an Android device. Using an Andriod device would lead to a more realistic interaction pattern, but it suffers from the drawback that screen capturing is not possible unless the device is rooted\fnurl{Android rooting}{http://en.wikipedia.org/wiki/Android\_rooting}. We chose to test the system on an Android device, as we figured it would seem more natural for a child and the NSEP laboratory has capabilities to record the user interaction through cameras.  
 
 
 \subsection{Test Method}
 \label{sec:testmethod}
-The execution of the usability tests were based on the theory described in Section \ref{sec:howtotestusability} and Section \ref{sec:usabilitytestchildren}.
 
-Before each test, we performed a quick-and-dirty pilot test in order to discover critical errors that could make an impact on the result.
+The usability tests were performed at the NSEP Usability Lab\fnurl{NSEP Usability Lab}{www.ntnu.no/nsep}, which provided measures for recording the sessions.  
 
-The participants were given an Android mobile device to perform tasks on. The different tasks were given one by one. The participants were introduced to the ``think-aloud''-method, and will be told to ask questions during the process, even though the test leader was not allowed to answer questions during the test. The main reason for gathering questions was for the discussion afterwards or in order to facilitate the ``think-aloud''-method. 
+Before each test, we performed a pilot test in order to discover last minute critical errors that could make an impact on the result.
 
-The test leader finished the test by asking questions regarding what the participants thought of the system and by answering the questions that were asked during the test. We also asked parents how they felt that the medication process went, so that they can compare it to their daily situation at home, and if they got the impression that the product could be helpful.  
+The test was divided into two stages. In the first stage, the parent were to use \app{} for a couple of basic tasks. In the second stage, the child was to perform a set of tasks (the tasks can be found in Appendix \ref{app:scenarioandtasks}). We wanted children to observe while their parent performed the tasks, in order for them to understand that the process was harmless. Additionally, we let their parents sit next to them and explain the tasks for them, such that the children were not told to perform some seemingly random task by a stranger.    
+ 
+The participants were given an Android mobile device to perform their tasks on. The different tasks were given one by one. The participants were introduced to the ``think-aloud''-method\cite{lewis1982using}, and was told to ask questions during the process, even though the test leader was not allowed to answer questions during the test. The main reason for gathering questions was for the discussion afterwards and facilitate for the ``think-aloud''-method. 
+
+The test leader finished the test by asking questions regarding what the participants thought of the system and by answering the questions that were asked during the test. We also asked parents how they felt that the medication process went, so that they could compare it to their daily situation at home, and if they got the impression that the product could be helpful.  
 
 The results were later analyzed in order to discover any improvements needed to the system. The errors were rated after level of severity\cite{dumas1995practical}. 
 
@@ -29,9 +59,13 @@ The results were later analyzed in order to discover any improvements needed to 
 \end{itemize}
 
 
+An often used approach to measure the usability of a system, is to use the System Usability Scale (SUS)\cite{sus}, together with the observations made during the test. These scores may give an indication of the usability of a system\cite{susform}. As we were dealing with children, we had to use a different approach in order to get feedback from the children. 
+
+Zaman et. al. proposes a way to measure the likeability of tangible interaction with preschoolers\cite{zaman2007measure}. They based their research on work done by Read, MacFarlane and Casey\cite{read2002endurability}, who found that traditional measures for likeability, for instance a smileyometer, proved to give false results. In fact, Read et. al. found that more than 80\% of the children being tested gave a ``Brilliant'' score. Zaman et. al. implies that children are actually lying when giving these scores, which is understandable from a questionnaire perspective. Instead of using scales as a measure of what is likeable or not, they propose a model where they compare different interaction systems against eachother. They call it the ``This or that'' method. For instance, the interviewer asks the child which system the child prefers, followed by ``this or that'' while pointing to the different systems. We used a similar approach to understand which forms of interaction children like most, and which system they liked to interact with the most, \app{} or \ab{}.   
+
 
 \subsection{Scenario and Tasks Given to the Users}
 \label{sec:scenarioandtasksgiventotheusers}
-We planned to use test users that speak fluent Norwegian, since the application has Norwegian as it's main language. Therefore the scenario and tasks were also written in Norwegian. The exact scenario and tasks handed to the participants can be found in Appendix \ref{app:scenarioandtasks}, but for convenience the next paragraph gives a short summary of the scenario and tasks.
+Since the application has Norwegian as it's main language, the scenario and tasks were given in Norwegian. A translation of the scenario and tasks handed to the participants can be found in Appendix \ref{app:scenarioandtasks}, but for convenience the next paragraph gives a brief summary.
 
 The scenario explained that the user was a parent of a 4-year-old child with asthma. They have recently seen a doctor, and will now have to set up treatment plans according to advice given by the specialist. Since they have little experience with asthma, they would have to look up information about the medicines and how the treatment will be done. In order to motivate the child to continue taking his/her medicine, they will have to add a reward via the application menu. Finally, they would have to look through the calendar log in order to find correlations between the child's health state and the use of medicines. 
