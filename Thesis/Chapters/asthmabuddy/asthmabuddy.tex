@@ -48,14 +48,15 @@ Network & 10/100 Mbps Ethernet  \\
 \end{table}
 
 \begin{figure}[H] 
-	\begin{minipage}[b]{0.4\linewidth}
+	\begin{minipage}[t]{0.4\linewidth}
 	\centering
 		\includegraphics[width=0.3\paperwidth]{Pictures/rpi-arch-overview.png}
-	\caption[Raspberry Pi Model B Architecture]{Raspberry Pi Model B architecture. \emph{Image source: http://raspberrypi.org/faqs} }
+	\caption[Raspberry Pi Model B Architecture]{Raspberry Pi Model B architecture.}
+	\caption*{Image source: \url{http://raspberrypi.org/faqs}}
 	\label{fig:pi-arch-overview}
 	\end{minipage}
 	\hspace{2.0cm}
-	\begin{minipage}[b]{0.4\linewidth}
+	\begin{minipage}[t]{0.4\linewidth}
 		\centering
 			\includegraphics[width=0.3\paperwidth]{Pictures/pi-fritzing-model.png}
 		\caption{Digital schematic of the components}
@@ -75,11 +76,12 @@ In order to interact with \ab{}, children can register RFID-tags against \ab{}'s
 In order to play sounds to children, we decided to integrate speakers inside AsthmaBuddy. Since we did not want to pull too many wires out of the bear, we decided to use USB-powered speakers.    
 
 \paragraph{LED lights}
-We used LED lights connected to a breadboard in order to play around with the first prototype. The LED lights emits light in different colors to correspond to what action(s) is expected from the user during a treatment (see more in \ref{sec:proto1}).
+We used LED lights connected to a breadboard in order to play around with the first prototype. The LED lights emits light in different colors to correspond to what action(s) is expected from the user during a treatment (see more in \ref{sec:proto1}). In order to display the correct colors to the children, according to the color of the medicine, we tried to use PWM\fnurl{Pulse-width Modulation}{http://en.wikipedia.org/wiki/Pulse-width\_modulation}. However, these experiments resulted in a significant weaker light. Thus, we used a simple combination of Blue and Red in order to show purple, and a combination of Red and Green to show orange.  
  
-
 Figure \ref{fig:pi-fritzing} shows a digital overview of \buddy{}. The green figure to the left is our \rpi{}. While it is also connected to a power supply and an internet cable, we chose not to include these in our figure. The red figure to the right is the RFID reader. It is connected to the \rpi{} through an USB cable. The black figure on top is the speaker, connected to the \rpi{} through the audio port. 
 The grey lines and the lamp represents our LED light. It is connected to three of the GPIO (General Purpose I/O) ports on the \rpi{}, through a resistor. The last leg of the LED light is connected to ground on the \rpi{}, without a resistor.
+
+A complete guide for wiring the components and running the application is included in Appendix \ref{app:asthmabuddy_manual}.
 
 \subsection{Components Considered for Use}
 In addition to the components mentioned in the last section, we considered using buttons, touch sensors and a microphone. Even though we did not use these components, we simulated them during user tests using the Wizard-of-Oz technique. 
