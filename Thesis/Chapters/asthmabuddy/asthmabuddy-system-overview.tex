@@ -145,18 +145,22 @@ Figures \ref{fig:ab-sd-byneed} - \ref{fig:ab-sd-completing-treatment} shows sequ
 	\label{fig:ab-sd-synchronizing}
 \end{sidewaysfigure}
 
-\paragraph{By Need Treatment}
+\textbf{By Need Treatment}
+
 We were not able to find a reasonable easy way to let the \buddy{} automatically be aware of the medicine that was to be taken at the start of a treatment. As a result, we used ssh into the \rpi{}, and provided the color of the medicine and the sequence number for the interaction that was to be tested.
 
 After inserting these parameters, the \code{LogicHandler} retrieves a \code{LinkedList} of \code{Interaction}-objects that is to be played. After this sequence is ended, the system jumps to \ref{fig:ab-sd-instructions}.
  
-\paragraph{Planned Treatment}
+\textbf{Planned Treatment}
+
 If an \code{AsthmaBuddy} instance is started without any parameters, it starts looking through alarm files (see Section \ref{sec:node-server}) every 60 seconds. If no alarm is returned from \code{UserDataManager}, it waits. Once an alarm is found, \code{AsthmaBuddy} is notified through \code{onNotificationFired}, which starts the treatment process. 
  
-\paragraph{Playing Instructions}
+\textbf{Playing Instructions}
+
 Playing instructions is mainly a loop of running a playing a sound, and turning on and off the LED-lights through the \code{LightEmitter} instance. 
 
-\paragraph{Finishing a Treatment}
+\textbf{Finishing a Treatment}
+
 When a treatment is finished, i.e. we are out of the \code{while} loop in Figure \ref{fig:ab-sd-instructions}, we register the treatment in the database. This ensures that the child is able to see the rewards in AsthmAPP. 
 
 

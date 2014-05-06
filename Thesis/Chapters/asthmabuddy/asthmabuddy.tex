@@ -12,6 +12,7 @@ While Arduino allows complex hardware configurations, Raspberry Pi makes larger 
 Our tangible user interface was planned to contain a lot of the same functionality that KAPP had, with some modifications. The reason we chose to develop on a different platform was to make the system more user friendly, specifically lower the requirement for technical knowledge needed to introduce \ab{} to an inexperienced user, by following the ``Plug and Play'' principle.
  
 \section{Technology}
+\label{sec:technology}
 
 \subsection{Raspberry Pi - Specifications Overview}
 The \rpi{} was initially intended to teach british school children about computer programming\cite{rasperrypi-about}. Since its release, it took an unexpected turn when lots of computer enthusiasts bought the product to do their own mini projects for a cheap price. 
@@ -69,14 +70,21 @@ Network & 10/100 Mbps Ethernet  \\
 In addition to the \rpi{} we needed some components that children are able to interact through. These components and their functionality are summarized in this section. 
 
 
-\paragraph{RFID Reader}
+\textbf{RFID Reader}
+
 In order to interact with \ab{}, children can register RFID-tags against \ab{}'s stomach. The RFID-reader we used was a Sparkfun ID-12LA\fnurl{Sparkfun ID-12LA documentation}{http://tiny.cc/sparkfundoc}. The requirements when choosing the reader was that it should be able to connect through an USB-port, and be able to communicate with UNIX-systems.
          
-\paragraph{USB speakers}
+\textbf{USB speakers}
+
 In order to play sounds to children, we decided to integrate speakers inside AsthmaBuddy. Since we did not want to pull too many wires out of the bear, we decided to use USB-powered speakers.    
 
-\paragraph{LED lights}
-We used LED lights connected to a breadboard in order to play around with the first prototype. The LED lights emits light in different colors to correspond to what action(s) is expected from the user during a treatment (see more in \ref{sec:proto1}). In order to display the correct colors to the children, according to the color of the medicine, we tried to use PWM\fnurl{Pulse-width Modulation}{http://en.wikipedia.org/wiki/Pulse-width\_modulation}. However, these experiments resulted in a significant weaker light. Thus, we used a simple combination of Blue and Red in order to show purple, and a combination of Red and Green to show orange.  
+
+\textbf{LED lights}
+
+We used LED lights connected to a breadboard in order to play around with the first prototype. The LED lights emits light in different colors to correspond to what action(s) is expected from the user during a treatment (see more in \ref{sec:proto1}). 
+
+In order to display the correct colors to the children, according to the color of the medicine, we tried to use PWM\fnurl{Pulse-width Modulation}{http://en.wikipedia.org/wiki/Pulse-width\_modulation}. However, these experiments resulted in a significant weaker light. Thus, we used a simple combination of Blue and Red in order to show purple, and a combination of Red and Green to show orange.  
+
  
 Figure \ref{fig:pi-fritzing} shows a digital overview of \buddy{}. The green figure to the left is our \rpi{}. While it is also connected to a power supply and an internet cable, we chose not to include these in our figure. The red figure to the right is the RFID reader. It is connected to the \rpi{} through an USB cable. The black figure on top is the speaker, connected to the \rpi{} through the audio port. 
 The grey lines and the lamp represents our LED light. It is connected to three of the GPIO (General Purpose I/O) ports on the \rpi{}, through a resistor. The last leg of the LED light is connected to ground on the \rpi{}, without a resistor.
@@ -86,27 +94,34 @@ A complete guide for wiring the components and running the application is includ
 \subsection{Components Considered for Use}
 In addition to the components mentioned in the last section, we considered using buttons, touch sensors and a microphone. Even though we did not use these components, we simulated them during user tests using the Wizard-of-Oz technique. 
 
-\paragraph{Buttons}
+\textbf{Buttons}
+
 One or more buttons could have been used on \ab{}. Buttons could have been used to manage boolean values, for instance if the progression of an instruction needed a yes/no answer. We did not include buttons, as it could disturb the impression of \ab{} as a regular teddy bear, i.e. it would look more mechanical. Additionally, we were not able to restrict the amount of buttons needed. 
 
-\paragraph{Touch sensors}
+\textbf{Touch sensors}
+
 A touch sensor could serve the same purpose as a single button. We did not include this component, as it would require a set of low level programming skills. 
 
-\paragraph{Microphone}
+\textbf{Microphone}
+
 A microphone could be used for speech recognition purposes. However, the \rpi{} does not have the processing power required to do speech recognition. Additionally, it would require writing code that is able to distinguish between noises\footnote{We were not able to find any open source libraries that are able to do speech recognition for the Norwegian language}. We belive it could have been a cool feature that would help establishing a relationship between the user and \ab{}.    
 
 \subsection{Frameworks and Libraries Used in \ab{}} 
 
-\paragraph{Pi4j}
+\textbf{Pi4j}
+
 We wanted to write the code on our \rpi{} in Java, as it was our most familiar programming language. However, it is cumbersome to use \rpi{}'s GPIO-ports and serial communications with Java and no frameworks. Pi4j\fnurl{Pi4j}{http://pi4j.com} solved this problem, by making the necessary abstractions.
 
-\paragraph{Gson}
+\textbf{Gson}
+
 Refer Section \ref{sec:techandframeinapp} for a description of Gson.    
 
-\paragraph{JLayer}
+\textbf{JLayer}
+
 We used JLayer\fnurl{Javazoom JLayer}{http://www.javazoom.net/index.shtml} to handle the decoding of our recorded mp3-files. 
 
 \section{Design Rationale}
+\label{sec:designrationale}
 \subsection{Why a Teddy Bear?}
 When designing \buddy{} we choose to use a teddy bear as an avatar for our system. There are several reasons as to why we think a teddy bear is an appropriate avatar. Teddy bears are well known toys, and have been loved by children for a long time. They are considered gender-neutral\cite{stagnitti1997determining}\cite{cherney2006gender} and in our subjective opinion it is a toy that could be discretely placed in a child's room. With the appearance of a teddy bear, \buddy{} can easily be placed among other toys and not stand out. It was also important for us to choose a teddy bear of some size. A too thin a bear could lead to problems when fitting the system inside the bear, and could in could be met with scepticism by the children. \buddy{} will have similarities to Tamagotchi\cite{tamagotchi} and Furby\cite{furby}, but \buddy{}'s purpose is to motivate, instruct and teach children about asthma, not be a toy purely for playing with. 
 
