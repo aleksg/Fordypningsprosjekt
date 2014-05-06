@@ -258,32 +258,20 @@ A part of the challenge is to recover from mistakes that have occured. For insta
 
 \section{Prototype version 1}
 \label{sec:proto1}
-Our first prototype was a ``dumb'' version with the purpose of testing out different methods of interaction. We wanted to get as many different experiences as possible, in order to find which methods of interaction will work with \ab{}. We did not have the time to implement all of the interaction methods listed. In order to simulate the interactions we used the Wizard-of-Oz technique\cite{wilson1988rapid}. 
 
-For the first prototype we tried out the following types of interaction with AsthmaBuddy:
-\begin{enumerate}
-	\item{Give AsthmaBuddy a ``High Five''}
-	\item{Hold AsthmaBuddy's hand}
-	\item{Hold smartphone close to AsthmaBuddy's belly}
-	\item{Press AsthmaBuddy's nose}
-	\item{Press \buddy{}'s belly}
-	\item{Hold medicine close to AsthmaBuddy's mouth}
-	\item{Hold RFID-tag close to \buddy{}'s nose}
-	\item{Hold RFID-tag close to \buddy{}'s belly}
-	\item{Clap your hands}
-	\item{A variation of the above interactions}
-\end{enumerate}
+Our first version of \ab{} was supposed to have capabilities to guide a child through a treatment. It was possible to interact with \ab{} through the interactions described in Table \ref{tab:interaction-rationale}. Version 1 did not have the ability to synchronize rewards with \app{}, nor informing the user about the total amount of stars collected. We tested the version on inexperienced users (results can be found in Chapter \ref{chp:interaction-methods}), in order to discover information flaws and difficulties when interacting with \ab{}. We assumed that if an adult was not able to perform a treatment correctly with \ab{}, then children would not be able to do it either.  
+
+We did not have the resources available to implement all of the interaction methods listed. As such, we simulated the interactions through the Wizard-of-Oz technique\cite{wilson1988rapid}.
+
+This version was also used for demonstration purposes during our interviews, which provided us useful feedback on functionality we could add to \ab{}.           
 	
 \section{Prototype version 2}
 \label{sec:abversion2}
-The improved version of \ab{}, named \ab{} 2.0, had some changes done since version 1.0. As stated in Table \ref{tab:interactioneval}, some of the interaction methods were removed. \ab{} also received some new features, such as a method for letting children more easily check the amount of stars they have collected. By registering an RFID tag, \ab{} tells how many stars the child has. This was implemented to make \ab{} more of a stand-alone system, and to avoid the problem were parents may not want the children to use their smart phone to use \app{}. 
+The improved version of \ab{}, hereby referred to as \ab{} 2.0, had some changes done since version 1.0. After testing version 1.0 on inexperienced users, we removed some of the interaction methods. A summary of the interaction methods available in version 2.0 is provided in \ref{chp:interaction-methods}. \ab{} 2.0 is able to synchronize collected stars automatically between \app{} and \ab{}. This was done to automate some tasks that previously needed manual interaction, and to create a tighter coupling between the two prototypes.
 
-\ab{} 2.0 now synchronizes achieved stars automatically between \app{} and \ab{}. This was done to automate some tasks that previously needed manual interaction, and to create a tighter coupling between the two prototypes. 
-
-Some small changes were made to the use of the LED light on \ab{}'s nose. \ab{} 1.0 changed the color of its nose fairly often. This was intended to make the treatment process more interesting; however, it ended up being more confusing than helpful, and was therefore changed. 
-
-
-\section{Evaluation of \ab{}}
+\ab{} 2.0 also received some new features, such as a method for letting children more easily check the total amount of stars they have collected. By registering an RFID tag, \ab{} tells how many stars the child has. This was implemented to make \ab{} more of a stand-alone system, and to avoid the problem where parents may not want their child to use their smart phone to use \app{}. 
+ 
+Additionally, some small changes were made to the use of the LED light on \ab{}'s nose. \ab{} 1.0 changed the color of its nose fairly often. This was intended to make the treatment process more interesting; however, it ended up being more confusing than helpful, and was therefore changed to mirror the breaths of the user, and the color of the medicine container. 
 
 \section{Summary}
-We have developed a prototype for a tangible user interface called \ab{}, who can be used to guide a child through a treatment process. The software behind the prototype is built upon a \rpi{}, which was placed inside \ab{}. We have designed a set of interaction methods that we figured could be appropriate for children. It is currently capable of reading RFID tags, playing sounds and changing the light of its' nose. During the user tests, we simulated the usage of microphones with voice recognition, sensing touches to it's hand, sensing a smartphone's precence and distinguishing between a touch and a high five.    
+We have developed a prototype for a tangible user interface called \ab{}, who can be used to guide a child through a treatment process. The software behind the prototype is built upon a \rpi{}, which was placed inside \ab{}. We designed a set of interaction methods that we figured could be appropriate for children. This set was narrowed down after a round of user tests on inexperienced users (see Chapter \ref{chp:interaction-methods}). It is currently capable of reading RFID tags, playing sounds and changing the light of its' nose. During the user tests, we simulated the usage of microphones with voice recognition, sensing touches to it's hand, sensing a smartphone's precence and distinguishing between a touch and a high five.    
