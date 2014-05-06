@@ -245,8 +245,7 @@ The part that regards specifying a target or several targets is considered irrel
 By listening to \buddy{} speak, the user should be aware of what is happening. There is not a lot of room for human error in this connection. By following the normal sequence of operation, the worst thing that may happen is a system crash. This will be handled by shutting down the lights, and \buddy{} will not be running.  
 
 \textbf{Accident: How do I avoid mistakes?}
-Again, as long as the user pays attention to what \buddy{} is saying, and does the intended interaction. A part of the challenge in this connection is to recover from mistakes that have happened. For instance, if the user goes further proceeds further than what was actually intended, and missed out on an instruction they needed, \buddy{} should have a way to revert to the missed instruction. This was handled by having a separate ``back''-interaction method.
-[TODO: Finn en interaksjon som kaller Back].   
+A part of the challenge is to recover from mistakes that have occured. For instance, if the user proceeds further than what was actually intended, and missed out on an instruction they needed, \buddy{} should have a way to revert to the missed instruction. \ab{} has functionality to replay instructions, but it needs to be told to do so by keyboard input from the ``Wizard-of-Oz''. During user tests, children were told to say ``Repeat'' loud and clear, in order to replay an instruction. Moving beyond the ``Wizard-of-Oz'', this could be handled by a separate form of interaction, eg. shaking \ab{}'s head.       
 
 \input{Chapters/asthmabuddy/asthmabuddy-system-overview.tex}
  
