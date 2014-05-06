@@ -67,6 +67,7 @@ Network & 10/100 Mbps Ethernet  \\
  
   
 \subsection{Additional Components}
+\label{sec:additionalcomponents}
 In addition to the \rpi{} we needed some components that children are able to interact through. These components and their functionality are summarized in this section. 
 
 
@@ -92,6 +93,7 @@ The grey lines and the lamp represents our LED light. It is connected to three o
 A complete guide for wiring the components and running the application is included in Appendix \ref{app:asthmabuddy_manual}.
 
 \subsection{Components Considered for Use}
+\label{sec:componentsconsidered}
 In addition to the components mentioned in the last section, we considered using buttons, touch sensors and a microphone. Even though we did not use these components, we simulated them during user tests using the Wizard-of-Oz technique. 
 
 \textbf{Buttons}
@@ -234,23 +236,29 @@ None of the sub-tasks needs relational interaction.
 [Pieter: Vil RFID-tag og RFID-leser her telle som en form for relational interaction?]
  
 \subsection{Dealing with Bellotti's challenges}
+\label{sec:dealingwithbellotti}
 
 Section \ref{sec:challenges-with-TUI} introduced some of the challenges that are encountered when designing tangible interfaces. In the following we will discuss how we handled the challenges encountered, by answering those of Bellotti's questions which we found relevant. 
 
 \textbf{Address: How do I address one of many possible devices?}
+
 One of the challenges mentioned here is ``How to not address the system''. This is an interesting challenge when the system is intended for children, as they are likely to pick things up and carry them around. If a child picks up \ab{}, it could be interpreted as an interaction. We solved this potential problem by only starting treatments in one of two ways, either because it is triggered by an alarm or because an RFID-tag attached to an inhaler is read by \ab{}. The RFID-reader is only capable of reading the tag from a distance of 3 - 5 cm. Thus, as long as no alarm is triggered, and no inhaler with attached RFID-tag is not withing the reach of the RFID-reader, the system should not respond.  
 
 
 \textbf{Attention: How do I know the system is ready and attending to my actions?}
+
 As mentioned previously, \buddy{} has a LED-light on it's nose. When the light is green, the user can expect that the system is running in idle mode. 
 
 \textbf{Action: How do I effect a meaningful action, control its extent and possibly specify a target or targets for my action?}
+
 The part that regards specifying a target or several targets is considered irrelevant. The interesting part is how the user can effect a meaningful action and control its extent. This will be taken care of by interactions between the user and \buddy{}. \buddy{} will never run several instructions at once. It will always give short and clear instructions, and wait for feedback from the user in order to proceed. 
 
 \textbf{Alignment: How do I know the system is doing the right thing?}
+
 By listening to \buddy{} speak, the user should be aware of what is happening. There is not a lot of room for human error in this connection. By following the normal sequence of operation, the worst thing that may happen is a system crash. This will be handled by shutting down the lights, and \buddy{} will not be running.  
 
 \textbf{Accident: How do I avoid mistakes?}
+
 A part of the challenge is to recover from mistakes that have occured. For instance, if the user proceeds further than what was actually intended, and missed out on an instruction they needed, \buddy{} should have a way to revert to the missed instruction. \ab{} has functionality to replay instructions, but it needs to be told to do so by keyboard input from the ``Wizard-of-Oz''. During user tests, children were told to say ``Repeat'' loud and clear, in order to replay an instruction. Moving beyond the ``Wizard-of-Oz'', this could be handled by a separate form of interaction, eg. shaking \ab{}'s head.       
 
 \input{Chapters/asthmabuddy/asthmabuddy-system-overview.tex}
@@ -274,4 +282,6 @@ The improved version of \ab{}, hereby referred to as \ab{} 2.0, had some changes
 Additionally, some small changes were made to the use of the LED light on \ab{}'s nose. \ab{} 1.0 changed the color of its nose fairly often. This was intended to make the treatment process more interesting; however, it ended up being more confusing than helpful, and was therefore changed to mirror the breaths of the user, and the color of the medicine container. 
 
 \section{Summary}
-We have developed a prototype for a tangible user interface called \ab{}, who can be used to guide a child through a treatment process. The software behind the prototype is built upon a \rpi{}, which was placed inside \ab{}. We designed a set of interaction methods that we figured could be appropriate for children. This set was narrowed down after a round of user tests on inexperienced users (see Chapter \ref{chp:interaction-methods}). It is currently capable of reading RFID tags, playing sounds and changing the light of its' nose. During the user tests, we simulated the usage of microphones with voice recognition, sensing touches to it's hand, sensing a smartphone's precence and distinguishing between a touch and a high five.    
+\label{sec:asthmabuddysummary}
+We have developed a prototype for a tangible user interface called \ab{}, who can be used to guide a child through a treatment process. The software behind the prototype is built upon a \rpi{}, which was placed inside \ab{}. We designed a set of interaction methods that we figured could be appropriate for children. This set was narrowed down after a round of user tests on inexperienced users (see Chapter \ref{chp:interaction-methods}). It is currently capable of reading RFID tags, playing sounds and changing the light of its' nose. During the user tests, we simulated the usage of microphones with voice recognition, sensing touches to it's hand, sensing a smartphone's precence and distinguishing between a touch and a high five.       
+
