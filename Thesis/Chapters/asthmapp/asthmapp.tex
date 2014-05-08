@@ -33,7 +33,7 @@ By having a webservice layer between the applications and the database, the syst
 \paragraph{JodaTime} Java's default implementation of time is cumbersome to work with, with a lot of it's functionality deprecated. JodaTime\fnurl{JodaTime}{http://www.joda.org/joda-time/} is an open source project that seeks to handle time in a proper manner on the Java platform.     
 
 
-\section{How Usability Research has Affected our Design}
+\section{Design Rationale}
 \label{sec:usability-affect-design}
 While designing AsthmAPP, we strived for an easy-to-use design with a good overview, in addition to the Android Design Principles\cite{androiddesign}. We have also taken Shneidermann's eight golden rules into consideration when designing \app{}\cite{shneiderman2003designing}. 
 We tried to lighten the short-term memory load by using a combination of sounds, pictures and text to tell the user the options that are available or what is expected from the user. During a treatment the user is prompted to take action in order to continue through the process, giving the user a locus of control. 
@@ -200,6 +200,7 @@ The manual contains the same information as shown in Section \ref{sec:descriptio
 Figure \ref{fig:parent-awards} shows the list of possible rewards a child may receive. They are added by parents through \emph{Add reward}. The idea of having parents set their children's rewards is to specify rewards according to children's interest (see Section \ref{sec:gamificationinapp}). Figure \ref{fig:parent-create-reward} shows how one may add a reward. The user inserts a description, then either adds a photo or selects one out of our standard images. It is possible to set a reward on \emph{Repeat}, which will make the reward appear multiple times, each time with an increased cost.        
 When the user press \emph{Save} (Lagre), the reward is added and the child has the possibility to select it. 
  
+\input{Chapters/asthmapp/usinggamification.tex}
  
 \section{Evaluation}
 \label{sec:asthmappevaluation}
