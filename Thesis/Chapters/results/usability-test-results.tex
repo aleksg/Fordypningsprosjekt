@@ -50,10 +50,11 @@ In order to protect the identity of our test subjects, especially considering th
 	4 & The test user wanted functionality for different views, for instance showing the log for a week or a single day. & Too high expectations & This feature could be implemented with more time and resources.  \\
 	\hline
 \end{tabular}
-\label{tab:test1}
-\caption{Usability result}
+\caption{Usability Test Results: AU1}
+\label{tab:testadult1}
 \end{table}
 \end{singlespacing}
+
 
 \subsubsection{Adult User 2}
 
@@ -93,9 +94,16 @@ In order to protect the identity of our test subjects, especially considering th
 	5 & The user was confused when deciding which day was selected & The view does not provide enough feedback to ensure the user of which day is selected. & Implementation of the feature could be performed. Additionally, we could add separate views to show a week or a day, and not only showing the month. \\
 	\hline  
 \end{tabular}
-\label{tab:test1}
-\caption{Usability result}
+\caption{Usability Test Results: AU1}
+\label{tab:testadult2}
 \end{table}
+
+
+
+\textbf{Comments about the test}
+
+The execution of this user test unfortunately suffered from a mistake made before initiating the test. When we started it, the Android device were not connected to the network. As such, task 2 uncovered a bug that we had never seen before. In order to get any useful testing started, we had to reset the application and connect it to the network, before we started over again. The first impression was probably not the best.   
+
 
 \subsection{Children partition}
 
@@ -136,9 +144,11 @@ During the user tests, \ab{} was configured to use the varied interaction scheme
 	5 & It was hard to get a clean read of the RFID tag. & It was not entirely clear where the user had to put the card in order to get a read. & \ab{} should have an indicator as of where the card should be held in order to be read.  \\
 	\hline
 \end{tabular}
-\label{tab:test2}
-\caption{Usability result}
+\caption{Usability Test Results: CU1}
+\label{tab:testchild1}
 \end{table}
+
+\textbf{Comments about the test}
 
 CU1 was very shy when arriving at the test lab. It quickly became clear for us that we had to leave the area and rather observe from the back room, in order for her to speak up. The parent was instructed with the tasks that were to be performed, and he explained the tasks to her. Once we were back stage, she started responding to the instructions given. We made a note that the observer should sit in the back room and observe from there, in order for the children to respond more easily.   
 
@@ -171,18 +181,34 @@ When asked which method CU1 preferred, i.e. \app{} or \ab{}, CU1 replied ``I don
 \hline
 	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
 	\hline
-	place & place & place & place \\
+	2 & The user did not know whether he should hold the medicine or the mask towards the mouth & We believe this falls under the category of human errors, as he may weren't able to distinguish between the two. & Neglected.  \\
 	\hline
-	place & place & place & place \\
-	\hline
-	place & place & place & place \\
-	\hline
-	place & place & place & place \\
+	2 & When the user was to count to 10, he counted too fast, leaving \ab{} to breathe for several seconds after he had finished counting. & He may not be aware of how long time a second takes.  & The light on \ab{}'s nose could light only when he is supposed to count. \\
 	\hline
 \end{tabular}
-\label{tab:test1}
-\caption{Usability result}
+\caption{Usability Test Results: CU2}
+\label{tab:testchild2}
 \end{table}
+
+\begin{figure}
+	\begin{minipage}[t]{0.4\linewidth}
+		\centering
+			\includegraphics[width=0.30\paperwidth]{Pictures/usability-pictures/CU2-interacting.png}
+		\label{fig:child-interacting-while-breathing}
+		\caption{CU2 interacting with \ab{} while taking his medicine}
+	\end{minipage}
+	\hspace{1.5cm}
+	\begin{minipage}[t]{0.4\linewidth}
+		\centering
+			\includegraphics[width=0.30\paperwidth]{Pictures/usability-pictures/CU2-app.png}
+		\label{fig:child-medicating-ab}
+		\caption{After having completed one treatment, CU2 decided to give \ab{} another round of medicine}
+	\end{minipage}
+\end{figure}
+
+\textbf{Comments about the test}
+
+When asked about which system he liked the most, CU2 first replied that he liked both systems equally. When we ``pushed'' him to pick one, he thought that \ab{} was more fun to interact with, as it had lights that blinked. He also liked \app{}, as it contained the store where he could buy a reward. 
 
 \subsubsection{Child User 3}
 %Personalia user 3
@@ -209,19 +235,45 @@ When asked which method CU1 preferred, i.e. \app{} or \ab{}, CU1 replied ``I don
 \begin{table}[H]
 \centering
 \begin{tabular}{| p{1.0cm} | p{4.0cm} | p{4.0cm} | p{4.0cm} |}
-\hline
+	\hline
 	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
 	\hline
-	2 & The user did not understand whether he should clap his own hands or \ab{}'s & The voice of \ab{} spoke to fast & place \\
+	2 & The user did not understand whether he should clap his own hands or \ab{}'s & The voice of \ab{} spoke to fast & Record sounds that talks slower \\
 	\hline
 	2 & When giving \ab{} an high five, he hit too hard, giving \ab{} a knock out & \ab{} have a stability issue. & The high five interaction might only be suitable for more stable interfaces \\
 	\hline
 	3 & The user did not know whether he should press \ab{}'s head or the animation on \app{} & The user had both \ab{} and \app{} in front of him during the user tests. & This could easily be avoided by removing \ab{} from the scene when we switched tasks. \\
-	\hline
-	place & place & place & place \\
-	\hline
+	\hline  
 \end{tabular}
-\label{tab:test1}
-\caption{Usability result}
+\caption{Usability Test Results: CU3}
+\label{tab:testchild3}
 \end{table}
 
+\begin{figure}
+	\begin{minipage}[t]{0.3\linewidth}
+		\centering
+			\includegraphics[width=0.20\paperwidth]{Pictures/usability-pictures/knockout1.png}
+		\label{fig:child-knockout1}
+	\end{minipage}
+	\hspace{0.5cm}
+	\begin{minipage}[t]{0.3\linewidth}
+		\centering
+			\includegraphics[width=0.20\paperwidth]{Pictures/usability-pictures/knockout2.png}
+		\label{fig:child-knockout2}
+	\end{minipage}
+	\hspace{0.5cm}
+	\begin{minipage}[t]{0.3\linewidth}
+		\centering
+			\includegraphics[width=0.20\paperwidth]{Pictures/usability-pictures/knockout3.png}
+		\label{fig:child-knockout3}
+	\end{minipage}
+	\label{fig:child-knockout}
+	\caption{CU3 knocks out \ab{} when giving him an high five}
+\end{figure}
+
+\textbf{Comments about the test}
+
+When asked about which system he liked the most, CU3 switched back and forth between the \app{} and both. After analyzing the recordings, we found strong reason to believe that he had most fun when using \app{}. 
+
+A problem not mentioned in Table \ref{tab:testchild3}, was that he was not able to read the text when he was to buy a reward. We have put a lot of effort into minimizing the reading ability required from the children, but at a certain point, some text is in required. An option for reducing the reading capabilities required at this stage, could be to prerecord potential rewards, but  it required too much resources to do this. An image of the view had problems with is included in Figure [TODO].   
+ 
