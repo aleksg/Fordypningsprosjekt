@@ -3,7 +3,10 @@
 In order to protect the identity of our test subjects, especially considering the children, we have used identifiers as names. Names starting with the letter ``A'' is an adult user, and names starting with ``C'' denotes a child.
 
 \subsection{Parent partition tests}
+
+\subsubsection{Adult User 1}
 \begin{table}[H]
+\centering
 \begin{tabular}{|p{4.0cm} | p{4.0cm} |}
 	\hline
 	\textbf{Name} & AU1\\
@@ -21,6 +24,7 @@ In order to protect the identity of our test subjects, especially considering th
 
 \begin{singlespacing}
 \begin{table}[H]
+\centering
 \begin{tabular}{| p{1.0cm} | p{4.0cm} | p{4.5cm} | p{4.0cm} |}
 \hline
 	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
@@ -51,17 +55,62 @@ In order to protect the identity of our test subjects, especially considering th
 \end{table}
 \end{singlespacing}
 
+\subsubsection{Adult User 2}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{| p{4.0cm} | p{4.0cm} |}
+\hline
+ \textbf{Name} & AU2 \\
+ \hline
+ \textbf{Age} & 35 years old \\
+ \hline 
+ \textbf{Date} & May 7th, 2014 \\
+ \hline
+ \textbf{Testleader} & Aleksander \\
+ \hline
+ \textbf{Observer} & Esben \\
+ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{| p{0.8cm} | p{3.0cm} | p{4.7cm} | p{4.5cm} |}
+\hline
+	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
+	\hline
+	2 & The user did not know whether the alarm should fire at a given time or if the child should actually take the medicine at that time  & The view only prompts the user to insert a time. & Could change the text ``Time'' to ``Time the alarm should fire'', or similar \\
+	\hline
+	2 & Alarms were not added properly & Discovered a bug; When the user opens the application for the first time, it adds a user to the database. As the device was not connected to any networks, this failed, and we had not implemented feedback to the user & Implement the functionality needed, and give feedback to the user.  \\
+	\hline
+	3 & The user did not know whether he had actually selected an image & The ``Add Reward'' module does not provide enough feedback as to whether or not the user has actually selected an image. & This functionality should be implemented.  \\
+	\hline
+	3 & The user did not understand what repeat meant & Repeat means to give the same reward on a continuous basis, for the same amount of stars given. This was not explained well enough on the user test.  & Clarify this aspect with a help box.   \\
+	\hline
+	5 & The air quality cast does not change with regards to which day is picked. & The air quality is currently only imported for the current date. & \app{} should give feedback that the queried data is not available for days later than today. \\ 
+	\hline
+	5 & The user was confused when deciding which day was selected & The view does not provide enough feedback to ensure the user of which day is selected. & Implementation of the feature could be performed. Additionally, we could add separate views to show a week or a day, and not only showing the month. \\
+	\hline  
+\end{tabular}
+\label{tab:test1}
+\caption{Usability result}
+\end{table}
+
 \subsection{Children partition}
 
 During the user tests, \ab{} was configured to use the varied interaction scheme. This involved a preset combination of the remaining interactions from Table \ref{tab:interactioneval}. This decision was made in order to test all of the possible interactions, as we did not have enough users to test them one-by-one. 
 
 \subsubsection{Child User 1}
 \begin{table}[H]
+\centering
 \begin{tabular}{| p{4.0cm} | p{4.0cm} |}
 \hline
  \textbf{Name} & CU1 \\
  \hline
  \textbf{Age} & 6 years old \\
+ \hline 
+ \textbf{Gender} & Female \\
  \hline 
  \textbf{Date} & May 2nd, 2014 \\
  \hline
@@ -73,7 +122,8 @@ During the user tests, \ab{} was configured to use the varied interaction scheme
 \end{table}
 
 \begin{table}[H]
-\begin{tabular}{| p{3.0cm} | p{3.0cm} | p{3.0cm} | p{3.0cm} |}
+\centering
+\begin{tabular}{| p{1.0cm} | p{4.0cm} | p{4.0cm} | p{4.0cm} |}
 \hline
 	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
 	\hline
@@ -92,11 +142,32 @@ During the user tests, \ab{} was configured to use the varied interaction scheme
 
 CU1 was very shy when arriving at the test lab. It quickly became clear for us that we had to leave the area and rather observe from the back room, in order for her to speak up. The parent was instructed with the tasks that were to be performed, and he explained the tasks to her. Once we were back stage, she started responding to the instructions given. We made a note that the observer should sit in the back room and observe from there, in order for the children to respond more easily.   
 
-When asked which method CU1 preferred, i.e. \app{} or \ab{}, CU1 replied ``I don't know''. CU1 was also asked if both were equally fun, which to CU1 replied ``Yes''. CU1 was also asked if the usage of \app{} and \ab{} was more fun than a regular treatment, which to CU replied ``Yes''\footnote{There is reason to belive that the answer was biased due to the reward}. We asked if this was because of her reward, which was candy, but we were unable to get a reply. 
+When asked which method CU1 preferred, i.e. \app{} or \ab{}, CU1 replied ``I don't know''. CU1 was also asked if both were equally fun, which to CU1 replied ``Yes''. CU1 was also asked if the usage of \app{} and \ab{} was more fun than a regular treatment, which to CU replied ``Yes''\footnote{There is reason to believe that the answer was biased due to the reward}. We asked if this was because of her reward, which was candy, but we were unable to get a reply. 
 
 \subsubsection{Child User 2}
+%Personalia user 2
 \begin{table}[H]
-\begin{tabular}{| p{3.0cm} | p{3.0cm} | p{3.0cm} | p{3.0cm} |}
+\centering
+\begin{tabular}{| p{4.0cm} | p{4.0cm} |}
+\hline
+ \textbf{Name} & CU2 \\
+ \hline
+ \textbf{Age} & 7 years old \\
+ \hline 
+ \textbf{Gender} & Male \\
+ \hline
+ \textbf{Date} & May 2nd, 2014 \\
+ \hline
+ \textbf{Testleader} & Aleksander \\
+ \hline
+ \textbf{Observer} & Esben \\
+ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{| p{1.0cm} | p{4.0cm} | p{4.0cm} | p{4.0cm} |}
 \hline
 	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
 	\hline
@@ -108,22 +179,44 @@ When asked which method CU1 preferred, i.e. \app{} or \ab{}, CU1 replied ``I don
 	\hline
 	place & place & place & place \\
 	\hline
-	
 \end{tabular}
 \label{tab:test1}
 \caption{Usability result}
 \end{table}
 
+\subsubsection{Child User 3}
+%Personalia user 3
 \begin{table}[H]
-\begin{tabular}{| p{3.0cm} | p{3.0cm} | p{3.0cm} | p{3.0cm} |}
+\centering
+\begin{tabular}{| p{4.0cm} | p{4.0cm} |}
+\hline
+ \textbf{Name} & CU3 \\
+ \hline
+ \textbf{Age} & 5 years old \\
+ \hline 
+ \textbf{Gender} & Male \\
+ \hline
+ \textbf{Date} & May 7th, 2014 \\
+ \hline
+ \textbf{Testleader} & Aleksander \\
+ \hline
+ \textbf{Observer} & Esben \\
+ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{| p{1.0cm} | p{4.0cm} | p{4.0cm} | p{4.0cm} |}
 \hline
 	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
 	\hline
-	place & place & place & place \\
+	2 & The user did not understand whether he should clap his own hands or \ab{}'s & The voice of \ab{} spoke to fast & place \\
 	\hline
-	place & place & place & place \\
+	2 & When giving \ab{} an high five, he hit too hard, giving \ab{} a knock out & \ab{} have a stability issue. & The high five interaction might only be suitable for more stable interfaces \\
 	\hline
-	place & place & place & place \\
+	3 & The user did not know whether he should press \ab{}'s head or the animation on \app{} & The user had both \ab{} and \app{} in front of him during the user tests. & This could easily be avoided by removing \ab{} from the scene when we switched tasks. \\
 	\hline
 	place & place & place & place \\
 	\hline
