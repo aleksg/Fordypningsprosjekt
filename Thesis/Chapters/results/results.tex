@@ -6,7 +6,6 @@
 
 We performed interviews on a set of domain experts in order to receive input on the work we had accomplished. Table \ref{tab:interviewsperformed} summarizes the interviews we performed, why we interviewed these subjects and the topics we covered during the interviews. Transcripts from the interviews are included in Appendix \ref{app:interview-transcripts}. 
 
-
 Where we have interviewed parents of children with asthma, we have named those Parent N (N is a number), in order to protect the identity of their children.  
 
 \begin{sidewaystable}
@@ -32,7 +31,20 @@ Where we have interviewed parents of children with asthma, we have named those P
 \label{tab:interviewsperformed}
 \end{sidewaystable}  
 
- 
+\subsection{Discoveries Found During Interviews}
+
+\textbf{Operating time}
+
+The longest duration for taking a planned treatment was about 2 minutes for an experienced user, and about 2.5 minutes for an inexperienced user. This treatment included the part where \buddy{} completes the treatment before the child. A normal treatment taken without \ab{} usually takes 1-2 minutes, according to our interview subjects. Since \ab{} only takes 0.5-1.5 minutes longer than normal, it should not be considered a time-waster. From another point-of-view, if a child does not want to take his/her medication, it may cause an argument and take more time to complete the treatment. If \ab{} can help on shortening the time spent arguing with the child, a large amount of time may be saved.      
+
+\textbf{By need treatments}
+
+We got some feedback regarding the \emph{by need} treatments. Some parents stated that they would not use \buddy{} to complete a by need treatment, as their child was suffering from an asthma attack. However, one of the parents noted that if children were used to performing their treatment with \buddy{}, it could create a dependency toward it, i.e. \buddy{} could help the child to calm down. Whether or not the by need functionality would actually be used needs more research, as \buddy{} would need to be placed within a home and be nearby when such an attack occurs. 
+
+\textbf{\ab{} as a stand-alone system}
+
+One of the interview subjects commented that \ab{} should be able to operate as a stand-alone system if the parents do not allow the child to borrow a smartphone and the child does not have a smartphone of his/her own. The same interview subject commented that she would not take the time to use \ab{} for two minutes every time the child needed to take a treatment, and that \ab{} might become boring after a period of time.
+
 \section{Testing \ab{} on Inexperienced Users}
 \label{chp:interaction-methods}
 
@@ -70,26 +82,34 @@ The results of the interaction testing is summarized in table \ref{tab:interacti
 \label{tab:interactioneval}
 \end{table}
 
-\paragraph{Operating time}
-
-The longest duration for taking a planned treatment was about 2 minutes for an experienced user, and about 2.5 minutes for an inexperienced user. This treatment included the part where \buddy{} completes the treatment before the child. A normal treatment taken without \ab{} usually takes 1-2 minutes, according to our interview subjects. Since \ab{} only takes 0.5-1.5 minutes longer than normal, it should not be considered a time-waster. From another point-of-view, if a child does not want to take his/her medication, it may cause an argument and take more time to complete the treatment. If \ab{} can help on shortening the time spent arguing with the child, a large amount of time may be saved.      
-
-\paragraph{Feedback}
-
-We got some feedback regarding the \emph{by need} treatments. Some parents stated that they would not use \buddy{} to complete a by need treatment, as their child was suffering from an asthma attack. However, one of the parents noted that if children were used to performing their treatment with \buddy{}, it could create a dependency toward it, i.e. \buddy{} could help the child to calm down. Whether or not the by need functionality would actually be used needs more research, as \buddy{} would need to be placed within a home and be nearby when such an attack occurs. 
+\subsection{Observations Made During Tests}
 
 In order for \ab{} to be useful for inexperienced users, it could have even clearer and more informative instructions. Even though it may seem self-explanatory to take the cap off the medicine before mounting it on the mask, it may not be that obvious to new users. Since \ab{}'s purpose is to instruct and inform, it should have a completely ``foolproof'' instructions. For instance some of the test users tried to attach the inhaler to the mask without removing the protective cap from the inhaler. Since the mask's mount is made from rubber, it gave them the idea that one should just push the medicine into the mount by force, which is incorrect. 
 
-When using \ab{} it may sometimes be difficult to hear all the instructions. There should be support for replay of the latest command.
-
-One of the users commented that \ab{} should be able to operate as a stand-alone system if the parents do not allow the child to borrow a smartphone and the child does not have a smartphone of his/her own. The same test user commented that she would not take the time to use \ab{} for two minutes every time the child needed to take a treatment, and that \ab{} might become boring after a period of time.
+When using \ab{}, some users found it difficult to hear all of the instructions. Supporting replay of the last instruction was important. 
 
 \input{Chapters/results/usability-test-results.tex}
 
 \section{Evaluation}
 \subsection{\ab{}}
-[Confusion?]
-[Clear Problems with interactions?]
-[Reaction towards \ab{}]
+
+After completing all of the validation tests, it occured to us that not one out of the three children we tested \ab{} with were able to listen to \emph{every} instruction and interact accordingly. I.e. every user had to make use of the repeat functionality. There is reason to believe that this is a problem caused by the speed \ab{} talks in. It seemed like a somewhat hard task for children to keep up with both the instruction, eg. ``Shake the blue medicine, and fetch it to your mask'', and the interaction that was to performed, eg. ``Clap your hands to proceed''. 
+
+As mentioned, CU3 discovered that \ab{} was not stable enough to handle a proper high five. This problem would probably have been avoided if the child had gotten used to interacting with \ab{}, giving him more knowledge of which preventive measures that needs to be taken, eg. supporting his back while giving him the high five. However, a more valid argument is that the choice we made regarding \ab{} as a teddy bear was not ideal in the first place.  
+
+Overall, it seemed like all of the children were able to interact with \ab{} as intended. Additionally, it seemed like all of the children found \ab{} enjoyable. 
+
 \subsection{\app{}}
-[]
+
+During the user test on AU2, we discovered a critical error that almost rendered the application completely useless. The error originates from the fact that \app{} needs to communicate with the database, and we had not implemented proper feedback to the user that an error had occured. This error should obviously not have occured in the first place, as these types of errors will result in less incentive for parents to use \app{}. 
+
+As for the children, it seemed like all of them liked to use \app{}. However, with the low sample size and the fact that it was children we tested in mind, it is reason to question the validity of this result. On one hand, none of the children had big problems to do what \app{} told them to do and had very few problems navigating the application. On the other hand, the only child capable of reading was CU2, who is seven years old. It should have been given more of an effort to make the process of purchasing a reward even more clear for the youngest users of our target group.     
+
+As far as the gamification system goes, it seemed like children were happy with the fact that stars appear immediately after the treatment is finished. They also seemed happy with the rewards they were given. However, a question that remains unanswered is whether our approach to a gamification system is sustainable over a longer period of time. 
+
+% Critical errors that should have been avoided. 
+% Instructions were Understandable for children
+% Easy interactions
+% Positivt at stjerner kommer med en gang.
+% Repeat burde blitt implementert. 
+% Flere konkurrenter paa markedet. 
