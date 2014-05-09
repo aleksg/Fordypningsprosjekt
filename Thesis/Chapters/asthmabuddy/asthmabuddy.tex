@@ -6,7 +6,7 @@
 As mentioned in Chapter \ref{chp:background}; in 2012, we did a similar project using Karotz\fnurl{Karotz}{www.karotz.com} as the platform for the tangible user interface\cite{CustomerDriven}.
 This project left us with mixed feelings towards Karotz as a platform. The thought behind Karotz is great. It is an open source robot which allows people to build applications and launch it to the Karotz store. However, in our subjective opinion, it is not ideal to work with. The Karotz starters kit costs ~\$200, not including customs. Thus it is a pretty large investment for a family wanting to use our application. The API is only documented in French, which limits the number of developers who are willing to develop applications for the Karotz, in addition to the fact that it is pretty cumbersome to configure for a ``non-technological'' family. 
 
-We researched other options than Karotz to create our tangible user interface. The alternatives we looked into was Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform\cite{arduino}, which allows for many different combinations of configurations. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide-range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
+We researched other options than Karotz to create our tangible user interface. The alternatives we looked into was Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform\cite{arduino}, which allows for many different combinations of configurations. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
 While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for us as developers. Arduino programs are normally written in C\cite{strahl2000language}, which we had little to no prior experience with. Additionally, Arduinos generally have low-powered CPUs, in order to keep them cheap. These low-powered CPUs tend to have problems with decoding MP3-files, which would lay heavy constraints to our system (without using sounds or a display, it is hard to communicate with children). Due to these facts, we choose to develop the system on a Raspberry Pi.
 
 Our tangible user interface was planned to contain a lot of the same functionality that KAPP had, with some modifications. The reason we chose to develop on a different platform was to make the system more user friendly, specifically lower the requirement for technical knowledge needed to introduce \ab{} to an inexperienced user, by following the ``Plug and Play'' principle.
@@ -234,12 +234,12 @@ Step 4 is an assembly task, 5(c) is a continuous task for a short period of time
 
 \textbf{OC6: Does the sub-task need any relational interaction?}
 None of the sub-tasks needs relational interaction.
-[Pieter: Vil RFID-tag og RFID-leser her telle som en form for relational interaction?]
+[TODO Pieter: Vil RFID-tag og RFID-leser her telle som en form for relational interaction?]
  
 \subsection{Dealing with Bellotti's Challenges}
 \label{sec:dealingwithbellotti}
 
-Section \ref{sec:challenges-with-TUI} introduced some of the challenges that are encountered when designing tangible interfaces. In the following we will discuss how we handled the challenges encountered, by answering those of Bellotti's questions which we found relevant. 
+Chapter \ref{sec:challenges-with-TUI} introduced some of the challenges that are encountered when designing tangible interfaces. In the following we will discuss how we handled the challenges encountered, by answering those of Bellotti's questions which we found relevant. 
 
 \textbf{Address: How do I address one of many possible devices?}
 
