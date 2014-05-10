@@ -2,6 +2,9 @@
 \label{sec:usabilityresults}
 In order to protect the identity of our test subjects, especially considering the children, we have used identifiers as names. Names starting with the letter ``A'' is an adult user, and names starting with ``C'' denotes a child.
 
+As mentioned in Chapter \ref{sec:testmethod}, the problems discovered were rated according to the severity. These errors can be found under the header \emph{Level} in the respective tables. To recap, the ranking goes as follows: Level 1 is a critical error, Level 2 is a significant problem with accomplishing a task, Level 3 is a minor issue with the usability and Level 4 is non-essential issue. 
+  
+
 \subsection{Parent Partition Tests}
 
 \subsubsection{Adult User 1}
@@ -27,29 +30,29 @@ In order to protect the identity of our test subjects, especially considering th
 \begin{singlespacing}
 \begin{table}[H]
 \centering
-\begin{tabular}{| p{1.0cm} | p{4.0cm} | p{4.5cm} | p{4.0cm} |}
+\begin{tabular}{| p{0.7cm} | p{4.0cm} | p{0.9cm} | p{3.7cm} | p{3.3cm} |}
 \hline
-	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
+	\textbf{Task} & \textbf{Problem} & \textbf{Level} & \textbf{Cause} & \textbf{Proposal for solution} \\
 	\hline
-	0 & The user where unable to separate between the image for child and parent partition. & The images were not entirely intuitive. & The image for adults could have a bearded man, or other recognizable features. \\
+	0 & The user where unable to separate between the image for child and parent partition. & 3 & The images were not entirely intuitive. & The image for adults could have a bearded man, or other recognizable features. \\
 	\hline
-	1 & It was unclear whether he had to press on the healthy medicine plan, as the child was in the healthy medicine plan by default. & Challenging GUI. & Could make it clearer for the user which treatment plan is being followed. \\
+	1 & It was unclear whether he had to press on the healthy medicine plan, as the child was in the healthy medicine plan by default. & 3 & Challenging GUI. & Could make it clearer for the user which treatment plan is being followed. \\
 	\hline
-	1 & The spinners for hour/minutes should be able to be written into. & The standard Android slider contains a minor bug when one writes into it.  & N/A \\
+	1 & The spinners for hour/minutes should be able to be written into. & 3 & The standard Android slider contains a minor bug when one writes into it.  & N/A \\
 	\hline
-	1 & The time that shows when the alarm should trigger contained seconds, which the test subject found unnecessary. & Timestamp contains seconds. & Remove seconds from the timestamp. \\
+	1 & The timestamp contained seconds, which caused annoyance. & 4 & Timestamp contains seconds. & Remove seconds from the timestamp. \\
 	\hline
-	2 & The user expected that he could be able to press the medicine, and not just the checkbox which was the case. He found this a little annoying. & Implementation of listener. & Make the entire list item touchable. \\
+	2 & The user expected that he could press the medicine, and not just the checkbox which was the case. He found this a little annoying. & 3 & Implementation of listener. & Make the entire list item touchable. \\
 	\hline
-	2 & He wanted functionality for adding two medicines at once. & This has not been implemented yet. & Implement it later. \\
+	2 & He wanted functionality for adding two medicines at once. & 2 & This has not been implemented yet. & Implement it later. \\
 	\hline
-	3 & The view shows a button with ``Add Activity'', which he felt was wrong. & This was not intended, as it should have said ``Add Reward''. & Change it to ``Add Reward''. \\
+	3 & The view shows a button with ``Add Activity'', which he felt was wrong. & 3 & This was not intended, as it should have said ``Add Reward''. & Change it to ``Add Reward''. \\
 	\hline
-	3 & The user pressed the back button one too many times. This caused the PIN-challenge to be presented again, which the test user said could be annoying for some users. & PIN-challenge appears as soon a parent returns from the parent partition. & Could implement a timer who checks when the user last completed the challenge.\\
+	3 & When pressing the back button one too many times, he was challenged with the PIN code again. This caused annoyance. & 4 & PIN-challenge appears as soon a parent returns from the parent partition. & Could implement a timer who checks when the user last completed the challenge.\\
 	\hline
-	4 & The test user said it was not logical to see where he could check the air quality cast. & Bad task description. & Change task description to make it more understandable. \\
+	4 & The test user said it was not logical to see where he could check the air quality cast. & 3 & Bad task description. & Change task description to make it more understandable. \\
 	\hline
-	4 & The test user wanted functionality for different views, for instance showing the log for a week or a single day. & Confusing calendar view. & This feature could be implemented with more time and resources.  \\
+	4 & The test user wanted functionality for different views, for instance showing the log for a week or a single day. & 4 & Confusing calendar view. & This feature could be implemented with more time and resources.  \\
 	\hline
 \end{tabular}
 \caption{Usability Test Results: AU1}
@@ -79,29 +82,30 @@ In order to protect the identity of our test subjects, especially considering th
 \end{tabular}
 \end{table}
 
+\begin{singlespacing}
 \begin{table}[H]
 \centering
-\begin{tabular}{| p{0.8cm} | p{3.0cm} | p{5.0cm} | p{4.2cm} |}
+\begin{tabular}{| p{0.8cm} | p{2.8cm} | p{0.9cm} | p{5.0cm} | p{3.1cm} |}
 \hline
-	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
+	\textbf{Task} & \textbf{Problem} & \textbf{Level} & \textbf{Cause} & \textbf{Proposal for solution} \\
 	\hline
-	2 & The user did not know whether the alarm should fire at a given time or if the child should actually take the medicine at that time. & The view only prompts the user to insert a time. & Could change the text ``Time'' to ``Time the alarm should trigger'', or similar. \\
+	2 & The user did not know whether the alarm should fire at a given time or if the child should actually take the medicine at that time. & 2 & The view only prompts the user to insert a time. & Could change the text ``Time'' to ``Time the alarm should trigger'', or similar. \\
 	\hline
-	2 & Alarms were not added properly. & Discovered a bug; When the user opens the application for the first time, it adds a user to the database. As the device was not connected to any network, this failed, and we had not implemented feedback to the user. & Implement the functionality needed, and give feedback to the user. \\
+	2 & Alarms were not added properly. & 1 & Discovered a bug; When the user opens the application for the first time, it adds a user to the database. As the device was not connected to any network, this failed, and we had not implemented feedback to the user. & Implement the functionality needed, and give feedback to the user. \\
 	\hline
-	3 & The user did not know whether he had actually selected an image. & The ``Add Reward'' module does not provide enough feedback as to whether or not the user has actually selected an image. & This functionality should be implemented.  \\
+	3 & The user did not know whether he had actually selected an image. & 2 & The ``Add Reward'' module does not provide enough feedback as to whether or not the user has actually selected an image. & This functionality should be implemented.  \\
 	\hline
-	3 & The user did not understand what repeat meant. & Repeat means to give the same reward on a continuous basis, for the same amount of stars given. This was not explained well enough on the user test. & Clarify this aspect with a help box.   \\
+	3 & The user did not understand what repeat meant. & 3 & Repeat means to give the same reward on a continuous basis, for the same amount of stars given. This was not explained well enough on the user test. & Clarify this aspect with a help box.   \\
 	\hline
-	5 & The air quality cast does not change with regards to which day is picked. & The air quality is currently only imported for the current date. & \app{} should give feedback that the queried data is not available for days later than today. \\ 
+	5 & The air quality cast does not change with regards to which day is picked. & 3 & The air quality is currently only imported for the current date. & \app{} should give feedback that the queried data is not available for days later than today. \\ 
 	\hline
-	5 & The user was confused when deciding which day was selected. & The view does not provide enough feedback to ensure the user of which day is selected. & Implementation of the feature could be performed. Additionally, we could add separate views to show a week or a day, and not only showing the month. \\
+	5 & The user was confused when deciding which day was selected. & 2 & The view does not provide enough feedback to ensure the user of which day is selected. & Implementation of the feature could be performed. Additionally, we could add separate views to show a week or a day, and not only showing the month. \\
 	\hline  
 \end{tabular}
 \caption{Usability Test Results: AU1}
 \label{tab:testadult2}
 \end{table}
-
+\end{singlespacing}
 
 
 \textbf{Comments about the test}
@@ -136,17 +140,17 @@ During the user tests, \ab{} was configured to use the varied interaction scheme
 
 \begin{table}[H]
 \centering
-\begin{tabular}{| p{1.0cm} | p{4.0cm} | p{4.0cm} | p{4.0cm} |}
+\begin{tabular}{| p{1.0cm} | p{4.0cm} | p{0.9cm} | p{3.6cm} | p{3.1cm} |}
 \hline
-	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
+	\textbf{Task} & \textbf{Problem} & \textbf{Level} & \textbf{Cause} & \textbf{Proposal for solution} \\
 	\hline
-	2 & It seemed like she had a hard time keeping up with \ab{}'s instructions. & The voice of \ab{} was speaking too fast. & Record sounds with lower speed. \\
+	2 & It seemed like she had a hard time keeping up with \ab{}'s instructions. & 2 & The voice of \ab{} was speaking too fast & Record sounds with lower speed. \\
 	\hline
-	4 & It was difficult to drag the medicine above the breathing chamber in order to start the treatment. & The treatment only starts when the medicine is directly above the breathing chamber. & Should make this functionality simpler to start.  \\
+	4 & It was difficult to drag the medicine above the breathing chamber in order to start the treatment. & 3 & The treatment only starts when the medicine is directly above the breathing chamber. & Should make a treatment simpler to start when alarms are triggered.  \\
 	\hline
-	4 & It was hard for the child to keep ut with the voice of the rabbit. & The voice talked too quickly, and \app{} does not have a repeat functionality when a treatment is running. & Should consider implementing repeat.\\ 
+	4 & It was hard for the child to keep ut with the voice of the rabbit. & 2 & The voice talked too quickly, and \app{} does not have a repeat functionality when a treatment is running. & Should consider implementing repeat.\\ 
 	\hline
-	5 & It was hard to get a clean read of the RFID tag. & It was not entirely clear where the user had to put the card in order to get a read. & \ab{} should have an indicator as of where the card should be held in order to be read.  \\
+	5 & It was hard to get a clean read of the RFID tag. & 3 & It was not entirely clear where the user had to put the card in order to get a read. & \ab{} should have an indicator as of where the card should be held in order to be read.  \\
 	\hline
 \end{tabular}
 \caption{Usability Test Results: CU1}
@@ -182,13 +186,13 @@ When asked which method CU1 preferred, i.e. \app{} or \ab{}, CU1 replied ``I don
 
 \begin{table}[H]
 \centering
-\begin{tabular}{| p{1.0cm} | p{4.0cm} | p{4.0cm} | p{4.0cm} |}
+\begin{tabular}{| p{1.0cm} | p{4.0cm} | p{0.9cm} | p{3.1cm} | p{3.7cm} |}
 \hline
-	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
+	\textbf{Task} & \textbf{Problem} & \textbf{Level} & \textbf{Cause} & \textbf{Proposal for solution} \\
 	\hline
-	2 & The user did not know whether he should hold the medicine or the breathing chamber towards the mouth. & We believe this falls under the category of human errors, as he may weren't able to distinguish between the two. & The voice instruction could put more emphasis on \emph{medicine}. \\
+	2 & The user did not know whether he should hold the medicine or the breathing chamber towards the mouth. & N/A & We believe this falls under the category of human errors, as he may weren't able to distinguish between the two. & The voice instruction could put more emphasis on \emph{medicine}. \\
 	\hline
-	2 & When the user was supposed to count to 10, he counted too fast, leaving \ab{} to breathe for several seconds after he had finished counting. & He may not be aware of how long time a second takes. & The light on \ab{}'s nose could light only when he is supposed to count. \\
+	2 & When the user was supposed to count to 10, he counted too fast, leaving \ab{} to breathe for several seconds after he had finished counting. & 3 & He may not be aware of how long time a second takes. & The light on \ab{}'s nose could light only when he is supposed to count. \\
 	\hline
 \end{tabular}
 \caption{Usability Test Results: CU2}
@@ -239,15 +243,15 @@ When asked about which system he liked the most, CU2 first replied that he liked
 
 \begin{table}[H]
 \centering
-\begin{tabular}{| p{1.0cm} | p{4.0cm} | p{4.0cm} | p{4.0cm} |}
+\begin{tabular}{| p{1.0cm} | p{4.0cm} | p{0.9cm} | p{3.1cm} | p{3.5cm} |}
 	\hline
-	\textbf{Task} & \textbf{Problem} & \textbf{Cause} & \textbf{Proposal for solution} \\
+	\textbf{Task} & \textbf{Problem} & \textbf{Level} & \textbf{Cause} & \textbf{Proposal for solution} \\
 	\hline
-	2 & The user did not understand whether he should clap his own hands or \ab{}'s. & The voice of \ab{} spoke to fast. & Record sounds that talks slower. \\
+	2 & The user did not understand whether he should clap his own hands or \ab{}'s. & 3 & The voice of \ab{} spoke to fast. & Record sounds that talks slower. \\
 	\hline
-	2 & When giving \ab{} a high five, he hit too hard, giving \ab{} a knock out. & \ab{} has a stability issue. & The high five interaction might only be suitable for more stable artefacts. \\
+	2 & When giving \ab{} a high five, he hit too hard, giving \ab{} a knock out. & 2 & \ab{} has a stability issue. & The high five interaction might only be suitable for more stable artefacts. \\
 	\hline
-	3 & The user did not know whether he should press \ab{}'s head or the animation on \app{}. & The user had both \ab{} and \app{} in front of him during the user tests. & This could easily be avoided by removing \ab{} from the scene when we switched tasks. \\
+	3 & The user did not know whether he should press \ab{}'s head or the animation on \app{}. & 4 & The user had both \ab{} and \app{} in front of him during the user tests. & This could easily be avoided by removing \ab{} from the scene when we switched tasks. \\
 	\hline  
 \end{tabular}
 \caption{Usability Test Results: CU3}
