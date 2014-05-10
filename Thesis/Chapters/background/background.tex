@@ -15,10 +15,10 @@ The goal of the BLOPP project was to explore how design and technology can motiv
 Asthma is a disease that affects the lungs. Asthma causes wheezing, breathlessness, chest tightness and coughing. It is a chronic disease, but asthma attacks will only occur when something is bothering the lungs. Asthma may be difficult to diagnose, especially in children under the age of five. 
 
 
-An asthma attack may include coughing, chest tightness, wheezing and trouble breathing. The attack takes place in the lungs, the airways tighten letting less oxygen pass through.
-According to the Norwegian Minestry of Health and Care Services, acute asthma attacks were the most common reason for hospitalization of children in 2008\cite{NationalStrategy}. In Norway, about 20 per cent of children are suffering from the disease, and because of this the condition may be said to have an effect on the economics of the society\footnote{Costs of having parents at home instead of working, hospitalization costs, medicine costs, etc.}. However, asthma can be controlled and asthma attacks avoided by taking medicine at regular intervals. Some of the medicines, such as Seretide and Flutide, are taken as a preventive measure to avoid asthma attacks. Ventoline is taken before exercise or when an asthma attack occurs, in order to stop/shorten the length of the attack. We will refer to this usage as ``by need treatments''. 
+An asthma attack may include coughing, chest tightness, wheezing and trouble breathing. The attack takes place in the lungs, the airways tighten which causes less oxygen to pass through.
+According to the Norwegian Ministry of Health and Care Services, acute asthma attacks were the most common reason for hospitalization of children in 2008\cite{NationalStrategy}. In Norway, about 20 per cent of children are suffering from the disease. Due to this fact the condition may be said to have an effect on the economics of the society\footnote{Costs of having parents at home instead of working, hospitalization costs, medicine costs, etc.}. However, asthma can be controlled and asthma attacks avoided by taking medicine at regular intervals. Some of the medicines, such as Seretide and Flutide, are taken as a preventive measure to avoid asthma attacks. Ventoline is taken before exercise or when an asthma attack occurs, in order to stop or shorten the length of the attack. We will refer to this use as ``by need treatments''. 
 
-A treatment may be done in different ways. For young children a nebulizer is often used. The nebulizer is a device used to reduce liquid to an extremely fine cloud, in order to make it easier to inhale. Treatments using a nebulizer may last up to 10 or 15 minutes.
+A treatment may be done in different ways. For the youngest children a nebulizer is often used. The nebulizer is a device used to reduce liquid to an extremely fine cloud, in order to make it easier to inhale. Treatments using a nebulizer may last up to 10 or 15 minutes.
 
 Older children use medication in spray or powder form (see Figure \ref{fig:inhalermask} and Figure \ref{fig:ventolinedisk} respectively). The spray is often used with a breathing chamber, and the powder form of medication is taken straight from the disk. Before use, the container of the asthma medicine must be shaken in order to stir the particles. If a breathing chamber is used, the protection cap is removed and the container is mounted on the breathing chamber. The chamber is pressed towards the user's face, covering the nose and mouth. The container is then pressed, to release the medicine into the breathing chamber, and the user breaths deeply for ten seconds\footnote{There are different ways to conduct a treatment. Some specialists advice to take six breaths instead of breathing for 10 seconds}. 
 
@@ -54,7 +54,7 @@ Their prototype was the basis for our work in this project.
 \subsection{CAPP}
 \label{sec:description-capp}
 CAPP is an Android application targeted at children. Its main purpose is to guide the child through the medication process. Figure \ref{fig:capp-main-menu} shows the main page of CAPP \footnote{All applications have Norwegian as their main language}.  
-As the target group for the application is children below the age of 8, it is reasonable to assume that not all of them are able to read, and consequently this application consists mainly of pictures and animations.
+As the target group for the application is children below the age of 8, it is reasonable to assume that not all of them are able to read, and consequently this application consists mainly of pictures and animations. However, some text is necessary since the amount of pictures and animations needed to 
 
 
 In CAPP, it is possible to start a medication in one of two ways. A parent can either set alarms in GAPP (See Section \ref{sec:description-gapp}) for preventive medicines, or a child can access the medication process directly by pressing the Karotz showed in Figure \ref{fig:capp-main-menu}, which is the way to start a by-need-treatment. 
@@ -66,8 +66,8 @@ One of the objectives of CAPP was to introduce a gamification experience to the 
 By clicking the treasure chest, the child is able to see how many stars he/she has aquired. A screenshot showing the inside of the treasure chest is included in Figure \ref{fig:capp_stars} 
 
 
-The last part of this application is an Information-section, where information as to how to take a medicine is ready available. A part of the functionality that has not been implemented is voice over for these instructions. Thus, a parent should be close by in order to read the information contained in this functionality.     
-Figures \ref{fig:instructions-1}-\ref{fig:instructions-7} shows the information-part of this application.
+The last part of this application is an Information-section, where information as to how to take a medicine is available. A part of the functionality that has not been implemented is voice over for these instructions. Thus, a parent should be close by in order to read the information contained in this functionality.     
+Figures \ref{fig:instructions-1} - \ref{fig:instructions-7} shows the information-part of this application.
 
 %CAPP MAIN MENU
 
@@ -145,9 +145,7 @@ Figures \ref{fig:instructions-1}-\ref{fig:instructions-7} shows the information-
 
 \subsection{KAPP}
 \label{sec:description-kapp}
-KAPP is the TUI-application targeted at children. The application runs on a Karotz\fnurl{Karotz}{www.karotz.com}, which is a small robot bunny (see Figure \ref{fig:karotz}). The purpose of the KAPP is similar to CAPP, namely to remind children when it is time to take the asthma medicine and give instructions during treatment. In order to interact with the Karotz, the child may use either a Nanoz (a small bunny with an integrated RFID) or by pressing a button on the top of the Karotz' head. It is not possible to do a by-need treatment with a Karotz as a companion. 
-
-A basic breakdown of the CAPP and KAPP manuscript is included in Appendix \ref{chp:anuscript}. 
+KAPP is the TUI-application targeted at children. The application runs on a Karotz\fnurl{Karotz}{www.karotz.com}, which is a small robot bunny (see Figure \ref{fig:karotz}). The purpose of KAPP is similar to CAPP, namely to remind children when it is time to take the asthma medicine and give instructions during treatment. In order to interact with the Karotz, the child may use either a Nanoz (a small bunny with an integrated RFID) or by pressing a button on the top of the Karotz' head. It is not possible to do a by-need treatment with a Karotz as a companion. 
 
 
 \begin{figure}[H]
@@ -171,27 +169,32 @@ A basic breakdown of the CAPP and KAPP manuscript is included in Appendix \ref{c
 \subsection{GAPP}
 \label{sec:description-gapp}
 GAPP is an Android application targeted at the guardians or parents of the child. 
-Some parents have problems with remembering how often their child has taken his/her medication the last couple of days, when the child should take the medication and how the child's disease has evolved over a period of time. Thus, GAPP's main puropose is to make parents more aware of their child's disease.   
+Some parents have problems with remembering how often their child has taken his/her medication the last couple of days, when the child should take the medication and how the child's disease has evolved over a period of time. Thus, GAPP's main purpose is to make parents more aware of their child's disease.   
 
 
 Figure \ref{fig:gapp-main-menu1} shows a screenshot of the main menu of GAPP. The main functionality is separated into 
 \emph{Medical Plan}, \emph{Register Treatment}, \emph{Medicine Log}, \emph{Medical Information} and \emph{Manual}. 
 
-\paragraph{Medical Plan}
-\emph{Medical Plan} gives parents the option to set up reminders at particular times. It is divided according to the Traffic-Light system (See Appendix \ref{chp:traffic-light}). A child has three separate plans, to ensure that an alarm that is set on the \emph{Healthy}-plan is not automatically set on the \emph{Sick}-plan.   
+\textbf{Medical Plan}
 
-\paragraph{Register Treatment}
+\emph{Medical Plan} gives parents the option to set up reminders at particular times. It is divided according to the Traffic-Light system (See Appendix \ref{chp:traffic-light}). A child has three separate plans, to ensure that an alarm that is set on the \emph{Danger}-plan is not automatically set on the \emph{Doing Well}-plan\footnote{In \app{} the different plans were named ``Healthy'', ``A little ill'' and ``Sick''}.   
+
+\textbf{Register Treatment}
+
 The \emph{Register Treatment}-option gives parents the possibility to register a treatment that was carried out in case the child for some reason did not go through the process in CAPP or KAPP. This way, the child will be rewarded with stars accordingly. Figure \ref{fig:gapp-register-treatment} shows a screen shot of this process.  
 
-\paragraph{Medical Information}
+\textbf{Medical Information}
+
 \emph{Medical Information} gives general information about different medicines, what they do and what they are used for. The three medicines that are currently in the system is Flutide, Seretide and Ventoline. Figures \ref{fig:information-1} and \ref{fig:information-2} shows screenshots of this functionality.
 
-\paragraph{Medicine Log}
+\textbf{Medicine Log}
+
 \emph{Medicine Log} shows how many times a child has taken his/her medicine the last months. Figure \ref{fig:medicine-log} shows a screen shot of this functionality. A red circle marks the current day. A child's health state is displayed by the Green/Yellow/Red bar at the top of each day. In the bottom left corner, it is possible to show how much medicine was taken on a given day.
 In the bottom right corner, Aaberg et. al. intended to show the pollen distribution for a given day. However, the pollen distribution data is only available during spring and summer, and thus Aaberg et. al created an artificial pollen distribution for demonstration purposes. 
 
-\paragraph{Manual}
-The purpose of the \emph{Manual} is to help ``newcomers'' to medicate their child. For instance, if a relative is watching a child with asthma, he/she could use the application as a reference on how to do the process. At the time being, the manual shows Figures \ref{fig:instructions-1} - \ref{fig:instructions-7}. 
+\textbf{Manual}
+
+The purpose of the \emph{Manual} is to help ``newcomers'' to medicate their child. For instance, if a relative is watching a child with asthma, he/she could use the application as a reference on how to do the process. At the time being, the manual shows Figures \ref{fig:instructions-1} - \ref{fig:instructions-7}, i.e. the content is equal to information section of CAPP. 
         
 \begin{figure}[H]
 	\begin{minipage}[b]{0.3\linewidth}
@@ -230,12 +233,7 @@ The purpose of the \emph{Manual} is to help ``newcomers'' to medicate their chil
 
 \subsection{Known Areas For Improvement}
 \label{sec:improvements}
-As Aaberg \etal{} finished their work, they commented on several areas of potential improvement for CAPP, GAPP and KAPP. This document is reprinted in its entirety in Appendix \ref{app:furtherWork} (after permission from Aaberg, Aarseth, Dale, Gisvold and Svalestuen). The main topics for improvement were
-\begin{itemize}
-\item{Reward System}
-\item{Distraction sequence for children}
-\item{Web application}
-\end{itemize}
+As Aaberg \etal{} finished their work, they commented on several areas of potential improvement for CAPP, GAPP and KAPP. This document is reprinted in its entirety in Appendix \ref{app:furtherWork} (after permission from Aaberg, Aarseth, Dale, Gisvold and Svalestuen). The main topics for improvement were the reward system, the distraction sequence and a potential web application for storing, sending and visualizing data. 
 
 
 These comments were used as a basis when we decided what to improve in this project. 

@@ -4,12 +4,12 @@
 
 \section{Background}
 As mentioned in Chapter \ref{chp:background}; in 2012, we did a similar project using Karotz\fnurl{Karotz}{www.karotz.com} as the platform for the tangible user interface\cite{CustomerDriven}.
-This project left us with mixed feelings towards Karotz as a platform. The thought behind Karotz is great. It is an open source robot which allows people to build applications and launch it to the Karotz store. However, in our subjective opinion, it is not ideal to work with. The Karotz starters kit costs ~\$200, not including customs. Thus it is a pretty large investment for a family wanting to use our application. The API is only documented in French, which limits the number of developers who are willing to develop applications for the Karotz, in addition to the fact that it is pretty cumbersome to configure for a ``non-technological'' family. 
+This project left us with mixed feelings towards Karotz as a platform. The thought behind Karotz is great. It is an open source robot which allows people to build applications and launch it to the Karotz store. However, in our subjective opinion, it is not ideal to work with. Firstly, the Karotz starters kit costs ~200 USD. Thus it is a pretty large investment for a family wanting to use our application. Secondly, the API is only documented in French, which limits the number of developers who are willing to develop applications for the Karotz. Thirdly, it is pretty cumbersome to configure for a person with little knowledge of computer configurations, e.g. the Karotz requires SSH access(Secure SHell access) for initial configurations. Fourthly, we did not want our product to be constrained by the limitations of the Karotz.
 
-We researched other options than Karotz to create our tangible user interface. The alternatives we looked into was Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform\cite{arduino}, which allows for many different combinations of configurations. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide-range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
+We researched other options than Karotz in order to create a tangible user interface from scratch. The alternatives we looked into was Arduino and Raspberry Pi. Arduino is an open source electronics prototyping platform\cite{arduino}, which allows for many different combinations of configurations. Arduino shields comes in many shapes and sizes and is built for modularity and extendability. A wide range of components are available if you want to add technical functionality to an Arduino system, such as Bluetooth, WiFi or small motors. 
 While Arduino allows complex hardware configurations, Raspberry Pi makes larger abstractions, which seemed like the better choice for us as developers. Arduino programs are normally written in C\cite{strahl2000language}, which we had little to no prior experience with. Additionally, Arduinos generally have low-powered CPUs, in order to keep them cheap. These low-powered CPUs tend to have problems with decoding MP3-files, which would lay heavy constraints to our system (without using sounds or a display, it is hard to communicate with children). Due to these facts, we choose to develop the system on a Raspberry Pi.
 
-Our tangible user interface was planned to contain a lot of the same functionality that KAPP had, with some modifications. The reason we chose to develop on a different platform was to make the system more user friendly, specifically lower the requirement for technical knowledge needed to introduce \ab{} to an inexperienced user, by following the ``Plug and Play'' principle.
+Our tangible user interface was planned to have similar functionality to what KAPP had, with some modifications. 
  
 \section{Technology}
 \label{sec:technology}
@@ -73,7 +73,7 @@ In addition to the \rpi{} we needed some components that children are able to in
 
 \textbf{RFID Reader}
 
-In order to interact with \ab{}, children can register RFID-tags against \ab{}'s stomach. The RFID-reader we used was a Sparkfun ID-12LA\fnurl{Sparkfun ID-12LA documentation}{http://tiny.cc/sparkfundoc}. The requirements when choosing the reader was that it should be able to connect through an USB-port, and be able to communicate with UNIX-systems.
+In order to interact with \ab{}, children can register RFID-tags against \ab{}'s stomach. The RFID-reader we used was a Sparkfun ID-12LA\fnurl{Sparkfun ID-12LA documentation}{http://tiny.cc/sparkfundoc}. Our requirements when choosing a reader was that it should be able to connect through an USB-port, and be able to communicate with UNIX-systems.
          
 \textbf{USB speakers}
 
@@ -82,9 +82,9 @@ In order to play sounds to children, we decided to integrate speakers inside Ast
 
 \textbf{LED lights}
 
-We used LED lights connected to a breadboard in order to play around with the first prototype. The LED lights emits light in different colors to correspond to what action(s) is expected from the user during a treatment (see more in \ref{sec:proto1}). 
+We used LED lights connected to a breadboard in order to play around with the first prototype. The LED lights emits light in different colors to correspond to what action(s) is expected from the user during a treatment (see more in Section \ref{sec:proto1}). 
 
-In order to display the correct colors to the children, according to the color of the medicine, we tried to use PWM\fnurl{Pulse-width Modulation}{http://en.wikipedia.org/wiki/Pulse-width\_modulation}. However, these experiments resulted in a significant weaker light. Thus, we used a simple combination of Blue and Red in order to show purple, and a combination of Red and Green to show orange.  
+In order to display the correct colors to the children, according to the color of the medicine, we tried to use PWM\fnurl{Pulse-width Modulation}{http://en.wikipedia.org/wiki/Pulse-width\_modulation}. However, these experiments resulted in a significant weaker light. Thus, we used a simple combination of blue and red in order to display purple, and a combination of red and green to display orange.  
 
  
 Figure \ref{fig:pi-fritzing} shows a digital overview of \buddy{}. The green figure to the left is our \rpi{}. While it is also connected to a power supply and an internet cable, we chose not to include these in our figure. The red figure to the right is the RFID reader. It is connected to the \rpi{} through an USB cable. The black figure on top is the speaker, connected to the \rpi{} through the audio port. 
@@ -98,7 +98,7 @@ In addition to the components mentioned in the last section, we considered using
 
 \textbf{Buttons}
 
-One or more buttons could have been used on \ab{}. Buttons could have been used to manage boolean values, for instance if the progression of an instruction needed a yes/no answer. We did not include buttons, as it could disturb the impression of \ab{} as a regular teddy bear, i.e. it would look more mechanical. Additionally, we were not able to restrict the amount of buttons needed. 
+One or more buttons could have been used on \ab{}. Buttons could have been used to manage boolean values, for instance if the progression of an instruction needed a yes/no answer. We did not include buttons, as it could disturb the impression of \ab{} as a regular teddy bear, i.e. it would seem more mechanical. 
 
 \textbf{Touch sensors}
 
@@ -106,7 +106,7 @@ A touch sensor could serve the same purpose as a single button. We did not inclu
 
 \textbf{Microphone}
 
-A microphone could be used for speech recognition purposes. However, the \rpi{} does not have the processing power required to do speech recognition. Additionally, it would require writing code that is able to distinguish between noises\footnote{We were not able to find any open source libraries that are able to do speech recognition for the Norwegian language}. We thought it could have been a cool feature that would help establishing a relationship between the user and \ab{}.    
+A microphone could be used for speech recognition purposes. However, the \rpi{} does not have the processing power required to do speech recognition. Additionally, it would require writing code that is able to distinguish between noises\footnote{We were not able to find any open source libraries that are able to do speech recognition for the Norwegian language}. We thought it could have been a cool feature that would help establishing a relationship between the user and \ab{}, but we found it infeasible to implement given our limited time and resources.    
 
 \subsection{Frameworks and Libraries Used in \ab{}} 
 
@@ -126,7 +126,7 @@ JLayer \fnurl{Javazoom JLayer}{http://www.javazoom.net/index.shtml} is an open s
 \section{Design Rationale}
 \label{sec:designrationale}
 \subsection{Why a Teddy Bear?}
-When designing \buddy{} we choose to use a teddy bear as an avatar for our system. There are several reasons as to why we think a teddy bear is an appropriate avatar. Teddy bears are well known toys, and have been loved by children for a long time. They are considered gender-neutral\cite{stagnitti1997determining}\cite{cherney2006gender} and in our subjective opinion it is a toy that could be discretely placed in a child's room. With the appearance of a teddy bear, \buddy{} can easily be placed among other toys and not stand out. It was also important for us to choose a teddy bear of some size. A too thin a bear could lead to problems when fitting the system inside the bear, and could in could be met with scepticism by the children. \buddy{} will have similarities to Tamagotchi\cite{tamagotchi} and Furby\cite{furby}, but \buddy{}'s purpose is to motivate, instruct and teach children about asthma, not be a toy purely for playing with. 
+When designing \buddy{} we chose a teddy bear as an avatar for our system. There are several reasons as to why we think a teddy bear is an appropriate avatar. Teddy bears are well known toys, and have been loved by children for a long time. They are considered gender-neutral\cite{stagnitti1997determining}\cite{cherney2006gender} and in our subjective opinion it is a toy that could be discretely placed in a child's room. With the appearance of a teddy bear, \buddy{} can easily be placed among other toys and not stand out. It was also important for us to choose a teddy bear of some size. A too thin a bear could lead to problems when fitting the system inside the bear, and could be met with scepticism by the children. \buddy{} will have similarities to Tamagotchi\cite{tamagotchi} and Furby\cite{furby}, but \buddy{}'s purpose is to motivate, instruct and teach children about asthma, not be a toy purely for playing with. 
 
 While designing our system we also wanted to make sure that our system did not have robot-like features or robotic similarities. While children tend to find technology very interesting, we wanted to make \buddy{} seem as natural as possible, making a stuffed toy animal, rather than a technological toy. We believe that these design choices served our purpose of making children more aware of their asthma, while not being a constant reminder and a stress element. 
 
@@ -154,11 +154,12 @@ Below are two pictures of how \ab{} looks in its final form.
 \end{figure}
 
 
-\subsection{Interaction design}
+\subsection{Interaction Design}
 \label{sec:interactiondesign}
 When we started developing the interaction design of \buddy{}, we had a brainstorming session with the intention of coming up with reasonable interaction patterns.        
-By ``reasonable'', we imply that the underlying functionality should be relatively cheap to implement. The interactions should also be fun for the children to perform, in addition to being efficient.  
+By ``reasonable'', we imply that the underlying functionality should be relatively cheap to implement. The interactions should also be fun for the children to perform, in addition to being efficient. 
 
+\begin{singlespacing}
 \begin{table}[H]
 	\begin{tabular}{| p{3.0cm} | p{5.5cm} | p{5.5cm} |}
 		\hline
@@ -168,24 +169,27 @@ By ``reasonable'', we imply that the underlying functionality should be relative
 		\hline
 		Hold \buddy{}'s hand & Demonstrates to children that \buddy{} is friendly. & Preassure sensor within the hand of \buddy{} could solve this. \\
 		\hline
-		Hold smartphone close to AsthmaBuddy's belly & Could demonstrate the ``smartness'' of \buddy{}, i.e. it can communicate with other things. & Could be solved by Bluetooth. \\
+		Hold smartphone close to AsthmaBuddy's belly & Could demonstrate the ``smartness'' of \buddy{}, i.e. it can communicate with other devices. & Could be solved by Bluetooth. \\
 		\hline 
 		Press \buddy{}'s nose & Demonstrates to children that \buddy{} is friendly. & Preassure sensor within the nose of \buddy{} could solve this. \\
 		\hline
-		Press \buddy{}'s belly & Same as above. & Same as above. \\
+		Press \buddy{}'s belly & Demonstrates to children that \buddy{} is friendly. & Preassure sensor within the nose of \buddy{} could solve this. \\
 		\hline
 		Hold medicine close to \buddy{}'s mouth & Demonstrates that \buddy{} also needs his medicine. & An RFID-tag attached to the medicine, and an RFID-reader inside the nose of \buddy{} could be used here to control the flow. \\ 
 		\hline
 		Hold RFID-tag close to \buddy{}'s mouth & Is a relatively easy way to proceed with the process. & A loose RFID-tag could be used together with an integrated RFID-reader, in order to proceed. \\ 
 		\hline
-		Hold RFID-tag close to \buddy{}'s belly & Same as above. & Same as above. \\
+		Hold RFID-tag close to \buddy{}'s belly & Is a relatively easy way to proceed with the process. & A loose RFID-tag could be used together with an integrated RFID-reader, in order to proceed. \\
 		\hline
 		Clap your hands & Should be a fun way of interacting with systems, considering the age of our target group. & Sound recognition could be used here. \\ 
+		\hline
+		Combination of the interactions above & Makes the process more fun through variation. & N/A \\
 		\hline
 	\end{tabular}
 	\label{tab:interaction-rationale}
 	\caption{Rationale behind \buddy{}'s interaction design}
 \end{table}
+\end{singlespacing}
 
 \subsection{Answering to Champoux's Development Framework}
 \label{sec:answeringchampoux}
@@ -213,7 +217,7 @@ Children must have their inhaler and mask stored within a short distance of \bud
 \textbf{OC5a: What is the nature of the interaction for each sub task (Continuous vs Discrete vs Assembly)?}
 The subtasks performed when taking a medicine is the following:
 \begin{enumerate}
-  \item Fetch a grown-up
+  \item Fetch an adult
   \item Fetch inhaler
   \item Fetch mask
   \item Prepare medicine
@@ -234,12 +238,12 @@ Step 4 is an assembly task, 5(c) is a continuous task for a short period of time
 
 \textbf{OC6: Does the sub-task need any relational interaction?}
 None of the sub-tasks needs relational interaction.
-[Pieter: Vil RFID-tag og RFID-leser her telle som en form for relational interaction?]
+[TODO Pieter: Vil RFID-tag og RFID-leser her telle som en form for relational interaction?]
  
-\subsection{Dealing with Bellotti's challenges}
+\subsection{Dealing with Bellotti's Challenges}
 \label{sec:dealingwithbellotti}
 
-Section \ref{sec:challenges-with-TUI} introduced some of the challenges that are encountered when designing tangible interfaces. In the following we will discuss how we handled the challenges encountered, by answering those of Bellotti's questions which we found relevant. 
+Chapter \ref{sec:challenges-with-TUI} introduced some of the challenges that are encountered when designing tangible interfaces. In the following we will discuss how we handled the challenges encountered, by answering those of Bellotti's questions which we found relevant. 
 
 \textbf{Address: How do I address one of many possible devices?}
 
@@ -260,12 +264,12 @@ By listening to \buddy{} speak, the user should be aware of what is happening. T
 
 \textbf{Accident: How do I avoid mistakes?}
 
-A part of the challenge is to recover from mistakes that have occured. For instance, if the user proceeds further than what was actually intended, and missed out on an instruction they needed, \buddy{} should have a way to revert to the missed instruction. \ab{} has functionality to replay instructions, but it needs to be told to do so by keyboard input from the ``Wizard-of-Oz''. During user tests, children were told to say ``Repeat'' loud and clear, in order to replay an instruction. Moving beyond the ``Wizard-of-Oz'', this could be handled by a separate form of interaction, eg. shaking \ab{}'s head.       
+A part of the challenge is to recover from mistakes that have occured. For instance, if the user proceeds further than what was actually intended, and missed out on an instruction they needed, \buddy{} should have a way to revert to the missed instruction. \ab{} has functionality to replay instructions, but it needs to be told to do so by keyboard input from the ``Wizard-of-Oz''. During user tests, children were told to say ``Repeat'' loud and clear, in order to replay an instruction. Moving beyond the ``Wizard-of-Oz'', this could be handled by a separate form of interaction, e.g. shaking \ab{}'s head, in order to make him repeat the instruction.      
 
 \input{Chapters/asthmabuddy/asthmabuddy-system-overview.tex}
  
 
-\section{Prototype version 1}
+\section{Prototype Version 1}
 \label{sec:proto1}
 
 Our first version of \ab{} was supposed to have capabilities to guide a child through a treatment. It was possible to interact with \ab{} through the interactions described in Table \ref{tab:interaction-rationale}. Version 1 did not have the ability to synchronize rewards with \app{}, nor informing the user about the total amount of stars collected. We tested the version on inexperienced users (results can be found in Chapter \ref{chp:interaction-methods}), in order to discover information flaws and difficulties when interacting with \ab{}. We assumed that if an adult was not able to perform a treatment correctly with \ab{}, then children would not be able to do it either.  
@@ -274,7 +278,7 @@ We did not have the resources available to implement all of the interaction meth
 
 This version was also used for demonstration purposes during our interviews, which provided us useful feedback on functionality we could add to \ab{}.           
 	
-\section{Prototype version 2}
+\section{Prototype Version 2}
 \label{sec:abversion2}
 The improved version of \ab{}, hereby referred to as \ab{} 2.0, had some changes done since version 1.0. After testing version 1.0 on inexperienced users, we removed some of the interaction methods. A summary of the interaction methods available in version 2.0 is provided in \ref{chp:interaction-methods}. \ab{} 2.0 is able to synchronize collected stars automatically between \app{} and \ab{}. This was done to automate some tasks that previously needed manual interaction, and to create a tighter coupling between the two prototypes.
 
@@ -285,4 +289,3 @@ Additionally, some small changes were made to the use of the LED light on \ab{}'
 \section{Summary}
 \label{sec:asthmabuddysummary}
 We have developed a prototype for a tangible user interface called \ab{}, who can be used to guide a child through a treatment process. The software behind the prototype is built upon a \rpi{}, which was placed inside \ab{}. We designed a set of interaction methods that we figured could be appropriate for children. This set was narrowed down after a round of user tests on inexperienced users (see Chapter \ref{chp:interaction-methods}). It is currently capable of reading RFID tags, playing sounds and changing the light of its' nose. During the user tests, we simulated the usage of microphones with voice recognition, sensing touches to it's hand, sensing a smartphone's precence and distinguishing between a touch and a high five.       
-
