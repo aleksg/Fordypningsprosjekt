@@ -99,8 +99,7 @@ The alternative to a registered alarm is if a child needs to take the medicine b
 \subsection{State Diagram}
 \label{sec:statediagram}
 
-In order to start the AsthmaBuddy application, we used SSH in order to gain access to the computer. We then retrieved the latest version of the source code from Git\fnurl{Git is the Source Code Management system we used}{http://git-scm.com/}, compiled it, and started running it (this process is described in Appendix \ref{app:asthmabuddy_manual}). Once AsthmaBuddy is running, it follows the state diagram depicted in Figure \ref{fig:asthmabuddy_statediagram}.  
-  
+Depticted in Figure \ref{fig:asthmabuddy_statediagram} is a state diagram of \ab{}. It is possible to start a by need treatment, which removes unnecessary parts from the sequence. This decision was made in order to make it faster to do by need treatments, as children are often stressed if an asthma attack occurs. 
 
 \begin{figure}[H] 
 	\centering
@@ -140,7 +139,6 @@ Figures \ref{fig:ab-sd-byneed} - \ref{fig:ab-sd-completing-treatment} shows sequ
 	\label{fig:ab-sd-completing-treatment}
 \end{sidewaysfigure}
 
-
 \begin{sidewaysfigure}[htbp]
 	\centering
 		\includegraphics[scale=0.6]{Pictures/sd/sd-synchronizingv2.png}
@@ -148,21 +146,21 @@ Figures \ref{fig:ab-sd-byneed} - \ref{fig:ab-sd-completing-treatment} shows sequ
 	\label{fig:ab-sd-synchronizing}
 \end{sidewaysfigure}
 
-\textbf{By Need Treatment}
+\textbf{By need treatment}
 
-We were not able to find a reasonable easy way to let the \buddy{} automatically be aware of the medicine that was to be taken at the start of a treatment. As a result, we used ssh into the \rpi{}, and provided the color of the medicine and the sequence number for the interaction that was to be tested.
+In order to start a treatment, the user provides a medicine code, which is represented by the first letter of the color of the medicine. The sequence number referred to in the state diagram is a number which corresponds to the faster sequence of instructions. 
 
 After inserting these parameters, the \code{LogicHandler} retrieves a \code{LinkedList} of \code{Interaction}-objects that is to be played. After this sequence is ended, the system jumps to Figure \ref{fig:ab-sd-instructions}.
  
-\textbf{Planned Treatment}
+\textbf{Planned treatment}
 
 If an \code{AsthmaBuddy} instance is started without any parameters, it starts looking through alarm files (see Section \ref{sec:node-server}) every 60 seconds. If no alarm is returned from \code{UserDataManager}, it waits. Once an alarm is found, \code{AsthmaBuddy} is notified through \code{onNotificationFired}, which starts the treatment process. 
  
-\textbf{Playing Instructions}
+\textbf{Playing instructions}
 
 Playing instructions is mainly a loop of playing a sound, and turning on and off the LED-lights through the \code{LightEmitter} instance. 
 
-\textbf{Finishing a Treatment}
+\textbf{Finishing a treatment}
 
 When a treatment is finished, i.e. we are out of the \code{while} loop in Figure \ref{fig:ab-sd-instructions}, we register the treatment in the database. This ensures that the child is able to see the rewards in AsthmAPP. 
 
