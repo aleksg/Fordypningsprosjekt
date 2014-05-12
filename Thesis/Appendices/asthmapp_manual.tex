@@ -1,0 +1,53 @@
+\chapter{Configuring AsthmAPP}
+\label{app:configure-asthmapp}
+
+\section{Introduction}
+During development, we have used systems that are only available for NTNU students. Once we graduate, we are not entirely sure what happens to these systems, and whether or not \app{} can rely on accessing these systems with the current configurations. As such, this appendix will clarify the work that needs to be done if someone wants to continue development of our project. 
+
+\section{MySQL Database}
+
+[TODO: Vent p\a Elin og Ole]
+
+\section{Webservice}
+
+In the source code folder, there should be folder called ``web-access''. This folder can be placed on a server, and it will be possible to access the webservice through this server. We will refer to the URL you choose as PATH through the rest of this chapter. 
+
+The folder should at least contain the following list of files:
+
+\begin{itemize}
+\itemsep0em
+  \item add\_plan.php
+  \item add\_plan\_dose.php
+  \item dbconfig.php
+  \item dose\_is\_taken.php
+  \item get\_available\_child\_states.php
+  \item get\_child\_state.php
+  \item get\_child.php
+  \item get\_doses\_for\_current\_state.php
+  \item get\_instructions.php
+  \item get\_log\_days\_for\_child.php
+  \item get\_log\_for\_child.php
+  \item get\_medicine\_list.php
+  \item get\_plan.php
+  \item index.php
+  \item register\_medicine\_taken.php
+  \item remove\_plan-dose.php
+  \item remove\_plan\_medicine\_at\_time.php
+  \item set\_child\_state.php
+  \item underscore-min.js
+  \item A res folder containing sounds. 
+\end{itemize}
+
+\section{Editing variables within the source code}
+
+In the source code for \app{} and \ab{}, there are some variables that needs to be fixed in order to make use of your newly configured database and web service.  
+% Table of filenames, and the variable that should be fixed
+
+\begin{table}[H]
+\begin{tabular}{|p{4.0cm} | p{4.0cm} | p{4.0cm} |}
+\hline
+\textbf{Package} & \textbf{Filename} & \textbf{Variable(s)} \\
+\hline
+\end{tabular}
+\end{table}
+ 
