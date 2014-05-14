@@ -3,7 +3,8 @@
 %% ---------------------------------------------------------------- 
 
 % Set up the document
-\documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+\documentclass[twoside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+%\usepackage[inner=4cm,outer=2cm]{geometry}
 \graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
 
 % Include any extra LaTeX packages required
@@ -16,9 +17,7 @@
 \usepackage{url}
 \usepackage{pdfpages}
 \usepackage{hyperref}
-\newcommand\fnurl[2]{
-	\footnote{\href{#2}{#1} - {#2}}
-}
+\newcommand\fnurl[2]{\footnote{\href{#2}{#1} - {#2}}}
 \usepackage{caption}
 \usepackage{rotating}
 \usepackage{enumitem}
