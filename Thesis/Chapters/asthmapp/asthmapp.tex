@@ -42,7 +42,7 @@ Java's default implementation of time is cumbersome to work with, with a lot of 
 While designing AsthmAPP, we strived for an easy-to-use design with a good overview, in addition to the Android Design Principles\cite{androiddesign}. We have also taken Shneidermann's eight golden rules into consideration when designing \app{}\cite{shneiderman2003designing}. 
 We tried to lighten the short-term memory load by using a combination of sounds, pictures and text to tell the user the options that are available or what is expected from the user. 
 
-The application is divided into two partitions, one for the parents and one for their children. In order to access one of the partitions, the user clicks on one of the buttons shown in Figure \ref{fig:asthmapp-main-menu}. The main menu of both partitions of \app{} gives a general overview. \app{} do not provide shortcuts between different modules, e.g. a parent who is currently viewing the medicine log has to go back to the main menu in order to view the treatment plan. While this breaks with Shneidermann's rules and the Android design principles, we believed that the solution we found is the preferrable one.  
+The application is divided into two partitions, one for the parents and one for the children. In order to access one of the partitions, the user clicks on one of the buttons shown in Figure \ref{fig:asthmapp-main-menu}. The main menu of both partitions of \app{} gives a general overview. \app{} does not provide shortcuts between different modules, e.g. a parent who is currently viewing the medicine log has to go back to the main menu in order to view the treatment plan. While this breaks with Shneidermann's rules and the Android design principles, we believed that the solution we found was the preferrable one.  
 
 During a treatment the child is prompted to take action in order to continue through the process, giving the child a locus of control. 
 
@@ -60,16 +60,16 @@ A screenshot of the first view users meet is included in Figure \ref{fig:asthmap
 	\label{fig:asthmapp-main-menu}
 \end{figure}
 
-The child partition of our application consists mainly out of four parts. This parts are the treatment process, the treasure chest, the reward shop and the instructions for how to finish a treatment.
+The child partition of our application consists of four parts. This parts are the treatment process, the treasure chest, the reward shop and the instructions for how to finish a treatment.
 
 \subsection{Treatment}
 \label{sec:sec:description-treatment}
-Figure \ref{fig:capp_start_treatment} shows a screenshot for the application when the child starts his/her treatment. This sequence may be started by on of two events: (i) \emph{The child reacts to an alarm set in the parent partition}, or (ii) \emph{The child needs to take his/her medicine by need}. If (ii) is the case, the child is instructed to pick the medicine from a list shown by the application. If (i) is the case, the medicine is given on beforehand. When a child has started his/her treatment, he/she is taken through an animated sequence, which reacts when a child interacts with the device. The child is being told what to do by the comforting voice of Andreas Ystmark\footnote{A classmate of ours at NTNU}.  
+Figure \ref{fig:capp_start_treatment} shows a screenshot for the application when the child starts his/her treatment. This sequence may be started by on of two events: (i) \emph{The child reacts to an alarm set in the parent partition}, or (ii) \emph{The child needs to take his/her medicine by need}. If (ii) is the case, the child is instructed to pick the medicine from a list shown by the application. If (i) is the case, the medicine is determined beforehand. When a child has started his/her treatment, he/she is taken through an animated sequence, which reacts when a child interacts with the device. The child is being told what to do by the comforting voice of Andreas Ystmark\footnote{A classmate of ours at NTNU}.  
 
 
 \subsection{Showing Collected Stars}
 \label{sec:description-show-rewards}
-Figure \ref{fig:capp_stars} shows a screenshot for the application when the child wants to review how many stars he/she has received, based on the amount of treatments completed. Since we cannot assume that children are able to read, we have made the stars countable, and hopefully the child is able to comprehend how many stars he/she actually has. We also provide some help to those who are able to read numbers, by showing the number of stars a child has on the top of the screen.      
+Figure \ref{fig:capp_stars} shows a screenshot for the application when the child wants to review how many stars he/she has received, based on the amount of treatments completed. Since we cannot assume that the child is able to read, we have made the stars countable, and hopefully the child is able to comprehend how many stars he/she actually has. We also provide some help to those who are able to read numbers, by showing the number of stars a child has on the top of the screen.      
 
 \subsection{Shop}
 \label{sec:description-shop}
@@ -152,7 +152,7 @@ The following steps are included in the instructions:
 		\begin{minipage}[t]{0.4\linewidth}
 		\centering
 			\includegraphics[width=0.20\paperwidth]{Pictures/new-screenshots/award.png}
-		\caption{Overview of rewards a child can get}
+		\caption{Overview of rewards a child may recieve}
 		\label{fig:parent-awards}
 	\end{minipage}
 \end{figure}
@@ -194,7 +194,7 @@ In order to access the parent partition the user is prompted with a PIN challeng
 \subsection{Medicine Plan}
 \label{sec:description-medicine-plan}
 Creating a medicine plan for asthma treatment is highly connected to the asthma action plan explained in Appendix \ref{chp:traffic-light}.
-Users can have three different plans, depending on which health state they are currently in. As we are targeting children, we can not assume that they are aware of which category they are currently in, and as a result, we let their parents control it. Figure \ref{fig:parent_medicine_plans} and \ref{fig:add_medicine_to_plan} shows the view in which one may change the medicine plan their child are currently on, in addition to setting alarms where appropriate. For instance, one may set an alarm at 07:00 AM, so it reminds the user before it is time to leave for school. Changing the medicine plan is done by selecting the checkbox at the left side of the panel.  
+Users can have three different plans, depending on which health state they are currently in. As we are targeting children, we cannot assume that they are aware of which category they are currently in, and as a result, we let their parents control it. Figure \ref{fig:parent_medicine_plans} and \ref{fig:add_medicine_to_plan} show the view in which one may change the medicine plan the child is currently on, in addition to setting alarms where appropriate. For instance, one may set an alarm at 07:00 AM, so it reminds the user before it is time to leave for school. Changing the medicine plan is done by selecting the checkbox at the left side of the panel.  
 
 
 \subsection{Register Treatment}
@@ -204,21 +204,21 @@ If a child need to take their medicine, but does not have the possibilty to do t
 
 \subsection{Medicine Log}
 \label{sec:description-medicine-log}
-The \emph{Medicine log} can be used by parents to show how many times a child has taken his/her medicine. We assume that one of the main reasons for a child not taking his/her medicine is lack of communication between parents. A medicine log gives parents the ability to check and see whether the child has taken the necessary dose on any given day.
+The \emph{Medicine log} can be used by parents to show how many times a child has taken his/her medicine. We assume that one of the main reasons for a child not taking his/her medicine is lack of communication between parents. A medicine log enables parents to check whether the child has taken the necessary dose on any given day.
 
 
-Figure \ref{fig:medicine-log} shows the calendar view of the application, which we will explain into details. The calendar module used is an open source component developed by Chris Goo\footnote{The source code is licensed under the Apache License, Version 2.0. At the time we wrote this thesis, we were no longer able to find the source code available online.}, which we modified for our purposes. The cells show any given day of a month. In addition, there is a top bar which shows the health state (or health plan) of the child on the day selected below. At the bottom of the screen, there are three panels. The left panel shows which medicine has been taken on the selected day. The topbar of this panel indicates which day is selected. The middle panel shows the air quality in Trondheim\fnurl{Measured by NILU}{http://luftkvalitet.info/}. The right panel shows the pollen distribution of the 6 most common pollen types\fnurl{Measured by NAAF}{http://www.pollenvarslingen.no/}. The idea behind this is that asthma symptoms often correlate with allergy symptoms. If parents are able to recognize a pattern between health state and pollen distribution, they may wish to take special precautions, such as no outdoor activity on a day with extreme amounts of pollen.    
+Figure \ref{fig:medicine-log} shows the calendar view of the application, which we will explain in detail. The calendar module used is an open source component developed by Chris Goo\footnote{The source code is licensed under the Apache License, Version 2.0. At the time we wrote this thesis, we were no longer able to find the source code available online.}, which we modified for our purposes. The cells show any given day of a month. In addition, there is a top bar which shows the health state (or health plan) of the child on the day selected below. At the bottom of the screen there are three panels. The left panel shows which medicine has been taken on the selected day. The topbar of this panel indicates which day is selected. The middle panel shows the air quality in Trondheim\fnurl{Measured by NILU}{http://luftkvalitet.info/}. The right panel shows the pollen distribution of the 6 most common pollen types\fnurl{Measured by NAAF}{http://www.pollenvarslingen.no/}. The idea behind this is that asthma symptoms often correlate with allergy symptoms. If parents are able to recognize a pattern between health state and pollen distribution, they may wish to take special precautions, such as no outdoor activity on a day with extreme amounts of pollen.    
 
 
 \subsection{Manual}
 \label{sec:description-manual}
-The manual contains the same information as shown in Section \ref{sec:description-instructions}. The manual is added to both the parent partition and the child partition of the application. This is done because it is important for both the children and the parents to know how to use the medicine correctly. 
+The manual contains the same information as shown in Section \ref{sec:description-instructions}. The manual is added to both the parent partition and the child partition of the application. This is done because it is important for both children and parents to know how to use the medicine correctly. 
 
 
 \subsection{Reward}
 \label{sec:description-manage-rewards}
-Figure \ref{fig:parent-awards} shows the list of possible rewards a child may receive. They are added by parents through \emph{Add reward}. The idea of having parents set their children's rewards is to specify rewards according to children's interest (see Chapter \ref{sec:gamificationinapp}). Figure \ref{fig:parent-create-reward} shows how one may add a reward. The user inserts a description, then either adds a photo or selects one out of our standard images. It is possible to set a reward on \emph{Repeat}, which will make the reward appear multiple times, each time with an increased cost.        
-When the user press \emph{Save} (Lagre), the reward is added and the child has the possibility to select it. 
+Figure \ref{fig:parent-awards} shows the list of possible rewards a child may receive. They are added by parents through \emph{Add reward}. The idea of having parents set their children's rewards is to tailormake rewards according to children's interest (see Chapter \ref{sec:gamificationinapp}). Figure \ref{fig:parent-create-reward} shows how one may add a reward. The user inserts a description, then either adds a photo or selects one out of our standard images. It is possible to set a reward on \emph{Repeat}, which will make the reward appear multiple times, each time with an increased cost.        
+When the user press \emph{Save} (Lagre), the reward is added and the child is able to select it. 
  
 \section{Summary}
 
@@ -226,6 +226,6 @@ To build our application \app{}, we have continued development of Aaberg \etal{}
 
 After completing a treatment, the child is given experience points, in the shape of golden stars, based on their current health state. These stars can be used to purchase rewards defined by the child's parents. 
 
-\app{} is an application divided into two partitions, one for parents and one for children. The parent partition give users the right to change a child's treatment plan, view a child's medicine log and adding rewards that children can purchase. This partition is protected by a PIN challenge, in order to hide user data and deny children access. 
+\app{} is an application divided into two partitions, one for parents and one for children. The parent partition give users the right to change a child's treatment plan, view a child's medicine log and add rewards that children can purchase. This partition is protected by a PIN challenge, in order to hide user data and deny children access. 
 
 In the child partition, the child can be guided through treatments and use his/her earned stars to purchase rewards. It also gives a guide for how to perform a treatment, in the shape of a comic book.   
