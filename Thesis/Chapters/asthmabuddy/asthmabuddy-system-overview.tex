@@ -153,6 +153,8 @@ In order to start a treatment, the user provides a medicine code, which is repre
 
 After inserting these parameters, the \code{LogicHandler} retrieves a \code{LinkedList} of \code{Interaction}-objects that is to be played. After this sequence is ended, the system jumps to Figure \ref{fig:ab-sd-instructions}.
  
+\clearpage{}
+ 
 \textbf{Planned treatment}
 
 If an \code{AsthmaBuddy} instance is started without any parameters, it starts looking through alarm files (see Section \ref{sec:node-server}) every 60 seconds. If no alarm is returned from \code{UserDataManager}, it waits. Once an alarm is found, \code{AsthmaBuddy} is notified through \code{onNotificationFired}, which starts the treatment process. 

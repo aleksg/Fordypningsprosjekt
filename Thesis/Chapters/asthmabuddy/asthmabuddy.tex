@@ -78,6 +78,7 @@ In order to interact with \ab{}, children can register RFID-tags against \ab{}'s
 
 In order to play sounds we decided to integrate speakers inside AsthmaBuddy. Since we did not want to pull too many wires out of the bear, we decided to use USB-powered speakers.    
 
+\clearpage{}
 
 \textbf{LED lights}
 
@@ -85,6 +86,7 @@ We used LED lights connected to a breadboard in order to play around with the fi
 
 In order to display the correct colors to the child, according to the color of the medicine, we tried to use PWM\fnurl{Pulse-width Modulation}{http://en.wikipedia.org/wiki/Pulse-width\_modulation}. However, these experiments resulted in a significant weaker light. Thus, we used a simple combination of blue and red in order to display purple, and a combination of red and green to display orange.  
 
+\textbf{Digital overview}
  
 Figure \ref{fig:pi-fritzing} shows a digital overview of \buddy{}. The green figure to the left is our \rpi{}. While it is also connected to a power supply and an internet cable, we chose not to include these in our figure. The red figure to the right is the RFID reader. It is connected to the \rpi{} through a USB cable. The black figure on top is the speaker, connected to the \rpi{} through the audio port. 
 The grey lines and the lamp represents our LED light. It is connected to three of the GPIO (General Purpose I/O) ports on the \rpi{}, through a resistor. The last leg of the LED light is connected to ground on the \rpi{}, without a resistor.
