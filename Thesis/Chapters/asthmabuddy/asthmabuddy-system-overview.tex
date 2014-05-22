@@ -2,6 +2,7 @@
 \label{sec:systemoverview}
 
 \subsection{Use Cases}
+\label{sec:usecases}
 Figure \ref{fig:pi-use-cases} shows a general overview of the use cases we have included in our prototype. A medication process can be started by two ways:
 A parent can register an alarm by using AsthmAPP. This alarm is then set of by the \code{AsthmaBuddy} instance running\footnote{The reader should take notice that the tangible user interface \ab{} differs from the program running on the \rpi{}, which is called \code{AsthmaBuddy}(note the change of font)}, giving the child a notification that it is time to take the relevant medicine.
 
@@ -157,15 +158,15 @@ After inserting these parameters, the \code{LogicHandler} retrieves a \code{Link
  
 \textbf{Planned treatment}
 
-If an \code{AsthmaBuddy} instance is started without any parameters, it starts looking through alarm files (see Section \ref{sec:node-server}) every 60 seconds. If no alarm is returned from \code{UserDataManager}, it waits. Once an alarm is found, \code{AsthmaBuddy} is notified through \code{onNotificationFired}, which starts the treatment process. 
+If an \code{AsthmaBuddy} instance is started without any parameters, it starts looking through alarm files (see Section \ref{sec:node-server}) every 60 seconds. If no alarm is returned from \code{UserDataManager}, it waits. Once an alarm is found, \code{AsthmaBuddy} is notified through \code{onNotificationFired}, which starts the treatment process. The sequence diagram for this process is depicted in Figure \ref{fig:ab-sd-planned-treatment}.
  
 \textbf{Playing instructions}
 
-Playing instructions is mainly a loop of playing a sound, and turning on and off the LED-lights through the \code{LightEmitter} instance. 
+Playing instructions is mainly a loop of playing a sound, and turning on and off the LED-lights through the \code{LightEmitter} instance. The sequence diagram for this process is depicted in Figure \ref{fig:ab-sd-instructions}.
 
 \textbf{Finishing a treatment}
 
-When a treatment is finished, i.e. we are out of the \code{while} loop in Figure \ref{fig:ab-sd-instructions}, we register the treatment in the database. This ensures that the child is able to see the rewards in AsthmAPP. 
+When a treatment is finished, i.e. we are out of the \code{while} loop in Figure \ref{fig:ab-sd-instructions}, we register the treatment in the database. This ensures that the child is able to see the rewards in AsthmAPP. The sequence diagram for this process is depicted in Figure \ref{fig:ab-sd-completing-treatment}.
 
 
 \subsection{Node Server}
